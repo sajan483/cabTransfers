@@ -1,0 +1,14 @@
+<div fxLayout="row" class="week-outer">
+    <div *ngFor="let day of week; trackBy:trackByFn" (click)="selectDate(day)" class="day" [ngClass]="{'today': day.today, 'selected': day.selected,'inbetween': day.inbetween, 'hidden': day.hidden, 'inactive': day.inactive, 'weekend': day.weekend}" fxLayout="column" fxLayoutAlign="center center">
+        <span class="date">
+            {{day.mDate.date()}}
+        </span>
+        <span class="fare">
+            {{day.fare}}
+        </span>
+        <ng-container *ngIf="day?.holiday?.length">
+            <span class="holiday"></span>
+            <span class="holiday-text">{{day.holiday}}</span>
+        </ng-container>
+    </div>
+</div>

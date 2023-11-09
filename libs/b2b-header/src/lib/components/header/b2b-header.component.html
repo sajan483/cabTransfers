@@ -1,0 +1,17 @@
+<header class="top-header" fxLayout="column" fxLayoutAlign="space-between">
+    <div class="headtop-section">
+        <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="headtop">
+                <div class="logo">
+                    <img src="assets/images/agent-logo.png">
+                </div>
+            </div>
+            <div class="head-right">
+                <lib-agent-details [redirectUrl]="redirectUrl" (onMenuClick)="showMenu()"></lib-agent-details>
+            </div>
+        </div>
+    </div>
+    <lib-navigation></lib-navigation>
+</header>
+
+<lib-left-menu [currentState]="menuState" [closeFunction]="hideMenuFunction"></lib-left-menu>

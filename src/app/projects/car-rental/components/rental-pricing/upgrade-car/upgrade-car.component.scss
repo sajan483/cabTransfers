@@ -1,0 +1,126 @@
+@import "common";
+
+.upgrade-car {
+    @include flex(column);
+    gap: 15px;
+    .heading {
+        h3 {
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+    }
+
+    .card {
+        @include flex(column);
+        gap: 15px;
+
+        .list {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            border: 1px solid #D0D0D0;
+            border-radius: 4px;
+            padding: 10px;
+
+            @media screen and (max-width:1100px) {
+                @include flex(column);
+                @include flexAlign(s, s);
+            }
+
+            .outer {
+                @include flex(row);
+                @include flexAlign(sb, c);
+                width: 66%;
+                @media screen and (max-width:1100px) {
+                    width: 100%;
+                }
+                @media screen and (max-width:600px) {
+                    @include flex(column);
+                    @include flexAlign(s, s);
+                    gap: 20px;
+                }
+                .left {
+                    @include flex(column);
+                    gap: 10px;
+                    width: 50%;
+                    @media screen and (max-width:600px) {
+                        width: 100%; 
+                    }
+                    h4{
+                        font-size: $clamp-16-14;
+                    }
+                    img {
+                        width: 70px;
+                    }
+                }
+
+                .middle {
+                    width: 50%;
+                    @media screen and (max-width:600px) {
+                        width: 100%; 
+                    }
+                    .icon-box {
+                        @include flex(row);
+                        gap: 5px;
+                        padding: 8px;
+                        border-radius: 4px;
+
+                        p {
+                            font-size: $clamp-14-12;
+                        }
+
+                        &.green {
+                            background: #ECF9EA;
+                            color: #1CAE00;
+                        }
+
+                        .orange {
+                            color: #F78C03
+                        }
+
+                        .blue {
+                            color: #0E295A;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                @include flex(row);
+                @include flexAlign(e, c);
+                gap: 15px;
+                width: 33%;
+                @media screen and (max-width:1100px) {
+                    width: 100%;
+                    border-top: 1px solid #ece0e0;
+                    padding-top: 10px;
+                }
+                .price {
+                    @include flex(column);
+                    @include flexAlign(e, e);
+                    gap: 3px;
+
+                    h4 {
+                        font-size: $clamp-17-15;
+                        font-weight: $black_fnt;
+                    }
+
+                    p {
+                        color: #525252;
+                        font-size: 12px;
+                    }
+                }
+
+                .yellow {
+                    background: #FFCD2E;
+                    padding: 16px;
+                    font-size: 14px;
+                    height: 32px;
+                    border: 0;
+                }
+            }
+        }
+    }
+
+
+}

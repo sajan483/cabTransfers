@@ -1,0 +1,266 @@
+@import "common";
+
+.upi-payment-container {
+    width: $w100;
+    padding: 20px;
+
+    .enteramount-row {
+      background: #f4f6f8;
+      padding: 15px 15px 0 15px;
+      margin-bottom: 20px;
+      border-radius: 7px;
+      @include flex(row);
+      @include flexAlign(s, s);
+      gap: 10px;
+
+      .block {
+        padding-bottom: 20px;
+        @include flex(column);
+        @include flexAlign(s, s);
+        gap: 5px;
+
+        &.large-width {
+          width: 40%;
+
+          @media screen and (max-width : 650px) {
+            width: $w100;
+          }
+        }
+      }
+    }
+
+    .upidiagram {
+      margin: 40px 0 0px;
+      @include flex(row);
+      @include flexAlign(s, s);
+
+      @media screen and (max-width : 650px) {
+        @include flex(column);
+        @include flexAlign(c, c);
+      }
+
+      li {
+        width: 33.333%;
+        padding: 0 15px 30px;
+        text-align: center;
+        list-style: none;
+
+        @media screen and (max-width : 650px) {
+          width: $w100;
+        }
+
+        .bg {
+          width: 100px;
+          height: 105px;
+          border-radius: 5px;
+          background: #f4f6f8;
+          position: relative;
+          padding: 25px 0 0;
+          margin: 0 auto 15px;
+
+          .no {
+            position: absolute;
+            top: -15px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #525252;
+            font-size: 17px;
+            font-weight: 400;
+            border: 1px solid #d9d9d9;
+            border-radius: 50%;
+            background: $white;
+            left: calc(50% - 15px);
+            //@include transform(translateX(-50%));
+            z-index: 10;
+          }
+
+          .one {
+            width: 40px;
+            height: 68px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -458px -3px;
+            margin: 0 auto 0;
+          }
+
+          .two {
+            width: 76px;
+            height: 67px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -433px -74px;
+            margin: 0 auto 0;
+          }
+
+          .three {
+            width: 76px;
+            height: 70px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -433px -143px;
+            margin: 0 auto 0;
+          }
+
+          .four {
+            width: 40px;
+            height: 68px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -435px -217px;
+            margin: 0 auto 0;
+          }
+
+          .five {
+            width: 69px;
+            height: 74px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -433px -287px;
+            margin: 6px auto 0;
+          }
+
+          .six {
+            width: 76px;
+            height: 67px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -291px -346px;
+            margin: 0 auto 0;
+          }
+        }
+
+        p {
+          color: #525252;
+          font-size: 11px;
+          font-weight: 400;
+          line-height: 16px;
+        }
+      }
+    }
+
+    .seperationbg {
+      // padding: 15px;
+      width: $w100;
+
+      @media screen and (max-width : 768px) {
+        padding: 0;
+      }
+
+      .seperation {
+        @include flex(row);
+        @include flexAlign(sb, c);
+        gap: 15px;
+
+        @media screen and (max-width : 768px) {
+          @include flex(column);
+          @include flexAlign(c, c);
+
+
+        }
+
+        .block {
+          padding-bottom: 20px;
+          @include flex(column);
+          gap: 5px;
+
+          &.large-width {
+            width: 45%;
+            background: #f4f6f8;
+            padding: 20px;
+            border-radius: 7px;
+
+            @media screen and (max-width : 768px) {
+              width: $w100;
+            }
+          }
+
+          &.x-large-width {
+            width: 70%;
+          }
+
+          &.small-width {
+            width: 110px;
+          }
+        }
+
+        .hideshowsection {
+          border-top: 1px solid #c6cbd0;
+          padding: 17px 0 15px;
+        }
+
+        .or-row {
+          position: relative;
+          z-index: 0;
+          width: 150px;
+          padding: 25px 0;
+          @include flex(row);
+          @include flexAlign(c, c);
+
+          .or-box {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #ededed;
+            border: 1px solid #0e295a;
+            text-align: center;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 30px;
+          }
+
+          &::after {
+            width: 1px;
+            height: $w100;
+            background: #d0d0d0;
+            position: absolute;
+            content: "";
+            z-index: -1;
+          }
+        }
+
+        .scan-row {
+          width: 55%;
+          @include flex(column);
+          @include flexAlign(s, s);
+
+          @media screen and (max-width : 768px) {
+            width: $w100;
+          }
+
+          h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: $black;
+          }
+
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            color: $black;
+            margin: 6px 0;
+          }
+
+          .scanning-btn {
+            background: #ffcd2e;
+            color: #000000;
+            line-height: 34px;
+            font-size: 16px;
+            padding: 3px 20px;
+            display: block;
+            margin: 15px 0;
+            font-weight: 400 !important;
+            border: none;
+            border-radius: 3px;
+          }
+
+          .checkouter {
+            width: $w100;
+            font-size: 14px;
+            color: $black;
+
+            a {
+              color: #244885;
+              text-decoration: underline;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }

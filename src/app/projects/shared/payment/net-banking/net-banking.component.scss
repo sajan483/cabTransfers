@@ -1,0 +1,229 @@
+@import "common";
+
+.netbanking-container {
+    width: $w100;
+    padding: 20px;
+
+    .enteramount-row {
+        background: #f4f6f8;
+        padding: 15px 15px 0;
+        margin-bottom: 20px;
+        border-radius: 7px;
+
+    }
+
+    .block {
+        padding-bottom: 20px;
+        @include flex(column);
+        @include flexAlign(s, s);
+        gap: 5px;
+
+        &.large-width {
+            width: 35%;
+
+            @media screen and (max-width : 650px) {
+                width: $w100;
+
+            }
+        }
+
+        &.x-large-width {
+            width: 70%;
+        }
+
+        &.small-width {
+            width: 110px;
+        }
+    }
+
+    .formlabel {
+        color: $black;
+        font-size: 14px;
+        margin-bottom: 5px;
+        width: $w100;
+    }
+
+    .radiobutton-payment {
+        width: $w100;
+        padding-bottom: 20px;
+        @include flex(row);
+        @include flexAlign(s, c);
+
+        @media screen and (max-width : 768px) {
+            @include flex(column);
+            @include flexAlign(s, s);
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: $black;
+            margin-right: 20px;
+        }
+
+        .top {
+            padding-right: 20px;
+        }
+    }
+
+    .seperationbg {
+        padding: 15px 15px 0;
+
+        .other-banks {
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 15px;
+        }
+
+        .hideshowsection {
+            border-top: 1px solid #c6cbd0;
+            padding: 17px 0 15px;
+        }
+    }
+
+    .bank-radio {
+        margin: 10px 0 20px;
+        @include flex(row);
+        @include flexAlign(s, s);
+        gap: 15px;
+
+        ul {
+            @include flex(row);
+            @include flexAlign(s, s);
+            flex-flow: wrap;
+            width: $w100;
+            gap: 20px 10px;
+
+
+            li {
+                width: 18%;
+                min-width: 170px;
+
+                @media screen and (max-width : 990px) {
+                    width: 25%;
+                }
+
+                .bankdiv {
+                    width: 137px;
+                    height: 45px;
+                    background: url(../../../../../assets/images/payment-sprite.png ) no-repeat;
+                    border-radius: 3px;
+
+                    &.citybank {
+                        background-position: -5px -45px;
+                    }
+
+                    &.icicibank {
+                        background-position: -293px -45px;
+                    }
+
+                    &.sbi-bank {
+                        background-position: -149px -96px;
+                    }
+
+                    &.hdfcbank {
+                        background-position: -149px -45px;
+                    }
+
+                    &.axisbank {
+                        background-position: -5px -96px;
+                    }
+
+                    &.bankofbaroda {
+                        background-position: -293px -96px;
+                    }
+
+                    &.mobikwik {
+                        background-position: -5px -145px;
+                    }
+
+                    &.payzapp {
+                        background-position: -149px -146px;
+                    }
+
+                    &.mpesa {
+                        background-position: -293px -146px;
+                    }
+
+                    &.amazonpay {
+                        background-position: -5px -194px;
+                    }
+
+                    &.phonepe {
+                        background-position: -149px -194px;
+                    }
+                }
+            }
+        }
+
+        .radio-options {
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 10px;
+            width: $w100;
+
+            span {
+                font-size: 12px;
+                color: #525252;
+            }
+
+            .bank-section {
+                @include flex(row);
+                @include flexAlign(s, s);
+                gap: 20px;
+                width: $w100;
+
+                // .bankdiv {
+                //     width: 137px;
+                //     height: 45px;
+                //     background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+                //     border-radius: 3px;
+
+                //     &.citybank {
+                //         background-position: -5px -45px;
+                //     }
+
+                //     &.icicibank {
+                //         background-position: -293px -45px;
+                //     }
+
+                //     &.sbi-bank {
+                //         background-position: -149px -96px;
+                //     }
+
+                //     &.hdfcbank {
+                //         background-position: -149px -45px;
+                //     }
+
+                //     &.axisbank {
+                //         background-position: -5px -96px;
+                //     }
+
+                //     &.bankofbaroda {
+                //         background-position: -293px -96px;
+                //     }
+
+                //     &.mobikwik {
+                //         background-position: -5px -145px;
+                //     }
+
+                //     &.payzapp {
+                //         background-position: -149px -146px;
+                //     }
+
+                //     &.mpesa {
+                //         background-position: -293px -146px;
+                //     }
+
+                //     &.amazonpay {
+                //         background-position: -5px -194px;
+                //     }
+
+                //     &.phonepe {
+                //         background-position: -149px -194px;
+                //     }
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<app-payment></app-payment>
+<div class="footer">
+    <div class="left">
+        <p>By click on Make Payment, <br>I agree with the booking policies, <a>Privacy policy & Terms</a></p>
+    </div>
+    <div class="right">
+        <div class="price bg">
+            <h4>AED10,579</h4>
+            <p>Net Fare : AED2000</p>
+        </div>
+        <button mat-stroked-button color="primary" class="btn green" (click)="openSidePanel()">Make Payment</button>
+    </div>
+</div>
+<app-sidepanel class="custom-sidepanel" *ngIf="showSidePanel" [heading]="'Reconfirmation'"
+  (closeMenu)="openSidePanel()">
+  <app-reconfirmation></app-reconfirmation>
+</app-sidepanel>

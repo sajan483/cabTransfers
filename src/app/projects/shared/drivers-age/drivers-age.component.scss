@@ -1,0 +1,80 @@
+@import "common";
+
+.wrapper {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+
+    .sector-outer {
+        @include flex(column);
+        @include flexAlign(s, st);
+        width: 100px;
+        border: 1px solid #d4d4d4;
+        border-radius: 3px;
+        position: relative;
+
+        .searchinput {
+            display: none;
+            @include flexAlign(s, c);
+            gap: 10px;
+            padding: 0 15px;
+            height: 60px;
+            border-bottom: 1px solid #c3c3c3;
+
+            .icon {
+                display: none;
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 17px;
+                font-weight: 500;
+            }
+        }
+
+        .search-list {
+            max-height: 150px;
+            overflow: hidden;
+            overflow-y: auto;
+
+            ul {
+                li {
+                    padding: 15px;
+                    background: #fff;
+                    @include transition(all 0.3s ease-in);
+                    cursor: pointer;
+
+                    &:hover {
+                        background: #f8fbe1;
+                    }
+                }
+            }
+        }
+    }
+    
+    &.fullscreen {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        .sector-outer {
+            width: 100%;
+            height: 100%;
+            
+            .searchinput {
+                @include flex(row);
+                .icon {
+                    display: block;
+                }
+            }
+
+            .search-list {
+                height: calc(100% - 60px);
+                max-height: unset;
+            }
+        }
+     }
+}

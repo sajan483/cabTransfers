@@ -1,0 +1,28 @@
+@import 'common';
+
+.fare-details-card {
+    width: $w100;
+
+    .footer {
+        border-top: 1px solid $borderlight;
+        padding: 5px 15px;
+        @include flex(row);
+        @include flexAlign(e, c);
+
+        .bottom {
+            @include flex(row);
+            gap: 10px;
+            padding: 10px 0;
+
+            p {
+                line-height: 17px;
+            }
+
+            .orange {
+                color: #F78C03;
+                padding-top: 3px;
+            }
+        }
+
+    }
+}

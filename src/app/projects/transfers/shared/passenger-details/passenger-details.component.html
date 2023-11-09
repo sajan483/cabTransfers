@@ -1,0 +1,25 @@
+<div class="passenger-details card-common">
+    <div class="header">
+        <h2> Passenger Details</h2>
+    </div>
+    <div class="body">
+        <div class="half-width">
+            <h3>Pax Name</h3>
+            <ng-container *ngFor="let pax of Adult">
+                <p *ngIf="Adult.length > 0">
+                {{pax.Title}}. {{pax.FirstName}} {{pax.LastName}} <span>adult</span>
+                </p>
+            </ng-container>
+            <ng-container *ngFor="let child of Child">
+                <p *ngIf="Child.length > 0">
+                    {{child.TitleChild}}. {{child.FirstNameChild}} {{child.LastNameChild}} <span>child</span>
+                    </p>
+            </ng-container>
+        </div>
+        <div class="half-width">
+            <h3>Sector</h3>
+            <span>John F. Kennedy International Airport - John F. Kennedy International Airport</span>
+            <span>John F. Kennedy International Airport - John F. Kennedy International Airport</span>
+        </div>
+    </div>
+</div>

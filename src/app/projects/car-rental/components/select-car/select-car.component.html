@@ -1,0 +1,224 @@
+<div class="container select-car">
+    <div class="heading">
+        <h4>Select Cars</h4>
+        <div class="back">
+            <span class="ak-left"></span>
+            <a>Back to Search</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="data">
+            <div class="left">
+                <div class="image-bg">
+                    <div class="img-item"></div>
+                </div>
+                <div class="text1">
+                    <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                    <div class="feature">
+                        <ul>
+                            <li><span class="ak-petrol icon"></span>Petrol</li>
+                            <li><span class="ak-seater icon"></span>5 Seater</li>
+                            <li><span class="ak-automatic icon"></span>Automatic</li>
+                            <li><span class="ak-doors icon"></span>4 Doors</li>
+                            <li><span class="ak-ac icon"></span>AC</li>
+
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <ul class="list">
+                            <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                            <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                policy</li>
+                        </ul>
+                        <ul class="list">
+                            <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                            </li>
+                            <li class="res blue"> <span class="ak-terms icon"></span>Terms and conditions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operator">
+            <div class="left">
+                <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                <div class="res">
+                    <div class="rating">
+                        <h3>9.3</h3>
+                        <p>Outstanding</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="right">
+                <p><span class="ak-terms icon"></span> <span class="res">Terms and conditions</span></p>
+            </div>
+        </div>
+        <div class="plan">
+            <div class="box">
+                <div class="res">
+                    <div class="top">
+                        <div class="feature">
+                            <h3>BASIC</h3>
+                        </div>
+                        <div class="listing">
+                            <ul>
+                                <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="toggleInclusions()">
+                                    <span class="ak-information icon orange"></span>Inclusions <span
+                                        class="ak-down down-icon" [class.rotate]="showInclusions"></span>
+                                </li>
+                                <div class="inclusion" *ngIf="showInclusions" @openCloseAnim>
+                                    <ul>
+                                        <li>Unlimited Mileage</li>
+                                        <li>LDW Loss Damage Waiver</li>
+                                        <li>1 Million USD Liability Cover (EP/SLI)</li>
+                                        <li>Local Sales Tax/es</li>
+                                        <li>State Tax</li>
+                                        <li>Airport Surcharges/Fees</li>
+                                        <li>Customer Facility Charge</li>
+                                        <li>Mechanical Assistance</li>
+                                        <li>Special Offer - Free Additional Driver</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="pricing">
+                        <h3><span class="ak-attention" matTooltip="dummy"></span>AED 2,307</h3>
+                        <button mat-stroked-button color="primary" class="btn green">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="res">
+                    <div class="top">
+                        <div class="feature">
+                            <h3>STANDARD</h3>
+                        </div>
+                        <div class="listing">
+                            <ul>
+                                <li><span class="ak-checked icon green"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="toggleInclusions()">
+                                    <span class="ak-information icon orange"></span>Inclusions <span
+                                        class="ak-down down-icon" [class.rotate]="showInclusions"></span>
+                                </li>
+                                <div class="inclusion" *ngIf="showInclusions" @openCloseAnim>
+                                    <ul>
+                                        <li>Unlimited Mileage</li>
+                                        <li>LDW Loss Damage Waiver</li>
+                                        <li>1 Million USD Liability Cover (EP/SLI)</li>
+                                        <li>Local Sales Tax/es</li>
+                                        <li>State Tax</li>
+                                        <li>Airport Surcharges/Fees</li>
+                                        <li>Customer Facility Charge</li>
+                                        <li>Mechanical Assistance</li>
+                                        <li>Special Offer - Free Additional Driver</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="pricing">
+                        <h3><span class="ak-attention" matTooltip="dummy"></span>AED 2,307</h3>
+                        <button mat-stroked-button color="primary" class="btn green">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="res">
+                    <div class="top">
+                        <div class="feature">
+                            <h3>PREMIUM</h3>
+                        </div>
+                        <div class="additional">
+                            <span class="ak-checkedmark"></span>
+                            <p>Additional Driver</p>
+                        </div>
+                        <div class="listing">
+                            <ul>
+                                <li><span class="ak-checked icon green"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="toggleInclusions()">
+                                    <span class="ak-information icon orange"></span>Inclusions <span
+                                        class="ak-down down-icon" [class.rotate]="showInclusions"></span>
+                                </li>
+                                <div class="inclusion" *ngIf="showInclusions" @openCloseAnim>
+                                    <ul>
+                                        <li>Unlimited Mileage</li>
+                                        <li>LDW Loss Damage Waiver</li>
+                                        <li>1 Million USD Liability Cover (EP/SLI)</li>
+                                        <li>Local Sales Tax/es</li>
+                                        <li>State Tax</li>
+                                        <li>Airport Surcharges/Fees</li>
+                                        <li>Customer Facility Charge</li>
+                                        <li>Mechanical Assistance</li>
+                                        <li>Special Offer - Free Additional Driver</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="pricing">
+                        <h3><span class="ak-attention" matTooltip="dummy"></span>AED 2,307</h3>
+                        <button mat-stroked-button color="primary" class="btn green">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="res">
+                    <div class="top">
+                        <div class="feature">
+                            <h3>GOLD</h3>
+                        </div>
+                        <div class="additional">
+                            <span class="ak-checkedmark"></span>
+                            <p>Includes GPS and Additional Driver</p>
+                        </div>
+                        <div class="listing">
+                            <ul>
+                                <li><span class="ak-checked icon green"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="toggleInclusions()">
+                                    <span class="ak-information icon orange"></span>Inclusions <span
+                                        class="ak-down down-icon" [class.rotate]="showInclusions"></span>
+                                </li>
+                                <div class="inclusion" *ngIf="showInclusions" @openCloseAnim>
+                                    <ul>
+                                        <li>Unlimited Mileage</li>
+                                        <li>LDW Loss Damage Waiver</li>
+                                        <li>1 Million USD Liability Cover (EP/SLI)</li>
+                                        <li>Local Sales Tax/es</li>
+                                        <li>State Tax</li>
+                                        <li>Airport Surcharges/Fees</li>
+                                        <li>Customer Facility Charge</li>
+                                        <li>Mechanical Assistance</li>
+                                        <li>Special Offer - Free Additional Driver</li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="pricing">
+                        <h3><span class="ak-attention" matTooltip="dummy"></span>AED 2,307</h3>
+                        <button mat-stroked-button color="primary" class="btn green">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

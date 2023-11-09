@@ -1,0 +1,32 @@
+@import "../../../../assets/css/common.scss";
+
+.bg-white {
+  background-color: $white;
+  padding: 10px 0;
+}
+
+.headtop-section {
+  width: $full-width;
+  background: $white;
+  text-align: center;
+  height: 76px;
+
+  .logo {
+    height: 76px;
+
+    img {
+      max-width: 200px;
+      max-height: 65px;
+    }
+  }
+}
+
+::ng-deep .b2b-header-open {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 700px) {
+  lib-navigation {
+    display: none;
+  }
+}

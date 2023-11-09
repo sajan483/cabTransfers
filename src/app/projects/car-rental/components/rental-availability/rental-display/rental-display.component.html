@@ -1,0 +1,383 @@
+<div class="container rental">
+    <div class="rental-left sticky">
+        <app-filter></app-filter>
+    </div>
+    <div class="rental-right">
+        <div class="header-row">
+            <h2>Car from <span>Chennai</span> to <span>Bangalore</span></h2>
+            <div class="selection">
+                <span class="ak-search"></span>
+                <span class="ak-share" (click)="openshareDialog()"></span>
+            </div>
+        </div>
+
+        <div class="card1">
+            <div class="icon-outer">
+                <span class="ak-megaphone"></span>
+            </div>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+        </div>
+
+        <div class="sort-top">
+            <div class="left">
+                <p>Showing 20 of 109 cars found</p>
+            </div>
+            <div class="right">
+                <ul>
+                    <li class="sortby">SORT BY :</li>
+                    <li>Car</li>
+                    <li class="active">Price <span class="ak-download-1 icon"></span></li>
+                    <li><span class="ak-eye view"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="data">
+                <div class="left">
+                    <div class="image-bg">
+                        <div class="img-item"></div>
+                    </div>
+                    <div class="text1">
+                        <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                        <div class="feature">
+                            <ul>
+                                <li><span class="ak-petrol icon"></span>Petrol</li>
+                                <li><span class="ak-seater icon"></span>5 Seater</li>
+                                <li><span class="ak-automatic icon"></span>Automatic</li>
+                                <li><span class="ak-doors icon"></span>4 Doors</li>
+                                <li><span class="ak-ac icon"></span>AC</li>
+
+                            </ul>
+                        </div>
+                        <div class="footer">
+                            <ul class="list">
+                                <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                                <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                    policy</li>
+                            </ul>
+                            <ul class="list">
+                                <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="openDialog()"><span
+                                        class="ak-information icon orange"></span>Inclusions</li>
+                                <li class="res blue" (click)="openSidePanel()"> <span class="ak-terms icon"></span>Terms
+                                    and conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="price">
+                         <h3>AED 2,307<span class="ak-attention"  matTooltip="dummy"></span></h3>
+                        <button mat-stroked-button color="primary" class="btn green">Book Now</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="operator">
+                <div class="left">
+                    <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                    <div class="res">
+                        <div class="rating">
+                            <h3>9.3</h3>
+                            <p>Outstanding</p>
+                        </div>
+                        <div class="compare">
+                            <mat-checkbox class="example-margin" (click)="compareDialog()">Compare</mat-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <p (click)="openSidePanel()"><span class="ak-terms icon"></span> <span class="res">Terms and
+                            conditions</span></p>
+                </div>
+            </div>
+            <mat-checkbox class="check-top"></mat-checkbox>
+        </div>
+        <div class="card">
+            <div class="data">
+                <div class="left">
+                    <div class="image-bg">
+                        <div class="img-item"></div>
+                    </div>
+                    <div class="text1">
+                        <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                        <div class="feature">
+                            <ul>
+                                <li><span class="ak-petrol icon"></span>Petrol</li>
+                                <li><span class="ak-seater icon"></span>5 Seater</li>
+                                <li><span class="ak-automatic icon"></span>Automatic</li>
+                                <li><span class="ak-doors icon"></span>4 Doors</li>
+                                <li><span class="ak-ac icon"></span>AC</li>
+
+                            </ul>
+                        </div>
+                        <div class="footer">
+                            <ul class="list">
+                                <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                                <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                    policy</li>
+                            </ul>
+                            <ul class="list">
+                                <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="openDialog()"><span
+                                        class="ak-information icon orange"></span>Inclusions</li>
+                                <li class="res blue" (click)="openSidePanel()"><span class="ak-terms icon"></span>Terms
+                                    and conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="price">
+                         <h3>AED 2,307<span class="ak-attention"  matTooltip="dummy"></span></h3>
+                        <button mat-stroked-button color="primary" class="btn yellow">Request</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="operator">
+                <div class="left">
+                    <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                    <div class="res">
+                        <div class="rating">
+                            <h3>9.3</h3>
+                            <p>Outstanding</p>
+                        </div>
+                        <div class="compare">
+                            <mat-checkbox class="example-margin" (click)="compareDialog()">Compare</mat-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <p (click)="openSidePanel()"><span class="ak-terms icon"></span> <span class="res">Terms and
+                            conditions</span></p>
+                </div>
+            </div>
+            <mat-checkbox class="check-top"></mat-checkbox>
+
+        </div>
+        <div class="card">
+            <div class="data">
+                <div class="left">
+                    <div class="image-bg">
+                        <div class="img-item"></div>
+                    </div>
+                    <div class="text1">
+                        <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                        <div class="feature">
+                            <ul>
+                                <li><span class="ak-petrol icon"></span>Petrol</li>
+                                <li><span class="ak-seater icon"></span>5 Seater</li>
+                                <li><span class="ak-automatic icon"></span>Automatic</li>
+                                <li><span class="ak-doors icon"></span>4 Doors</li>
+                                <li><span class="ak-ac icon"></span>AC</li>
+
+                            </ul>
+                        </div>
+                        <div class="footer">
+                            <ul class="list">
+                                <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                                <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                    policy</li>
+                            </ul>
+                            <ul class="list">
+                                <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="openDialog()"><span
+                                        class="ak-information icon orange"></span>Inclusions</li>
+                                <li class="res blue" (click)="openSidePanel()"><span class="ak-terms icon"></span>Terms
+                                    and conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <!-- <div class="tax">
+                        <p>Payable Locally GBP126.00 Inc. Tax</p>
+                    </div> -->
+                    <div class="price">
+                         <h3>AED 2,307<span class="ak-attention"  matTooltip="dummy"></span></h3>
+                        <button mat-stroked-button color="primary" class="btn green">Select</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="operator">
+                <div class="left">
+                    <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                    <div class="res">
+                        <div class="rating">
+                            <h3>9.3</h3>
+                            <p>Outstanding</p>
+                        </div>
+                        <div class="compare">
+                            <mat-checkbox class="example-margin" (click)="compareDialog()">Compare</mat-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <p (click)="openSidePanel()"><span class="ak-terms icon"></span> <span class="res">Terms and
+                            conditions</span></p>
+                </div>
+            </div>
+            <mat-checkbox class="check-top"></mat-checkbox>
+
+        </div>
+        <div class="card">
+            <div class="data">
+                <div class="left">
+                    <div class="image-bg">
+                        <div class="img-item"></div>
+                    </div>
+                    <div class="text1">
+                        <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                        <div class="feature">
+                            <ul>
+                                <li><span class="ak-petrol icon"></span>Petrol</li>
+                                <li><span class="ak-seater icon"></span>5 Seater</li>
+                                <li><span class="ak-automatic icon"></span>Automatic</li>
+                                <li><span class="ak-doors icon"></span>4 Doors</li>
+                                <li><span class="ak-ac icon"></span>AC</li>
+
+                            </ul>
+                        </div>
+                        <div class="footer">
+                            <ul class="list">
+                                <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                                <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                    policy</li>
+                            </ul>
+                            <ul class="list">
+                                <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="openDialog()"><span
+                                        class="ak-information icon orange"></span>Inclusions</li>
+                                <li class="res blue" (click)="openSidePanel()"><span class="ak-terms icon"></span>Terms
+                                    and conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="tax">
+                        <p>Payable Locally GBP126.00 Inc. Tax</p>
+                    </div>
+                    <div class="price">
+                        <h3>AED 2,307<span class="ak-attention"  matTooltip="dummy"></span></h3>
+                        <button mat-stroked-button color="primary" class="btn green">Select</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="operator">
+                <div class="left">
+                    <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                    <div class="res">
+                        <div class="rating">
+                            <h3>9.3</h3>
+                            <p>Outstanding</p>
+                        </div>
+                        <div class="compare">
+                            <mat-checkbox class="example-margin" (click)="compareDialog()">Compare</mat-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <p (click)="openSidePanel()"><span class="ak-terms icon"></span> <span class="res">Terms and
+                            conditions</span></p>
+                </div>
+            </div>
+            <mat-checkbox class="check-top"></mat-checkbox>
+
+        </div>
+        <div class="card">
+            <div class="data">
+                <div class="left">
+                    <div class="image-bg">
+                        <div class="img-item"></div>
+                    </div>
+                    <div class="text1">
+                        <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                        <div class="feature">
+                            <ul>
+                                <li><span class="ak-petrol icon"></span>Petrol</li>
+                                <li><span class="ak-seater icon"></span>5 Seater</li>
+                                <li><span class="ak-automatic icon"></span>Automatic</li>
+                                <li><span class="ak-doors icon"></span>4 Doors</li>
+                                <li><span class="ak-ac icon"></span>AC</li>
+
+                            </ul>
+                        </div>
+                        <div class="footer">
+                            <ul class="list">
+                                <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                                <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                    policy</li>
+                            </ul>
+                            <ul class="list">
+                                <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                </li>
+                                <li class="blue" (click)="openDialog()"><span
+                                        class="ak-information icon orange"></span>Inclusions</li>
+                                <li class="res blue" (click)="openSidePanel()"><span class="ak-terms icon"></span>Terms
+                                    and conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="tax">
+                        <p>Payable Locally GBP126.00 Inc. Tax</p>
+                    </div>
+                    <div class="price">
+                        <h3>AED 2,307<span class="ak-attention"  matTooltip="dummy"></span></h3>
+                        <button mat-stroked-button color="primary" class="btn green">Select</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="operator">
+                <div class="left">
+                    <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                    <div class="res">
+                        <div class="rating">
+                            <h3>9.3</h3>
+                            <p>Outstanding</p>
+                        </div>
+                        <div class="compare">
+                            <mat-checkbox class="example-margin" (click)="compareDialog()">Compare</mat-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <p (click)="openSidePanel()"><span class="ak-terms icon"></span> <span class="res">Terms and
+                            conditions</span></p>
+                </div>
+            </div>
+            <mat-checkbox class="check-top"></mat-checkbox>
+
+        </div>
+    </div>
+</div>
+
+<div class="compare-right">
+    <div class="txt">Compare</div>
+    <span>3</span>
+</div>
+
+<div class="res-filter">
+    <div class="filter-style" (click)="toggleFilter()"> <span class="ak-filter icon"></span> Filter</div>
+</div>
+<app-sidepanel *ngIf="showSidePanel" [heading]="'Terms and Conditions'" (closeMenu)="openSidePanel()">
+    <app-terms-conditions></app-terms-conditions>
+</app-sidepanel>
+
+<app-filter *ngIf="showFilter" [fullscreen]="true" (close)="toggleFilter()"></app-filter>

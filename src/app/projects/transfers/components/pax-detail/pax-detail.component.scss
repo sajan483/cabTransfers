@@ -1,0 +1,122 @@
+@import "common";
+
+.pax-outer {
+    @include flex(column);
+    @include flexAlign (s, s);
+    gap: 30px;
+    width: $w100;
+    margin: $clamp-30-5 $reset;
+
+    .pax {
+        @include flex(row);
+        @include flexAlign (sb, s);
+        gap: 30px;
+        width: $w100;
+
+        &-left,
+        &-right {
+            .head {
+                margin-top: 25px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                h2 {
+                    font-size: $clamp-19-16;
+                    font-weight: $bold;
+                    color: #000;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        &-left {
+            width: 77%;
+
+            @media screen and (max-width : 990px) {
+                width: $w100;
+            }
+        }
+
+        &-right {
+            width: 23%;
+
+            .head {
+                @include flex(row);
+                @include flexAlign(sb, c);
+                margin-bottom: 15px;
+
+                h2 {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    font-size: 20px;
+                }
+
+            }
+
+            @media screen and (max-width : 990px) {
+                display: none;
+            }
+
+        }
+
+    }
+}
+
+.fair-summery-mob {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 10px;
+    background: #fff;
+    box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, .1);
+    z-index: 150;
+    @include flex(row);
+    @include flexAlign (sb, c);
+
+    @media screen and (min-width : 990px) {
+        display: none;
+    }
+
+    .left {
+        @include flex(column);
+        @include flexAlign (s, s);
+        gap: 5px;
+
+        h4 {
+            font-size: $clamp-13-11;
+            font-weight: 400;
+            color: #363636;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: $clamp-23-16;
+            font-weight: $bold;
+            color: #363636;
+            // margin-top: -4px;
+            @include flex(row);
+            @include flexAlign (s, c);
+            gap: 5px;
+
+            .icon {
+                font-size: 15px;
+                color: #d32f2f;
+                // display: inline-block;
+                // width: 35px;
+                // height: 35px;
+                // line-height: 35px;
+                // text-align: left;
+                // padding-left: 5px;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .btn {}
+}

@@ -1,0 +1,14 @@
+<div class="wrapper" [ngClass]="{'hide': hide}">
+    <div class="heading">
+        <h1>{{heading}}</h1>
+        <div class="close-icon" (click)="close()">
+            <span class="ak-cancel"></span>
+        </div>
+    </div>
+
+    <div class="form">
+        <ng-content></ng-content>
+    </div>
+</div>
+
+<div class="overlay" (click)="close()"></div>

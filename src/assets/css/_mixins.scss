@@ -1,0 +1,134 @@
+@mixin transition($value) {
+    transition: $value;
+    -o-transition: $value;
+    -webkit-transition: $value;
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -ms-transform: $value;
+    transform: $value;
+    -moz-transform: $value;
+}
+
+@mixin boxshadow($value) {
+    -webkit-box-shadow: $value;
+    box-shadow: $value;
+}
+
+@mixin flex($orientation) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: $orientation;
+}
+
+@mixin flexAlign($justify-content, $align-items) {
+    @if $justify-content ==s {
+        justify-content: flex-start;
+    }
+
+    @else if $justify-content ==c {
+        justify-content: center;
+    }
+
+    @else if $justify-content ==e {
+        justify-content: flex-end;
+    }
+
+    @else if $justify-content ==sb {
+        justify-content: space-between;
+    }
+
+    @else if $justify-content ==sa {
+        justify-content: space-around;
+    }
+
+    @else if $justify-content ==se {
+        justify-content: space-evenly;
+    }
+
+    @if $align-items ==s {
+        align-items: flex-start;
+    }
+
+    @else if $align-items ==c {
+        align-items: center;
+    }
+
+    @else if $align-items ==e {
+        align-items: flex-end;
+    }
+
+    @else if $align-items ==st {
+        align-items: stretch;
+    }
+}
+
+
+// skeletonbg
+
+@mixin skeletonbg() {
+    background: -webkit-gradient(linear,
+        left top,
+        right top,
+        color-stop(8%, #eeeeee),
+        color-stop(18%, #dddddd),
+        color-stop(33%, #eeeeee));
+    background: -webkit-linear-gradient(left,
+        #eeeeee 8%,
+        #dddddd 18%,
+        #eeeeee 33%);
+    background: -o-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    -webkit-background-size: 1000px 104px;
+    background-size: 1000px 104px;
+  }
+  
+@mixin progress-loader-bg() {
+background-image: -webkit-linear-gradient(135deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent);
+background-image: -o-linear-gradient(135deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent);
+background-image: linear-gradient(-45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent);
+background-size: 50px 50px;
+}
+  
+@-webkit-keyframes flash {
+0% {
+    background-position: -468px 0;
+}
+
+100% {
+    background-position: 468px 0;
+}
+}
+
+@keyframes flash {
+0% {
+    background-position: -468px 0;
+}
+
+100% {
+    background-position: 468px 0;
+}
+}

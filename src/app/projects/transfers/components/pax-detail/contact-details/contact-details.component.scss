@@ -1,0 +1,100 @@
+@import "common";
+
+.contact-details {
+    @include flex(column);
+    @include flexAlign(s, s);
+    gap: 25px;
+
+    .row {
+        @include flex(column);
+        @include flexAlign(s, s);
+        margin-top: 10px;
+        gap: 8px;
+
+        ul.form-field {
+            @include flex(row);
+            @include flexAlign(s, s);
+            flex-wrap: wrap;
+            gap: 15px;
+            width: $w100;
+            @media screen and (max-width : 500px) {
+                @include flex(column);
+            }
+            &.column {
+                @include flex(column);
+                @include flexAlign(s, s);
+
+                h3 {
+                    font-size: 14px;
+                    font-weight: $bold;
+                    padding-top: 12px;
+                }
+            }
+
+            li {
+                width: calc(33% - 15px);
+                @include flex(column);
+                @include flexAlign(s, s);
+                gap: 5px;
+                @media screen and (max-width : 500px) {
+                    width: $w100;
+                }
+              
+
+                label {
+                    font-size: 13px;
+                    font-weight: $regular;
+                }
+            }
+        }
+
+        .note {
+            border: 1px solid $note;
+            border-radius: 4px;
+            padding: 8px;
+            @include flex(row);
+            @include flexAlign(s, c);
+            gap: 18px;
+
+            span.icon {
+                font-size: 22px;
+                color: $note;
+            }
+
+            p {
+                font-size: 13px;
+                font-weight: $regular;
+                line-height: 22px;
+                color: $note;
+            }
+        }
+    }
+
+
+
+    &.skeleton{
+        .row {
+            .form-field{
+                li{
+                    .txt{
+                        width: 150px;
+                        height: 18px;
+                    }
+                }
+            }
+            .note{
+                width: 100%;
+
+                span{
+                    width: 20px;
+                    height: 20px;
+                }
+                p{
+                    width: 100%;
+                    height: 16px;
+                }
+            }
+        }
+    }
+
+}

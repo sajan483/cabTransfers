@@ -1,0 +1,819 @@
+@import "common";
+
+.review-car {
+    @include flex(column);
+    @include flexAlign(s, s);
+    gap: 12px;
+    width: 100%;
+    margin-top: 40px;
+
+    .yellow {
+        background: #FFCD2E
+    }
+
+    .heading {
+        @include flex(row);
+        @include flexAlign(sb, c);
+        width: $w100;
+
+        h3 {
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+
+        a {
+            color: $blue;
+            cursor: pointer;
+            text-decoration: underline;
+            font-weight: $bold;
+        }
+    }
+
+    .car-name {
+        @include flex(row);
+        @include flexAlign(sb, c);
+        gap: 10px;
+        width: $w100;
+
+        .left {
+            width: 96%;
+            @media screen and (max-width:768px) {
+                min-width: 100%;
+            }
+            .card {
+                @include flex(row);
+                @include flexAlign(sb, c);
+
+                @media screen and (max-width:500px) {
+                    @include flex(column);
+                    @include flexAlign(s, s);
+                }
+
+                a {
+                    color: $blue;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+
+                .res {
+                    @include flex(row);
+                    @include flexAlign(e, c);
+                    gap: 10px;
+
+                    @media screen and (max-width:500px) {
+                        width: 100%;
+                        @include flexAlign(sb, c);
+                    }
+
+                    .icon {
+                        border: 1px solid #e2e2e270;
+                        cursor: pointer;
+                        padding: 10px;
+                        border-radius: 3px;
+                        display: none;
+
+                        @media screen and (max-width : 768px) {
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+
+
+
+            h4 {
+                font-size: $clamp-17-15;
+
+                span {
+                    color: #676767;
+                    font-weight: $regular;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .right {
+            width: 50px;
+            text-align: center;
+            cursor: pointer;
+            .card {
+                @media screen and (max-width : 768px) {
+                    display: none !important;
+                }
+            }
+        }
+
+        .icon {
+            transition: all .5s ease;
+            display: inline-block;
+            &.rotate {
+                transform: rotateZ(180deg);
+            }
+        }
+    }
+
+    .outer {
+        padding: 15px 0px;
+        @include flex(column);
+        @include flexAlign(s, s);
+
+        .destination {
+            @include flex(row);
+            @include flexAlign(s, s);
+            border-bottom: 1px solid $gray1;
+            width: $w100;
+            padding-bottom: 15px;
+
+            @media screen and (max-width : 768px) {
+                @include flex(column);
+                @include flexAlign(s, c);
+            }
+
+            .connection {
+                width: 25%;
+
+                @media screen and (max-width : 768px) {
+                    width: $w100;
+
+                }
+
+                .left {
+                    @include flex(column);
+                    @include flexAlign(s, s);
+                    gap: 5px;
+
+                    p {
+                        color: #686868;
+                        font-size: 13px;
+                        white-space: nowrap;
+                        font-weight: $regular;
+                    }
+
+                    h2 {
+                        font-size: 17px;
+                        font-weight: $bold;
+                        color: #000;
+                    }
+                }
+
+            }
+
+            .journey-detail {
+                @include flex(row);
+                @include flexAlign(s, st);
+
+                @media screen and (max-width : 768px) {
+                    width: $w100;
+                    margin-top: 15px;
+
+                }
+
+                @media screen and (max-width : 500px) {
+                    border: 1px solid #f2f2f2;
+                    @include boxshadow(0 0 2px 0 rgba(0, 0, 0, 0.1));
+                    border-radius: 4px;
+                    padding: 5px 3px;
+                }
+
+                .left {
+                    @include flex(column);
+                    @include flexAlign(sb, st);
+                    height: 114px;
+
+                    @media screen and (max-width : 500px) {
+                        height: 144px;
+                    }
+
+                    .from-date,
+                    .to-date {
+                        text-align: right;
+
+                        h2 {
+                            font-size: $clamp-20-14;
+                            font-weight: $black_fnt;
+                            color: #000;
+                            margin-bottom: 6px;
+
+                            @media screen and (max-width : 768px) {
+                                font-weight: $bold;
+                            }
+                        }
+
+                        p {
+                            color: #9d9d9d;
+                            font-size: $clamp-14-12;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                .center {
+                    @include flex(row);
+                    @include flexAlign(c, c);
+                    width: 50px;
+                    padding: 0 0 13px;
+
+                    @media screen and (max-width : 500px) {
+                        padding: 0;
+                    }
+
+                    span.divider {
+                        position: relative;
+                        border-left: 3px dotted #a9a8a8;
+                        background-color: #fff;
+                        height: 75%;
+
+                        &::before {
+                            content: '';
+                            border: 3px solid #b5cb13;
+                            border-radius: 12px;
+                            box-sizing: border-box;
+                            height: 14px;
+                            width: 14px;
+                            position: absolute;
+                            top: -12px;
+                            left: -8px;
+                        }
+
+                        &::after {
+                            content: '';
+                            border: 3px solid #b5cb13;
+                            border-radius: 12px;
+                            box-sizing: border-box;
+                            height: 14px;
+                            width: 14px;
+                            position: absolute;
+                            bottom: -12px;
+                            left: -8px;
+                        }
+                    }
+
+                }
+
+                .right {
+                    @include flex(column);
+                    @include flexAlign(sb, st);
+                    padding: 0 0 14px 0;
+
+                    @media screen and (max-width : 500px) {
+                        padding: 0;
+                        gap: 36px;
+                    }
+
+                    .sector {
+                        @include flex(column);
+                        gap: 5px;
+
+                        span {
+                            color: #686868;
+                            font-size: 13px;
+                        }
+
+                        h2 {
+                            font-size: $clamp-16-14;
+                            font-weight: $black_fnt;
+                            color: #000;
+
+                            @media screen and (max-width : 768px) {
+                                font-weight: $bold;
+                            }
+
+                            @media screen and (max-width : 500px) {
+                                line-height: 22px;
+                                max-height: 45px;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+
+                        &:last-child {
+                            @include flex(column);
+                            @include flexAlign(s, s);
+                            gap: 5px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .car-detail {
+            padding: 15px 10px;
+            @include flex(row);
+            @include flexAlign(s, s);
+            border-bottom: 1px solid $gray1;
+            padding-bottom: 15px;
+            width: $w100;
+
+            .packages {
+                @include flex(column);
+                @include flexAlign (s, s);
+                width: $w100;
+
+                .card {
+                    background: $white;
+                    width: $w100;
+                    padding: 0;
+                    border-radius: 3px;
+                    border: 0;
+                    @include flex(column);
+                    @include flexAlign(sb, s);
+
+                    .data {
+                        @include flex(row);
+                        @include flexAlign(sb, s);
+                        gap: 20px;
+
+                        @media screen and (max-width : 800px) {
+                            @include flex(column);
+                            width: $w100;
+                        }
+
+                        .left {
+                            width: 70%;
+                            @include flex(row);
+                            @include flexAlign(s, s);
+                            gap: 15px;
+
+                            @media screen and (max-width : 800px) {
+                                width: $w100;
+                            }
+
+                            @media screen and (max-width : 500px) {
+                                @include flex(column);
+                            }
+
+                            .image-bg {
+                                background-color: #EDEDED;
+                                border-radius: 6px;
+                                width: 180px;
+                                height: 140px;
+                                @include flex(row);
+                                @include flexAlign(c, c);
+
+                                @media screen and (max-width : 500px) {
+                                    width: 100%;
+                                    height: auto;
+                                }
+
+                                .img-item {
+                                    background: var(--bg-image) no-repeat center center;
+                                    background-size: inherit;
+                                    width: 149px;
+                                    height: 100px;
+
+                                    @media screen and (max-width : 1000px) {
+                                        min-width: 60%;
+                                    }
+                                }
+                            }
+
+                            .text1 {
+                                @include flex(column);
+                                @include flexAlign(s, s);
+                                gap: 15px;
+
+                                h3 {
+                                    font-size: $clamp-20-16;
+                                    font-weight: $black_fnt;
+
+                                    span {
+                                        font-size: 13px;
+                                        color: #676767;
+                                        font-weight: $regular;
+                                    }
+                                }
+
+                                .feature {
+                                    @include flex(row);
+                                    @include flexAlign(s, s);
+                                    gap: 20px;
+
+                                    @media screen and (max-width : 1000px) {
+                                        @include flex(column);
+                                        gap: 5px;
+                                    }
+
+                                    @media screen and (max-width : 800px) {
+                                        @include flex(row);
+                                        gap: 20px;
+
+                                    }
+
+                                    @media screen and (max-width :600px) {
+                                        @include flex(column);
+                                        gap: 5px;
+                                    }
+
+                                    p {
+                                        font-size: 13px;
+                                        @include flex(row);
+                                        @include flexAlign(s, c);
+                                    }
+
+                                    .icon {
+                                        margin-right: 10px;
+                                        font-size: 25px;
+                                        color: #59646F;
+                                    }
+                                }
+
+                                .supplier {
+                                    @include flex(column);
+                                    @include flexAlign(s, s);
+                                    gap: 8px;
+
+                                    h5 {
+                                        font-size: $clamp-15-14;
+                                        font-weight: $bold;
+                                    }
+
+                                    .waiting {
+                                        font-size: 13px;
+                                        font-weight: $bold;
+
+                                        span {
+                                            font-weight: $regular;
+                                        }
+                                    }
+                                }
+
+                                .cancellation {
+                                    @include flex(row);
+                                    @include flexAlign(s, c);
+                                    cursor: pointer;
+
+                                    .ak-information {
+                                        color: #0E295A;
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .right {
+                            width: 30%;
+
+                            @media screen and (max-width : 800px) {
+                                width: $w100;
+                                border-top: 1px solid $gray1;
+                                padding-top: 15px;
+                            }
+
+                            @media screen and (max-width : 500px) {
+                                @include flex(column);
+                            }
+
+                            .list {
+                                margin-top: 35px;
+
+                                ul.list_style {
+                                    li {
+                                        width: $w100;
+                                        padding: 0 0;
+                                    }
+                                }
+
+                                @media screen and (max-width : 800px) {
+                                    margin-top: 0;
+                                }
+
+                                @media screen and (max-width : 500px) {
+                                    width: $w100;
+
+                                    ul.list_style {
+                                        li {
+                                            margin-left: 20px;
+                                        }
+                                    }
+
+                                }
+
+                                .view-more {
+                                    text-indent: 26px;
+                                    margin-top: 7px;
+                                    text-decoration: underline;
+                                    color: #244885;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .information {
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 10px;
+            padding-top: 15px;
+
+            .data {
+                color: #0E295A;
+                font-size: 13px;
+                font-weight: $regular;
+                @include flex(row);
+                @include flexAlign(c, c);
+                line-height: 16px;
+
+                span {
+                    color: #FF7800;
+                    font-size: 14px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .car-detail {
+        .data {
+            @include flex(row);
+            padding-bottom: 16px;
+
+            @media screen and (max-width:1200px) {
+                @include flex(column);
+            }
+            @media screen and (max-width:600px) {
+                padding-bottom: 0px;
+            }
+
+            .left {
+                width: 85%;
+                @include flex(row);
+                gap: 20px;
+
+                @media screen and (max-width:1200px) {
+                    width: 100%;
+                }
+
+                @media screen and (max-width:900px) {
+                    @include flex(column);
+                }
+
+                .image-bg {
+                    background-color: #EDEDED;
+                    border-radius: 6px;
+                    width: 220px;
+                    height: 143px;
+                    @include flex(row);
+                    @include flexAlign(c, c);
+
+                    @media screen and (max-width:900px) {
+                        width: 100%;
+                        height: auto;
+                    }
+
+
+                    .img-item {
+                        background: url('/assets/images/availability/baleno.png') no-repeat center center;
+                        width: 149px;
+                        height: 100px;
+
+                        @media screen and (max-width : 1000px) {
+                            min-width: 60%;
+                        }
+                    }
+                }
+
+                .text1 {
+                    @include flex(column);
+                    gap: 20px;
+                    width: 100%;
+                    margin-top: 10px;
+
+                    h3 {
+                        font-size: $clamp-22-16;
+                        font-weight: $black_fnt;
+                        @include flex(row);
+                        @include flexAlign(s, c);
+                        gap: 10px;
+
+                        span {
+                            color: #676767;
+                            font-weight: $regular;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .feature {
+                        @include flex(row);
+                        gap: 10px;
+
+                        ul {
+                            @include flex(row);
+                            @include flexAlign(s, c);
+                            flex-wrap: wrap;
+                            gap: 16px;
+
+                            li {
+                                @include flex(row);
+                                @include flexAlign(s, c);
+                                gap: 6px;
+
+                                .icon {
+                                    font-size: 18px;
+                                }
+                            }
+
+                        }
+                    }
+
+                    .footer {
+                        @include flex(column);
+                        gap: 10px;
+
+                        @media screen and (max-width:700px) {
+                            gap: 20px;
+                        }
+
+                        .list {
+                            @include flex(row);
+                            @include flexAlign(s, s);
+
+                            @media screen and (max-width:700px) {
+                                @include flex(column);
+                                gap: 20px;
+                            }
+
+                            li {
+                                width: 50%;
+                                @include flex(row);
+                                gap: 6px;
+
+                                @media screen and (max-width:700px) {
+                                    width: 100%;
+                                }
+
+                                &.blue {
+                                    color: #0E295A;
+                                    cursor: pointer;
+                                }
+
+                                &.res {
+                                    display: none;
+
+                                    @media screen and (max-width:600px) {
+                                        display: flex;
+                                    }
+                                }
+
+                                .icon {
+                                    font-size: 15px;
+
+                                    &.green {
+                                        color: #0C9426;
+                                    }
+
+                                    &.orange {
+                                        color: #F78C03
+                                    }
+
+                                    &.blue {
+                                        color: #0E295A;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 15%;
+                @include flex(column);
+                @include flexAlign(e, e);
+                gap: 10px;
+                margin-top: 10px;
+
+                @media screen and (max-width:1200px) {
+                    width: 100%;
+                    @include flex(row);
+                    @include flexAlign(sb, c);
+                }
+
+                @media screen and (max-width:600px) {
+                    @include flex(column);
+                    @include flexAlign(e, e);
+                    border-top: 1px solid #e9e9e9;
+                    padding: 15px 0;
+                    margin-top: 20px;
+                }
+
+                .price {
+                    @include flex(column);
+                    gap: 15px;
+
+                    @media screen and (max-width:1200px) {
+                        @include flex(row);
+                    }
+
+                    .btn {
+                        padding: 18px;
+                        border: 0;
+                        font-size: 14px;
+
+                        &.yellow {
+                            background: #FFCD2E;
+                        }
+                    }
+
+                }
+
+                .tax {
+                    min-width: 221px;
+
+                    p {
+                        background: #F79211;
+                        color: white;
+                        padding: 8px 10px;
+                        border-radius: 4px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .operator {
+            border-top: 1px solid #e9e9e9;
+            padding: 15px 0 0;
+            @include flex(row);
+            @include flexAlign(sb, c);
+
+            .left {
+                @include flex(row);
+                gap: 15px;
+
+                @media screen and (max-width:400px) {
+                    width: 100%;
+                    @include flexAlign(sb, c);
+                }
+
+                .res {
+                    @include flex(row);
+                    gap: 15px;
+                }
+
+                img {
+                    height: max-content;
+
+                    @media screen and (max-width:400px) {
+                        width: 33%;
+                    }
+                }
+
+                .rating {
+                    @include flex(row);
+                    @include flexAlign(s, c);
+                    border-radius: 4px;
+
+                    h3 {
+                        background: #0C9426;
+                        padding: 8px;
+                        border-radius: 4px;
+                        color: white;
+                        font-weight: 300;
+                        font-size: 13px;
+                    }
+
+                    p {
+                        padding: 8px;
+                        background: #F5F5F5;
+                        font-size: 13px;
+                    }
+                }
+
+
+            }
+
+            .right {
+                p {
+                    font-size: 14px;
+                    color: #0E295A;
+                    cursor: pointer;
+                    @include flex(row);
+                    @include flexAlign(s, c);
+                    gap: 8px;
+
+                    .res {
+                        display: block;
+                        text-decoration: underline;
+
+
+                    }
+                }
+
+                @media screen and (max-width:600px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .card {
+        overflow: hidden;
+    }
+}

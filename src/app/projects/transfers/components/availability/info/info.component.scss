@@ -1,0 +1,61 @@
+@import "common";
+
+.card {
+    background: $white;
+    width: $w100;
+    margin: $clamp-30-5 0;
+    border-radius: 6px;
+    border: 1px solid $lightgrey;
+    @include flex(row);
+    @include flexAlign(s, c);
+    gap: 6px;
+    overflow: hidden;
+    transition: .4s;
+    padding: 0px;
+
+    @media screen and (max-width : 800px) {
+        @include flex(column);
+        padding: 5px 8px;
+        border: 1px solid #efb400;
+
+    }
+
+    .icon-outer {
+        background: #efb400;
+        padding: 10px;
+        color: $white;
+        font-size: 20px;
+
+        @media screen and (max-width : 800px) {
+            display: none;
+        }
+    }
+
+    p {
+        color: #525252;
+        font-size: 14px;
+        font-weight: 400;
+
+        @media screen and (max-width : 768px) {
+            text-align: center;
+        }
+
+        b {
+            font-size: 14px;
+            font-weight: $bold;
+            color: $black;
+        }
+    }
+
+    .view-more {
+        text-indent: 15px;
+        text-decoration: underline;
+        color: #244885;
+        cursor: pointer;
+        white-space: nowrap;
+
+        @media screen and (max-width : 768px) {
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<div class="fare-details">
+  <div class="card" *ngIf="fareDetails">
+    <ul>
+      <li (click)="showDetails()">
+        <div class="heading">
+          <h2><span class="ak-right icon"></span>Base Fare</h2>
+          <h2>AED 184.70</h2>
+        </div>
+        <ul class="data" *ngIf="details" [@detailsAnimation]>
+          <li>
+            <p>Private Premium <br>(2 X 93.35 AED)</p>
+            <p>AED 184.70</p>
+          </li>
+
+        </ul>
+      </li>
+      <li>
+        <div class="heading">
+          <h2><span class="ak-right icon"></span>Tax & Charges</h2>
+          <h2>AED 251</h2>
+        </div>
+        <ul class="data" *ngIf="details" [@detailsAnimation]>
+          <li>
+            <p>tax (2 X ₹ 5,701)</p>
+            <p>₹ 1000</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <footer>
+      <h2>Total Amount:</h2>
+      <h2 class="bg">AED 457.70<br><span *ngIf="!netFareVisibility">Net Fare : AED 457.7</span></h2>
+    </footer>
+  </div>
+
+  <div class="card skeleton" *ngIf="!fareDetails">
+    <ul>
+      <li>
+        <div class="heading">
+          <h2><span class="ak-right icon"></span> <div class="txt animating"></div></h2>
+          <div class="amount animating"></div>
+        </div>
+
+        <ul class="data">
+          <li>
+            <p><span class="animating"></span>  <span class="animating"></span></p>
+            <p><span class="animating"></span></p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <div class="heading">
+          <h2><span class="ak-right icon"></span> <div class="txt animating"></div></h2>
+          <div class="amount animating"></div>
+        </div>
+
+        <ul class="data">
+          <li>
+            <p><span class="animating"></span></p>
+            <p><span class="animating"></span></p>
+          </li>
+        </ul>
+      </li>
+      
+    </ul>
+    <footer>
+     <div class="animating total" ></div> 
+
+      <div class="bg">
+        <span class="animating"></span>
+        <span class="animating"></span>
+      </div>
+    </footer>
+  </div>
+
+
+</div>

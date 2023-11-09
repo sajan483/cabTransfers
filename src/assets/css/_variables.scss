@@ -1,0 +1,33 @@
+$ff: 'Lato', sans-serif;
+$w100: 100%;
+$reset: 0;
+
+// font
+$light: 300;
+$regular: 400;
+$bold: 700;
+$black_fnt: 900;
+
+//clap
+$clamp-35-28: clamp(1.75rem, 1.6071rem + 0.7143vw, 2.1875rem);
+$clamp-30-5: clamp(0.3125rem, -0.1977rem + 2.551vw, 1.875rem);
+$clamp-32-25: clamp(1.5625rem, 1.4196rem + 0.7143vw, 2rem);
+$clamp-28-24: clamp(1.5rem, 1.4184rem + 0.4082vw, 1.75rem);
+$clamp-25-15: clamp(0.9375rem, 0.7334rem + 1.0204vw, 1.5625rem);
+$clamp-24-18: clamp(1.125rem, 1.0026rem + 0.6122vw, 1.5rem);
+$clamp-23-16: clamp(1rem, 0.8571rem + 0.7143vw, 1.4375rem);
+$clamp-22-16: clamp(1rem, 0.8776rem + 0.6122vw, 1.375rem);
+$clamp-20-16: clamp(1rem, 0.9184rem + 0.4082vw, 1.25rem);
+$clamp-20-14: clamp(0.875rem, 0.7526rem + 0.6122vw, 1.25rem);
+$clamp-19-16: clamp(1rem, 0.9388rem + 0.3061vw, 1.1875rem);
+$clamp-18-16: clamp(1rem, 0.9592rem + 0.2041vw, 1.125rem);
+$clamp-18-15: clamp(0.9375rem, 0.8763rem + 0.3061vw, 1.125rem);
+$clamp-17-15: clamp(0.9375rem, 0.8967rem + 0.2041vw, 1.0625rem);
+$clamp-16-14: clamp(0.875rem, 0.8342rem + 0.2041vw, 1rem);
+$clamp-16-13: clamp(0.75rem, 0.6684rem + 0.4082vw, 1rem);
+$clamp-15-14: clamp(0.875rem, 0.8546rem + 0.102vw, 0.9375rem);
+$clamp-15-10: clamp(0.625rem, 0.523rem + 0.5102vw, 0.9375rem);
+$clamp-14-12: clamp(0.75rem, 0.7092rem + 0.2041vw, 0.875rem);
+$clamp-13-11: clamp(0.6875rem, 0.6467rem + 0.2041vw, 0.8125rem);
+$clamp-12-10: clamp(0.625rem, 0.5842rem + 0.2041vw, 0.75rem);
+

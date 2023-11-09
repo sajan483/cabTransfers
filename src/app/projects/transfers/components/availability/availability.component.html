@@ -1,0 +1,11 @@
+<app-advanced-search></app-advanced-search>
+<div class="container">
+    <app-info></app-info>
+    <ng-container *ngIf="isLoading">
+        <div *ngFor="let x of [].constructor(5)">
+            <app-availability-loader></app-availability-loader>
+        </div>
+    </ng-container>
+    <app-packages [availability]="availability"></app-packages>
+    <app-nodata *ngIf="isNodata"></app-nodata>
+</div>

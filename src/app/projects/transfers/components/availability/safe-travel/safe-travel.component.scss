@@ -1,0 +1,73 @@
+@import "common";
+.safe-travel-popup {
+    background: $white;
+    .header {
+        @include flex(row);
+        @include flexAlign (sb, c);
+        box-sizing: border-box;
+        border-bottom: 1px solid $lightgrey;
+        padding: 12px 17px;
+        height: 52px;
+
+        h4 {
+            font-size: $clamp-19-16;
+            font-weight: $bold;
+        }
+    }
+    .content {
+        @include flex(column);
+        gap: 20px;
+        p {
+            font-size: 14px;
+            line-height: $clamp-22-16;
+        }
+        ol{
+            padding: 12px 17px;
+            li{
+                ul{
+                    list-style: none;
+                    margin-top: 10px;
+                    margin-left: -20px;
+                    @include flex(column);
+                    gap: 8px;
+                    li {
+                        font-size: 14px;
+                        line-height:$clamp-22-16;
+                        margin-left: 25px;
+                        @include flex(row);
+                        @include flexAlign(s, s);
+                        padding: 2px 0;
+                        font-weight: $regular;
+                        position: relative;
+                
+                        @media screen and (max-width: 768px) {
+                            @include flexAlign(s, s);
+                        }
+                
+                        p {
+                            line-height: $clamp-28-24;
+                            font-size: 14px;
+                        }
+                
+                        &::before {
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            background-color: $secondary;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin-left: -1em;
+                            line-height: 24px;
+                            top: 11px;
+                            position: absolute;
+                
+                            @media screen and (max-width: 768px) {
+                                line-height: 33px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+@import "common";
+.popup-box {
+    width: 390px;
+    margin: auto;
+    
+    @media screen and (max-width:900px) {
+        width: 100%;
+    }
+    .body{
+        padding:17px;
+        @include flex(column);
+        @include flexAlign(c,c);
+        gap: 13px;
+        .icon{
+            font-size: 41px;
+            color: #c31717;
+        }
+       .btn{
+        padding: 17px;
+       } 
+    }
+}

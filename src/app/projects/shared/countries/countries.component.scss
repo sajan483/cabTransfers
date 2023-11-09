@@ -1,0 +1,130 @@
+@import "common";
+
+.wrapper {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+
+    .sector-outer {
+        @include flex(column);
+        @include flexAlign(s, st);
+        width: 336px;
+        border: 1px solid #d4d4d4;
+        border-radius: 3px;
+        position: relative;
+
+        .searchinput {
+            @include flex(row);
+            @include flexAlign(s, c);
+            gap: 10px;
+            padding: 0 15px;
+            height: 60px;
+
+            .full-width {
+                width: 100%;
+
+                .cancel-icon {
+                    position: relative;
+                    top: -8px;
+                    right: 8px;
+                    font-size: 12px;
+                }
+            }
+
+            .icon {
+                display: none;
+                cursor: pointer;
+                font-size: 18px;
+            }
+        }
+
+        .search-list {
+            max-height: 330px;
+            overflow: hidden;
+            overflow-y: auto;
+
+            ul {
+                li {
+                    padding: 15px 0;
+                    background: #fff;
+                    @include transition(all 0.3s ease-in);
+                    cursor: pointer;
+
+                    p {
+                        background: #e9efb8;
+                        padding: 5px 15px;
+                        color: #244885;
+                        font-size: 13px;
+                        font-weight: 700;
+                        margin: 0;
+                    }
+
+                    a {
+                        @include flex(row);
+                        @include flexAlign(sb, c);
+                        gap: 15px;
+                        padding: 0 15px;
+
+                        h3 {
+                            font-size: 14px;
+                            color: #010101;
+                            margin: 0;
+                            font-weight: 400;
+                            width: 100%;
+                        }
+
+                        h4 {
+                            color: #6b6b6b;
+                            font-size: 12px;
+                            font-weight: 400;
+
+                            span {
+                                border-radius: 0px;
+                                width: 17px;
+                                height: 15px;
+                                overflow: hidden;
+                                margin-left: 3px;
+                                vertical-align: sub;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background: #f8fbe1;
+
+                        a {
+                            h3 {
+                                color: $black;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.fullscreen {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        .sector-outer {
+            width: 100%;
+            height: 100%;
+
+            .searchinput {
+                .icon {
+                    display: block;
+                }
+            }
+
+            .search-list {
+                height: calc(100% - 60px);
+                max-height: unset;
+            }
+        }
+    }
+}

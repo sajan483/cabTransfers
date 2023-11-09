@@ -1,0 +1,13 @@
+<section #timerDiv class="pricing-timer {{theme}}">
+    <mat-progress-spinner [mode]="'determinate'" [value]="value">
+    </mat-progress-spinner>
+    <div class="text">
+        <h1>{{ (timer$ | async)! | time}}</h1>
+        <h3>LEFT</h3>
+    </div>
+    <div class="text-responsive">The session will expire in: <span>24</span> min <span>49</span> sec</div>
+</section>  
+
+<!-- <section class="pricing-timers skeleton" fxLayout="row" fxLayoutAlign="center center">
+    <div class="animating"></div>
+</section>   -->

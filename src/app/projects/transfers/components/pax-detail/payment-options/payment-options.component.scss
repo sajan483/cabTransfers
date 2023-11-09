@@ -1,0 +1,66 @@
+@import "common";
+
+.paymentbottom {
+  margin: 30px 0;
+  @include flex(row);
+  @include flexAlign(sb, c);
+
+  @media screen and (max-width : 990px) {
+    display: none;
+  }
+
+  .left {
+    p {
+      font-size: 14px;
+      color: $black;
+
+      a {
+        text-decoration: underline;
+        color: $black;
+      }
+    }
+  }
+
+  .right {
+    @include flex(row);
+    @include flexAlign(sb, c);
+
+    .icon {
+      font-size: 20px;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .amount {
+      @include flex(column);
+      @include flexAlign(s, s);
+      gap: 5px;
+      background: url(../../../../../../assets/images/watermark.png), #efefef;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      padding: 1px 15px 6px;
+      border-radius: 5px;
+      @include flex(column);
+      @include flexAlign(e, e);
+      gap: 5px;
+      margin-right: 15px;
+
+      h3 {
+        font-size: 28px;
+        font-weight: 800;
+        position: relative;
+        z-index: 0;
+      }
+
+      h6 {
+        color: #908f8f !important;
+        font-weight: 400;
+        text-align: center;
+        margin-top: -5px;
+        z-index: 0;
+      }
+
+    }
+  }
+}
+

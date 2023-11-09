@@ -1,0 +1,62 @@
+@import "common";
+
+.footer {
+    @include flex(row);
+    @include flexAlign(sb, c);
+    margin-top: 15px;
+
+    @media screen and (max-width:990px) {
+       display:none;
+    }
+
+    .left {
+        p {
+            line-height: 20px;
+
+            a {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .right {
+        @include flex(row);
+        @include flexAlign(e, c);
+        gap: 10px;
+
+        .price {
+            @include flex(column);
+            @include flexAlign(c, c);
+            gap: 2px;
+            padding: 0 17px;
+
+            h4 {
+                font-size: $clamp-24-18;
+                font-weight: $black_fnt;
+            }
+
+            p {
+                color: #908F8F;
+                font-size: 12px;
+                text-align: right;
+                width: 100%;
+            }
+
+            &.bg {
+                background-position: center;
+                background: url(../../../../../../assets/images/watermark.png);
+                overflow: hidden;
+                padding: 5px 12px;
+                border-radius: 5px;
+            }
+        }
+
+        .btn {
+            border: 0;
+            padding: 22px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+}

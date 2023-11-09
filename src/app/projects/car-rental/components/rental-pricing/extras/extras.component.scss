@@ -1,0 +1,124 @@
+@import "common";
+
+.extras {
+    @include flex(column);
+    gap: 15px;
+
+    .heading {
+        h3 {
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+
+            span {
+                font-weight: $regular;
+            }
+        }
+    }
+
+    .card {
+        @include flex(column);
+        gap: 20px;
+
+        .top {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .list {
+                background: #F9F9F9;
+                border: 1px solid #EEEEEE;
+                border-radius: 6px;
+                @include flex(row);
+                gap: 20px;
+                padding: 10px;
+                width: calc(33% - 15px);
+                @include flexAlign(s, c);
+
+                @media screen and (max-width:1000px) {
+                    width: calc(50% - 15px);
+                }
+
+                @media screen and (max-width:600px) {
+                    width: 100%;
+                }
+
+                .left {
+                    width: 20%;
+                    @media screen and (max-width:600px) {
+                        width: 10%;
+                    }
+                    @media screen and (max-width:400px) {
+                        width: 20%;
+                    }
+                    img {
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+
+                .right {
+                    @include flex(column);
+                    gap: 5px;
+                    width: 80%;
+
+                    @media screen and (max-width:600px) {
+                        @include flex(row);
+                        @include flexAlign(sb, c);
+                        width: 90%;
+                    }
+                    @media screen and (max-width:400px) {
+                        @include flex(column);
+                        @include flexAlign(s, s);
+                        width: 80%;
+                    }
+                    .texts {
+                        @include flex(column);
+                        gap: 5px;
+                    }
+
+                    .icons {
+                        @include flex(row);
+                        margin-top: 10px;
+
+                        .box {
+                            width: 40px;
+                            height: 30px;
+                            @include flex(row);
+                            @include flexAlign(c, c);
+                            cursor: pointer;
+                            background: white;
+
+                            &.green {
+                                background: $primary;
+                                border-radius: 4px 0px 0px 4px;
+                                width: 30px;
+                                height: 30px;
+                            }
+
+                            &.right {
+                                border-radius: 0px 4px 4px 0px !important;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            @include flex(row);
+            gap: 10px;
+
+            p {
+                line-height: 17px;
+            }
+
+            .orange {
+                color: #F78C03
+            }
+        }
+    }
+
+
+}

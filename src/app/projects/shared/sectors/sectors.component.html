@@ -1,0 +1,39 @@
+<div class="wrapper" [ngClass]="{'fullscreen': fullScreen}">
+  <div class="sector-outer">
+    <div class="searchinput">
+      <span class="ak-back icon" (click)="onSelectItem('')"></span>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{dropdowntype === 'from' ? 'Pick Up' : 'Drop Off'}}</mat-label>
+        <input matInput (input)="citySearch($event)">
+        <span matSuffix class="ak-cancel cancel-icon"></span>
+      </mat-form-field>
+    </div>
+    <div class="search-list scrollbar">
+      <ul *ngIf="recentSearch">
+        <li class="heading-style">
+          <p>Recently Searched</p>
+        </li>
+        <li>
+          <a (click)="onSelectItem('')">
+            <h3>
+              <strong>amd</strong>Ahamedabad<span>Sardar Vallabhbhai Patel</span>
+            </h3>
+            <!-- <h4>India<span class="fi fi-ml"></span></h4> -->
+          </a>
+        </li>
+
+      </ul>
+      <ul>
+        <li class="heading-style">
+          <p>Important airports</p>
+        </li>
+        <li *ngFor="let city of cityList | appFilter: searchText: 'city'">
+          <a (click)="onSelectItem(city)">
+            <h3>
+              <strong *ngIf="city.code">{{city.code}}</strong>{{city.locationName.split(',')[0]}}<span>{{city.locationName}}</span>
+            </h3>
+            <h4>{{city.country}}<span class="fi fi-{{city.countryCode | lowercase}}"></span></h4>
+          </a>
+        </li>
+      </ul>
+    </div>

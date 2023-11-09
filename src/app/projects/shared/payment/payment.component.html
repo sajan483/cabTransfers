@@ -1,0 +1,103 @@
+<div class="outer">
+    <div class="payment-options card">
+        <div class="deposit">
+            <mat-checkbox class="example-margin">Use Deposit Account</mat-checkbox>
+        </div>
+        <div class="price">
+            <div class="texts">
+                <span>From Deposit<br>Account</span>
+                <h4>AED 2,507</h4>
+            </div>
+            <span class="ak-piggy-bank icon"></span>
+        </div>
+    </div>
+
+    <!-- <div class="pmtoptions">
+        <div class="pmtoptions-row" [class.closed]="checked == 0">
+
+            <div class="box" [class.active]="checked == 3" (click)="onBoxClick(mcb3.checked, 3)">
+                <div class="left">
+                    <ul class="checkouter">
+                        <li>
+                            <mat-checkbox #mcb3 class="check" [checked]="checked == 3"
+                                (change)="onChecked($event.checked, 3)" (click)="$event.stopPropagation()">
+                                UPI
+                            </mat-checkbox>
+                        </li>
+                    </ul>
+                </div>
+                <span class="ak-upi icon"></span>
+            </div>
+            <div class="box" [class.active]="checked == 1" (click)="onBoxClick(mcb1.checked, 1)">
+                <div class="left">
+                    <ul class="checkouter">
+                        <li>
+                            <mat-checkbox #mcb1 class="check" [checked]="checked == 1"
+                                (change)="onChecked($event.checked, 1)" (click)="$event.stopPropagation()">
+                                Credit/ Debit Card
+                            </mat-checkbox>
+                        </li>
+                    </ul>
+                </div>
+                <span class="ak-credit-payment icon"></span>
+            </div>
+            <div class="box brdright" [class.active]="checked == 2" (click)="onBoxClick(mcb2.checked, 2)">
+                <div class="left">
+                    <ul class="checkouter">
+                        <li>
+                            <mat-checkbox #mcb2 class="check" [checked]="checked == 2"
+                                (change)="onChecked($event.checked, 2)" (click)="$event.stopPropagation()">
+                                Net Banking
+                            </mat-checkbox>
+                        </li>
+                    </ul>
+                </div>
+                <span class="ak-online-payment icon"></span>
+            </div>
+
+        </div>
+
+        <section @removeAnim class="paymentoptions-wrapper" [ngClass]="{
+                'opened-cc':removeWrapper && checked==1 && !isMob, 
+                'opened-nb':removeWrapper && checked==2 && !isMob, 
+                'opened-upi':removeWrapper && checked==3 && !isMob}">
+            <div class="mobile-heading" (click)="onTabClick(1)">
+                <mat-checkbox #mcb1 class="check" [checked]="checked == 1" (change)="onTabClick(1)"
+                    (click)="$event.stopPropagation()">
+                    Credit/Debit Card
+                </mat-checkbox>
+
+                <span class="ak-down icon" [class.rotate]="checked==1"></span>
+            </div>
+            <div [@.disabled]="checked<1" [@paymentAnim]="animState" *ngIf="checked == 1" class="pmtoptions-section">
+                <app-credit-and-debit-card *ngIf="checked == 1" class="fullwidth"></app-credit-and-debit-card>
+            </div>
+
+            <div class="mobile-heading" (click)="onTabClick(2)">
+                <mat-checkbox #mcb2 class="check" [checked]="checked == 2" (change)="onTabClick(2)"
+                    (click)="$event.stopPropagation()">
+                    Net Banking
+                </mat-checkbox>
+
+                <span class="ak-down icon" [class.rotate]="checked==2"></span>
+            </div>
+            <div [@.disabled]="checked<1" [@paymentAnim]="animState" *ngIf="checked == 2" class="pmtoptions-section">
+                <app-net-banking *ngIf="checked == 2" class="fullwidth"></app-net-banking>
+            </div>
+
+            <div class="mobile-heading" (click)="onTabClick(3)">
+                <mat-checkbox #mcb3 class="check" [checked]="checked == 3" (change)="onTabClick(3)"
+                    (click)="$event.stopPropagation()">
+                    UPI
+                </mat-checkbox>
+
+                <span class="ak-down icon" [class.rotate]="checked==3"></span>
+            </div>
+            <div [@.disabled]="checked<1" [@paymentAnim]="animState" *ngIf="checked == 3" class="pmtoptions-section">
+                <app-upi *ngIf="checked == 3" class="fullwidth"></app-upi>
+            </div>
+        </section>
+    </div> -->
+
+
+</div>

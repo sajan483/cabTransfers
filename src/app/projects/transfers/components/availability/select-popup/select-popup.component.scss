@@ -1,0 +1,179 @@
+@import "common";
+
+.popup-box {
+    width: 700px;
+    margin: auto;
+    max-height: 80vh;
+    @media screen and (max-width:900px) {
+        width: 100%;
+    }
+    .header {
+        @include flex(row);
+        @include flexAlign (sb, c);
+        box-sizing: border-box;
+        border-bottom: 1px solid #E7E7E7;
+        padding: 12px 17px;
+        height: 52px;
+
+        h4 {
+            font-size: $clamp-19-16;
+            font-weight: $bold;
+        }
+        .close-icon{
+            cursor: pointer;
+            transform: scale(.8);
+            transition: all .5s ease;
+            opacity: .5;
+            &:hover{
+                transform: scale(1);
+                opacity: 1;
+                color:$black;
+            }
+        }
+      
+    }
+
+    .body {
+        padding: 25px 17px;
+        @include flex(column);
+        gap: 20px;
+
+        .top {
+            @include flex(row);
+            @include flexAlign (s, c);
+            gap: 20px;
+            border: 1px solid #E7E7E7;
+            padding: 15px;
+            border-radius: 4px;
+
+            @media screen and (max-width:800px) {
+                @include flex(column);
+            }
+
+            .icon {
+                width: 15%;
+                text-align: center;
+
+                @media screen and (max-width:800px) {
+                    display: none;
+                }
+                span {
+                    color: #EE404C;
+                    font-size: clamp(1.875rem, 1.0587rem + 4.0816vw, 4.375rem);
+                }
+            }
+
+            .text {
+                width: 85%;
+
+                @media screen and (max-width:800px) {
+                    width: 100%;
+                }
+
+                ol {
+                    list-style: none;
+                    @include flex(column);
+                    gap: 20px;
+
+                    li {
+                        line-height: 20px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+.box{
+    @include flex(column);
+    gap:14px;
+    .bottom {
+        @include flex(row);
+
+        @media screen and (max-width:600px) {
+            @include flex(column);
+        }
+
+        gap: 20px;
+
+        .mat-mdc-form-field {
+            margin-top: 10px;
+        }
+      
+        .left {
+            width: 35%;
+
+            @media screen and (max-width:900px) {
+                width: 50%;
+            }
+
+            @media screen and (max-width:600px) {
+                width: 100%;
+            }
+        }
+
+        .right {
+            width: 65%;
+            @media screen and (max-width:900px) {
+                width: 50%;
+            }
+
+            @media screen and (max-width:600px) {
+                width: 100%;
+            }
+            
+
+            .time {
+                display: flex;
+                gap: 10px;
+                width: 38%;
+                @media screen and (max-width:900px) {
+                    width: 50%;
+                }
+    
+                @media screen and (max-width:768px) {
+                    width: 100%;
+                }
+                @media screen and (max-width:500px) {
+                    @include flex(column);
+                }
+
+                .mat-form-field {
+                    width: 40%;
+
+                    @media screen and (max-width:500px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+       
+    }
+
+    .footer {
+        @include flex(row);
+        @include flexAlign (e, c);
+        padding: 12px 17px;
+        border-top: 1px solid #E7E7E7;
+
+        button {
+            background: $primary;
+            font-size: 16px;
+            color: #060606 !important;
+            font-weight: 400;
+            padding: 12px 20px;
+            letter-spacing: 0;
+            border-radius: 5px;
+            border: 0;
+            cursor: pointer;
+        }
+    }
+}
+::ng-deep .mat-dialog-container {
+    overflow-y: auto; 
+    max-height: 80vh;  
+    padding: 16px;
+}
+::ng-deep .mat-mdc-select-value {
+    font-size: 14px !important;
+}

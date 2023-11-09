@@ -1,0 +1,140 @@
+<div class="popup-box">
+    <div class="header">
+        <h4>Arrival Transfer</h4>
+        <div class="close-icon">
+            <span class="ak-cancel" (click)="closeDialog()"></span>
+        </div>
+    </div>
+    <form  [formGroup]="FlightCodeTransferRequest">
+    <div class="body">
+        <div class="top">
+            <div class="icon">
+                <span class="ak-danger"></span>
+            </div>
+            <div class="text">
+                <ol>
+                    <li>1. Please provide the following information, it is vital in order to confirm your transfer reservation. If this is not accurate, the supplier is not responsible for the correct service provision and you may be subject to cancellation/no show fees</li>
+                    <li>2. Please note that the desired pick-up time doesn´t apply for shared transfers INVOLVING A PORT. Customers must confirm the pick-up time by calling the supplier. Contact details can be found on the voucher.</li>
+                </ol>
+            </div>
+        </div>
+      
+        <div class="box">
+            <div class="bottom">
+                <div class="left">
+                        <mat-label>Flight Code</mat-label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                          <input matInput formControlName="FlightCode" placeholder="BA2760">
+                        </mat-form-field>    
+                </div>
+                <div class="right">
+                    <mat-label>Flight arrival time (enter 24hr clock)</mat-label>
+                    <div class="time">
+                        <mat-form-field appearance="outline">
+                            <mat-select placeholder="HH" formControlName="ArrivalTimeHour">
+                              <mat-option *ngFor="let hour of timeOptions" [value]="hour">{{hour}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-select  placeholder="MM" formControlName="ArrivalTimeMinute">
+                              <mat-option *ngFor="let minute of minuteOptions" [value]="minute">{{minute}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                   
+                </div>
+               </div>
+        </div>
+        <!-- departure transfer popup=================================== -->
+        <div class="box">
+            <h3>Arrival Transfer</h3>
+              <div class="bottom">
+                <div class="left">
+                        <mat-label>Vessel name</mat-label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                          <input matInput placeholder="BA2760" formControlName="ArrivalVesselName">
+                        </mat-form-field>     
+                </div>
+                <div class="right">
+                    <mat-label>Desired pick-up time (enter 24hr clock)</mat-label>
+                    <div class="time">
+                        <mat-form-field appearance="outline">
+                            <mat-select placeholder="HH" formControlName="PickUpTimeHour">
+                              <mat-option *ngFor="let hour of timeOptions" [value]="hour">{{hour}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-select  placeholder="MM" formControlName="PickUpTimeMinute">
+                              <mat-option *ngFor="let minute of minuteOptions" [value]="minute">{{minute}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                   
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="left">
+                        <mat-label>Flight code</mat-label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                          <input matInput placeholder="BA2760" formControlName="FlightCodeArrivalTransfer">
+                        </mat-form-field>     
+                </div>
+                <div class="right">
+                    <mat-label>Flight departure time (enter 24hr clock)</mat-label>
+                    <div class="time">
+                        <mat-form-field appearance="outline">
+                            <mat-select placeholder="HH" formControlName="ArrivalTransferDepartureHour">
+                              <mat-option *ngFor="let hour of timeOptions" [value]="hour">{{hour}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-select  placeholder="MM" formControlName="ArrivalTransferDepartureMinute">
+                              <mat-option *ngFor="let minute of minuteOptions" [value]="minute">{{minute}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </div>
+           </div>
+           <div class="box" *ngIf="ShowDepartureTransfer">
+            <h3>Departure Transfer</h3>
+              <div class="bottom">
+                <div class="left">
+                        <mat-label>Vessel name</mat-label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                          <input matInput placeholder="BA2760" formControlName="DepartureTransferVesselName">
+                        </mat-form-field>  
+                </div>
+                <div class="right">
+                    <mat-label>Flight departure time (enter 24hr clock)</mat-label>
+                    <div class="time">
+                        <mat-form-field appearance="outline">
+                            <mat-select placeholder="HH" formControlName="DepartureTransferDeptHour">
+                              <mat-option *ngFor="let hour of timeOptions" [value]="hour">{{hour}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-select  placeholder="MM" formControlName="DepartureTransferDeptMinute">
+                              <mat-option *ngFor="let minute of minuteOptions" [value]="minute">{{minute}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                   
+                </div>
+              </div>
+              <div class="bottom">
+                <div class="left">
+                        <mat-label>Flight code</mat-label>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                          <input matInput placeholder="BA2760" formControlName="DepartureTransferFlightCode">
+                        </mat-form-field>
+                </div>
+                <div class="right"></div>
+            </div>
+           </div>
+          </div>
+    </div>
+  </form>
+    <div class="footer">
+        <button mat-flat-button color="primary" class="btn green" (click)="Continue()">Continue</button>
+    </div>
+</div>

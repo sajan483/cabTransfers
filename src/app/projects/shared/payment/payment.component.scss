@@ -1,0 +1,212 @@
+@import "common";
+
+.outer {
+    @include flex(column);
+    gap: 15px;
+
+    .heading {
+        h3 {
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+    }
+
+    .payment-options {
+        @include flex(row);
+        @include flexAlign(sb, c);
+
+        @media screen and (max-width:500px) {
+            @include flex(column);
+            @include flexAlign(s, s);
+        }
+
+        .price {
+            @include flex(row);
+            @include flexAlign(e, c);
+            gap: 15px;
+
+            @media screen and (max-width:500px) {
+                width: 100%;
+            }
+
+            .texts {
+                @include flex(row);
+                @include flexAlign(e, c);
+                gap: 10px;
+                background: #F5F6F8;
+                border: 1px solid #ECECEC;
+                padding: 10px;
+                border-radius: 5px;
+
+                span {
+                    text-align: right;
+                    font-size: 11px;
+                    color: #525252;
+                }
+
+                h4 {
+                    font-size: $clamp-22-16;
+                    font-weight: $regular;
+                }
+            }
+
+            .icon {
+                font-size: 42px;
+                color: $gray;
+            }
+        }
+
+    }
+
+    .pmtoptions {
+        width: $w100;
+        border: 1px solid $borderlight;
+        background: $white;
+        border-radius: 4px;
+        @include flex(column);
+
+        .pmtoptions-row {
+            width: $w100;
+            @include flex(row);
+            @include flexAlign(sb, c);
+
+            @media screen and (max-width:600px) {
+                flex-wrap: wrap;
+            }
+
+            @media screen and (max-width:500px) {
+                @include flex(column);
+            }
+
+            .box {
+                width: 34%;
+                padding: 20px 16px 20px 9px;
+                border-right: 1px solid #e7e7e7;
+                border-bottom: 4px solid white;
+                box-sizing: border-box;
+                position: relative;
+                cursor: pointer;
+                display: none;
+                @include flexAlign(sb, c);
+
+                @media screen and (max-width:600px) {
+                    width: 50%;
+                }
+
+                @media screen and (max-width:500px) {
+                    width: 100%;
+                    border-right: 0;
+                    border-bottom: 1px solid #e7e7e7;
+                }
+
+                &:hover,
+                &.active {
+                    border-bottom: 4px solid #ffcd2e;
+                    padding: 20px 16px 20px 9px;
+
+                    @media screen and (max-width:500px) {
+                        border-bottom: 1px solid #ffcd2e;
+                    }
+                }
+
+                ul {
+                    li {
+                        font-size: 16px;
+                        color: $black;
+                        font-weight: 600;
+                    }
+                }
+
+                .icon {
+                    font-size: 30px;
+                    color: #929191;
+                }
+
+                &.brdright {
+                    border-right: none !important;
+
+                    @media screen and (max-width:600px) {
+                        border-right: 1px solid #e7e7e7 !important;
+                    }
+
+                    @media screen and (max-width:500px) {
+                        border-right: 0 !important;
+                        border-bottom: 0;
+                    }
+                }
+
+                @media screen and (min-width: 751px) {
+                    @include flex(row);
+                }
+            }
+
+            &.closed {
+                border-radius: 4px;
+                border: 1px solid #d0d0d0;
+            }
+        }
+
+        .pmtoptions-section {
+            overflow: hidden;
+            width: $w100;
+            border-top: 1px solid #e7e7e7;
+            @include flex(row);
+            @include flexAlign(sb, c);
+
+            .fullwidth {
+                width: $w100;
+            }
+        }
+
+        .paymentoptions-wrapper {
+            position: relative;
+            overflow: hidden;
+            -moz-transition: all .25s linear;
+            -webkit-transition: all .25s linear;
+            transition: all .25s linear;
+
+            // for animation
+            &.opened-cc {
+                min-height: 360px;
+            }
+
+            &.opened-upi {
+                min-height: 360px;
+            }
+
+            &.opened-nb {
+                min-height: 360px;
+            }
+        }
+    }
+
+    .mobile-heading {
+        width: 100%;
+        border: 1px solid #d0d0d0;
+        background: #fff;
+        border-radius: 4px;
+        padding: 15px 20px;
+        cursor: pointer;
+        display: none;
+        @include flexAlign(sb, c);
+
+        .icon {
+            -moz-transition: all 0.25s linear;
+            -webkit-transition: all 0.25s linear;
+            transition: all 0.25s linear;
+
+            &.rotate {
+                -ms-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            @include flex(row);
+        }
+
+    }
+
+}

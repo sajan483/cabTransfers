@@ -1,0 +1,337 @@
+@import "common";
+
+.advanced-search {
+    padding: 10px 0;
+    background: rgba(255, 255, 255, .5);
+
+    .outer {
+        @include flex(column);
+        @include flexAlign (s, s);
+
+        .place-drop {
+            border-bottom: 1px solid #C3C3C3;
+            width: $w100;
+            padding-bottom: 10px;
+            position: relative;
+            
+            .country {
+                @include flex(row);
+                @include flexAlign (s, c);
+                gap: 5px;
+                cursor: pointer;
+                width: fit-content;
+                
+                h5 {
+                    font-size: 14px;
+                    font-weight: $regular;
+                }
+
+                .icon {
+                    font-size: 10px;
+                    margin-left: 8px;
+                }
+            }
+
+            app-countries {
+                position: absolute;
+                margin-top: 5px;
+            }
+        }
+
+        .search {
+            width: $w100;
+            @include flex(row);
+            @include flexAlign (sb, c);
+
+            @media screen and (max-width : 1250px) {
+                @include flex(column);
+
+            }
+
+            &-left {
+                width: 85%;
+                padding: 5px 5px 5px 0;
+                @include flex(row);
+                @include flexAlign (sb, c);
+
+                @media screen and (max-width : 1250px) {
+                    width: $w100;
+                    padding: 0;
+                }
+
+                ul {
+                    @include flex(row);
+                    @include flexAlign (s, c);
+                    width: $w100;
+                    min-height: 60px;
+
+                    @media screen and (max-width : 1000px) {
+                        flex-wrap: wrap;
+                        @include flex(row);
+                        @include flexAlign (sb, c);
+                    }
+
+                    li {
+                        border-right: 1px solid $silver;
+                        @include flex(column);
+                        @include flexAlign (s, s);
+                        gap: 10px;
+                        width: 170px;
+                        padding-left: 15px;
+                        cursor: pointer;
+                        transition: .4s;
+                        padding: 5px 15px;
+
+                        @media screen and (max-width : 500px) {
+                            padding: 5px 15px 0 0;
+                            border-right: 0;
+                        }
+
+                        &:hover {
+                            background: #e9efb8;
+                        }
+
+                        &:first-child {
+                            padding-left: 0;
+                        }
+
+                        &:last-child {
+                            border-right: 0;
+
+                        }
+
+                        &.from,
+                        &.to {
+                            position: relative;
+                            width: 170px;
+
+                            @media screen and (max-width : 1000px) {
+                                width: 50%;
+                                border-bottom: 1px solid $lightgrey;
+                                padding: 15px 0;
+                            }
+
+                            @media screen and (max-width : 500px) {
+                                width: 100%;
+                            }
+
+                            .wrapper {
+                                @include flex(column);
+                                @include flexAlign (s, s);
+                                gap: 10px;
+                                width: 100%;
+
+                            }
+
+                            sectors {
+                                position: absolute;
+                                top: 50%;
+                            }
+                        }
+
+                        &.to {
+                            @media screen and (max-width : 1000px) {
+                                border-right: 0;
+                                padding-left: 15px;
+                            }
+
+                            @media screen and (max-width : 500px) {
+                                padding-left: 0;
+                            }
+
+                            sectors {
+                                @media screen and (min-width: 501px) and (max-width: 740px) {
+                                    left: clamp(-6.25rem, -19.3515rem + 41.841vw, 0rem);
+                                }
+                            }
+                        }
+
+                        &.pickup,
+                        &.drop {
+                            position: relative;
+                            width: 260px;
+
+                            @media screen and (max-width : 1000px) {
+                                padding: 15px 0;
+                            }
+
+                            @media screen and (max-width : 830px) {
+                                width: 50% !important;
+                                border-bottom: 1px solid $lightgrey;
+                                // margin-bottom: 15px;
+                            }
+
+                            @media screen and (max-width : 500px) {
+                                width: 100% !important;
+                                padding-bottom: 15px;
+                                // margin-bottom: 15px;
+                                padding-left: 0;
+                            }
+
+                            .wrapper {
+                                @include flex(column);
+                                @include flexAlign (s, s);
+                                gap: 10px;
+                            }
+
+                            lib-date-time-calendar {
+                                position: absolute;
+                                top: 18px;
+                            }
+                        }
+
+                        .drop {
+                            @media screen and (max-width : 830px) {
+                                border-right: 0;
+                                padding-left: 15px;
+                            }
+                        }
+
+                        &.pickup,
+                        &.drop,
+                        &.travelers {
+                            @media screen and (max-width : 1000px) {
+                                width: 33%;
+                            }
+
+                            @media screen and (max-width : 768px) {
+                                width: 25%;
+                            }
+                        }
+
+                        &.drop {
+                            &.date-nill {
+                                width: 315px;
+
+                                @media screen and (max-width : 1250px) {
+                                    width: 270px;
+                                }
+
+                                @media screen and (max-width : 1000px) {
+                                    width: 33% !important;
+                                    padding: 15px 0;
+                                    padding-left: 15px;
+                                }
+
+                                @media screen and (max-width : 830px) {
+                                    width: 50% !important;
+                                    border-right: 0;
+                                }
+
+                                @media screen and (max-width : 500px) {
+                                    width: 100% !important;
+                                    padding-left: 0;
+                                }
+
+                            }
+
+                            lib-date-time-calendar {
+                                @media screen and (min-width:501px) and (max-width:1150px) {
+                                    left: clamp(-4.6875rem, -16.4063rem + 37.5vw, 0rem);
+                                }
+                            }
+                        }
+
+                        &.travelers {
+                            position: relative;
+
+                            span.number {
+                                font-weight: $black_fnt;
+                                font-size: $clamp-24-18;
+                            }
+
+                            @media screen and (max-width : 1000px) {
+                                width: 33%;
+                                padding: 15px 0;
+                            }
+
+                            @media screen and (max-width : 830px) {
+                                width: 50%;
+                            }
+
+                            @media screen and (max-width : 550px) {
+                                width: 100% !important;
+                            }
+
+                            .wrapper {
+                                @include flex(column);
+                                @include flexAlign (s, s);
+                                gap: 10px;
+                            }
+
+                            app-travellers {
+                                position: absolute;
+                                top: 18px;
+
+                                @media screen and (min-width: 831px) {
+                                    right: 0;
+                                }
+                            }
+                        }
+
+                        h6 {
+                            font-size: 12px;
+                            color: #363636;
+                            font-weight: $regular;
+                            @include flex(row);
+                            @include flexAlign (s, c);
+                            gap: 4px;
+
+                            .icon {
+                                font-size: 8px;
+
+                                &.close {
+                                    color: #919191;
+                                    font-size: 12px;
+                                    margin-left: 15px;
+                                }
+                            }
+                        }
+
+                        .place {
+                            font-size: $clamp-16-14;
+                            font-weight: $black_fnt;
+                            width: 100%;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font-size: $clamp-15-14;
+                            font-weight: $regular;
+
+                            .icon {
+                                margin-right: 5px;
+                                font-size: $clamp-18-16;
+                            }
+
+                            .date {
+                                span {
+                                    font-weight: $black_fnt;
+                                    font-size: $clamp-16-14;
+                                }
+                            }
+
+                            .time {
+                                font-weight: $bold;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            &-right {
+                @media screen and (max-width : 1250px) {
+                    width: $w100;
+                    @include flex(row);
+                    @include flexAlign (e, c);
+                    border-top: 1px solid $lightgrey;
+                    padding-top: 15px;
+                }
+
+                @media screen and (max-width : 830px) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

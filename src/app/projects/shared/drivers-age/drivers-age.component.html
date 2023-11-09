@@ -1,0 +1,14 @@
+<div class="wrapper" [ngClass]="{'fullscreen': fullScreen}">
+    <div class="sector-outer">
+        <div class="searchinput">
+            <span class="ak-back icon" (click)="onSelectItem()"></span>
+            <h3>Select Drivers Age</h3>
+        </div>
+
+        <div class="search-list scrollbar">
+            <ul>
+                <li *ngFor="let age of ageArray" (click)="onSelectItem()">{{age}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,477 @@
+@import "common";
+
+.confirmation-header {
+    .row {
+        @include flex(row);
+        @include flexAlign(s, c);
+        gap: 80px;
+
+        @media screen and (max-width : 768px) {
+            @include flex(column);
+            gap: 20px;
+        }
+
+        .left {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            width: 50%;
+            @media screen and (max-width : 768px) {
+                width: $w100;
+                @include flexAlign(s, c);
+                gap: 40px;
+            }
+
+            @media screen and (max-width : 450px) {
+                width: $w100;
+                @include flexAlign(s, c);
+                gap: 40px;
+            }
+            
+            .icon {
+                @include flex(row);
+                @include flexAlign(s, s);
+            }
+
+            .status {
+                @include flex(column);
+                @include flexAlign(s, s);
+                gap: 5px;
+
+                h3 {
+                    font-size: 1.9rem;
+                    color: #576203;
+                }
+
+                p {
+                    font-size: 19px;
+                    color: #87913d;
+                }
+            }
+        }
+
+        .right {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            width: 40%;
+
+            @media screen and (max-width : 1000px) {
+                width: 50%;
+            }
+
+            @media screen and (max-width : 768px) {
+                width: $w100;
+                margin-bottom: 40px;
+            }
+
+            @media screen and (max-width : 430px) {
+                @include flex(column);
+                gap: 20px;
+            }
+
+            .received,
+            .bkg-success {
+                @include flex(column);
+                @include flexAlign(c, c);
+                width: 500px;
+
+                @media screen and (max-width : 768px) {
+                    width: $w100;
+                }
+
+                img {
+                    width: 36px;
+                    height: 40px;
+                    z-index: 1;
+                }
+
+                h3 {
+                    font-size: 16px;
+                    color: #1d200e;
+                }
+
+                p {
+                    font-size: 12px;
+                    color: #45463c;
+                    margin-top: 5px;
+                }
+            }
+
+            .received {
+                &::after {
+                    display: inline-block;
+                    content: "";
+                    border-top: 2px solid white;
+                    -webkit-transform: translate(50%, -52px);
+                    transform: translate(50%, -52px);
+                    width: 100%;
+
+                    @media screen and (max-width : 430px) {
+                        display: none;
+                    }
+                }
+            }
+
+            .bkg-success {
+                &::before {
+                    display: inline-block;
+                    content: "";
+                    border-top: 2px solid white;
+                    -webkit-transform: translate(-50%, 21px);
+                    transform: translate(-50%, 21px);
+                    width: 100%;
+
+                    @media screen and (max-width : 430px) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &.faild-page {
+        background: #f3e0e0;
+    }
+
+    &.success-page {
+        background: #dee6ba;
+    }
+}
+
+
+
+.confirmation-outer {
+    width: 100%;
+    position: relative;
+    top: -1.5rem;
+
+    @media screen and (max-width : 1260px) {
+        top: 1rem;
+    }
+
+    .confirmation {
+        @include flex(row);
+        @include flexAlign(sb, s);
+
+        @media screen and (max-width : 990px) {
+            @include flex(column);
+            @include flexAlign(s, s);
+        }
+
+        &-left {
+            width: 75%;
+            @include flex(column);
+            @include flexAlign(s, s);
+
+            @media screen and (max-width : 990px) {
+                width: $w100;
+            }
+
+            .user-card {
+                @include flex(column);
+                @include flexAlign(c, s);
+                border: 1px solid #d0d0d0;
+                border-radius: 5px;
+                height: auto;
+                background-color: #fff;
+                padding-left: 2rem;
+
+                @media screen and (max-width : 990px) {
+                    padding-left: 1rem;
+                }
+
+                p {
+                    font-size: 13px;
+                    padding-bottom: 10px;
+
+                    b {
+                        font-weight: 800;
+                        color: #262626;
+                    }
+
+                    &:last-child {
+                        font-size: 13px;
+                        color: #363636;
+                        width: 67%;
+                        line-height: 18px;
+
+                        @media screen and (max-width : 990px) {
+                            width: $w100 ;
+                        }
+                    }
+                }
+            }
+            .box {
+                width: 100%;
+            }
+        }
+
+        &-right {
+            width: 23%;
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 20px;
+
+            @media screen and (max-width : 990px) {
+                width: $w100;
+                margin: 15px 0;
+            }
+
+            .ref-number {
+                @include flex(column);
+                @include flexAlign(c, c);
+                gap: 10px;
+                padding: 27px 15px;
+
+                p {
+                    font-size: 17px;
+                    padding-bottom: 5px;
+                }
+
+                .nu-row {
+                    @include flex(row);
+                    @include flexAlign(c, c);
+                    gap: 7px;
+
+                    &.faild {
+                        h3 {
+                            color: #D32F2F;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 22px;
+                        color: #58ab32;
+                        margin-right: 5px;
+                        font-weight: $black_fnt;
+
+
+                    }
+
+                    .icon {
+                        font-size: 16px;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        width: 2rem;
+                        cursor: pointer;
+                        color: #bdbdbd;
+                    }
+                }
+            }
+
+            .booking-outer {
+                @include flex(column);
+                @include flexAlign(s, s);
+                width: $w100;
+
+                h2 {
+                    font-size: $clamp-19-16;
+                    font-weight: $bold;
+                    color: #000;
+                    margin-bottom: 15px;
+                }
+
+                .details {
+                    @include flex(column);
+                    @include flexAlign(s, s);
+                    gap: 10px;
+
+                    .head {
+                        @include flex(row);
+                        @include flexAlign(sb, c);
+                        width: $w100;
+                        border-bottom: 1px solid #e6e6e6;
+                        padding-bottom: 10px;
+
+                        .v-detail {
+                            @include flex(column);
+                            @include flexAlign(s, s);
+                            gap: 5px;
+
+                            h4 {
+                                font-size: 14px;
+                                font-weight: $regular;
+                            }
+
+                            span {
+                                font-size: 12px;
+                                font-weight: $regular;
+                                color: #A2A1A1;
+                            }
+                        }
+
+                        .logo {}
+                    }
+
+                    .body {
+                        @include flex(column);
+                        @include flexAlign(s, s);
+                        gap: 7px;
+
+                        h5 {
+                            font-size: 17px;
+                            font-weight: $regular;
+                        }
+
+                        .bkg-nu {
+                            @include flex(row);
+                            @include flexAlign(s, c);
+                            gap: 8px;
+
+                            h6 {
+                                font-size: 22px;
+                                font-weight: $black_fnt;
+                            }
+
+                            .icon {
+                                color: $black;
+                                font-size: 17px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .faild {
+                    @include flex(column);
+                    @include flexAlign(c, c);
+                    gap: 15px;
+
+                    .icon {
+
+                        color: #D32F2F;
+                        font-size: 20px;
+                        border: 4px solid #D32F2F;
+                        border-radius: 50%;
+                        padding: 10px;
+                        font-weight: $black_fnt;
+                    }
+
+                    h4 {
+                        font-size: 20px;
+                        font-weight: $bold
+                    }
+                }
+
+            }
+
+            .share-detail {
+                ul {
+                    @include flex(row);
+                    @include flexAlign(s, c);
+                    flex-wrap: wrap;
+                    gap: 20px 15px;
+
+                    @media screen and (max-width : 990px) {
+                        @include flexAlign(sb, c);
+                    }
+
+                    li {
+                        @include flex(row);
+                        @include flexAlign(s, c);
+                        flex-wrap: wrap;
+                        width: calc(50% - 20px);
+                        cursor: pointer;
+
+                        @media screen and (max-width : 990px) {
+                            width: calc(20% - 20px);
+                        }
+
+                        @media screen and (max-width : 800px) {
+                            width: calc(50% - 20px);
+                        }
+
+
+
+                        a {
+                            @include flex(row);
+                            @include flexAlign(s, c);
+
+                            &:hover {
+                                .icon-round {
+                                    @include transform(scale(1.2));
+                                }
+                            }
+
+                            .icon-round {
+                                text-decoration: none;
+                                padding: 6px 7px 6px 7px;
+                                border-radius: 50%;
+                                -o-transition: .4s;
+                                -webkit-transition: .4s;
+                                @include flex(row);
+                                @include flexAlign (c, c);
+                                text-decoration: none;
+                                @include transform(scale(1));
+                                @include transition(all 0.4s ease);
+                                width: 35px;
+                                height: 35px;
+
+                                span {
+                                    font-size: 18px;
+                                }
+
+                                &.print {
+                                    background: $d-yellow;
+                                }
+
+                                &.download {
+                                    background: $peech;
+                                }
+
+                                &.email {
+                                    background: $l-green;
+                                }
+
+                                &.whatsapp {
+                                    background: $d-green;
+                                }
+
+                                .icon {
+                                    font-size: 12px;
+                                    color: black;
+
+                                }
+                            }
+
+                            p {
+                                font-size: 14px;
+                                margin-left: 11px;
+                                font-weight: $regular;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            .itinery-section {
+                @include flex(row);
+                @include flexAlign(sb, c);
+                gap: 15px;
+                width: $w100;
+
+                &.card {
+                    padding: 10px;
+                }
+
+                .row {
+                    @include flex(row);
+                    @include flexAlign(s, c);
+                    gap: 5px;
+
+                    .icon {
+                        color: #0a416f;
+                        font-size: 30px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        font-weight: $regular;
+                    }
+                }
+            }
+        }
+    }
+}

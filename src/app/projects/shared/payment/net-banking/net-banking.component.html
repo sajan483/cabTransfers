@@ -1,0 +1,100 @@
+<div class="netbanking-container">
+  
+
+    <div class="bank-radio">
+        <ul>
+            <li>
+                <mat-radio-button value="1" checked="true">
+                    <div class="bankdiv citybank"></div>
+                </mat-radio-button>
+            </li>
+            <li>
+                <mat-radio-button value="2">
+                    <div class="bankdiv icicibank"></div>
+                </mat-radio-button>
+            </li>
+            <li>
+                <mat-radio-button value="3">
+                    <div class="bankdiv sbi-bank"></div>
+                </mat-radio-button>
+            </li>
+            <li>
+                <mat-radio-button value="4">
+                    <div class="bankdiv hdfcbank"></div>
+                </mat-radio-button>
+            </li>
+            <li>
+                <mat-radio-button value="5">
+                    <div class="bankdiv axisbank"></div>
+                </mat-radio-button>
+            </li>
+            <li>
+                <mat-radio-button value="6">
+                    <div class="bankdiv bankofbaroda"></div>
+                </mat-radio-button>
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="bank-radio">
+      <mat-radio-group aria-label="Select an option" class="radio-options no-background">
+        <div class="bank-section">
+          <mat-radio-button value="1" checked="true">
+            <div class="bankdiv citybank"></div>
+          </mat-radio-button>
+          <mat-radio-button value="2">
+            <div class="bankdiv icicibank"></div>
+          </mat-radio-button>
+          <mat-radio-button value="3">
+            <div class="bankdiv sbi-bank"></div>
+          </mat-radio-button>
+        </div>
+        <div class="bank-section">
+          <mat-radio-button value="4">
+            <div class="bankdiv hdfcbank"></div>
+          </mat-radio-button>
+          <mat-radio-button value="5">
+            <div class="bankdiv axisbank"></div>
+          </mat-radio-button>
+          <mat-radio-button value="6">
+            <div class="bankdiv bankofbaroda"></div>
+          </mat-radio-button>
+        </div>
+      </mat-radio-group>
+    </div> -->
+
+    <div class="seperationbg">
+        <div class="other-banks">
+            <div class="block large-width">
+                <!-- <label class="formlabel">Other Banks</label> -->
+                <!-- <mat-form-field appearance="outline" class="small not-floating">
+                    <mat-label></mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let i of foods" [value]="i.value">  
+                        <mat-option>
+                           
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field> -->
+
+                <mat-form-field appearance="outline" class="small not-floating">
+                    <mat-label>Select Bank</mat-label>
+                    <mat-select>
+                      <mat-option>Axis Bank</mat-option>
+                      <mat-option>Icici bank</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="enteramount-row">
+        <div class="block large-width">
+            <label class="formlabel">Amount</label>
+            <input type="text" class="form-control" placeholder="Enter Amount" />
+        </div>
+    </div>
+
+    
+</div>

@@ -1,0 +1,33 @@
+@import "../../../../assets/css/common.scss";
+
+.footer-center {
+    background: #293345;
+}
+
+.footer-links {
+    padding: 10px 0;
+
+    .footer-nav {
+        li {
+            padding: 5px 3px;
+            color: #f2f2f2;
+            font-size: 12px;
+
+            &:nth-child(1) {
+                padding-left: 0;
+            }
+
+            a {
+                color: #f2f2f2;
+                font-size: 13px;
+                font-weight: 400;
+                white-space: pre;
+                cursor: pointer;
+                
+                &:hover {
+                    color: #faef8f;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import "common";
+
+.no-results-found {
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    margin: 15px 0 0 0;
+
+    .wrap {
+        @include flex(row);
+        @include flexAlign(s,c);
+
+        .left {
+            span {
+                font-size: 50px;
+                color: #c83a32;
+            }
+            margin-right: 10px;
+        }
+
+        .right {
+            h3 {
+                color: #363636;
+                font-size: 15px;
+                font-weight: 400;
+                margin: 0;
+                span {
+                    font-weight: 700;
+                    font-size: 19px;
+                    display: block;
+                    color: $black;
+                    margin-bottom: 3px;
+                }
+            }
+        }
+
+        .reset {
+            font-size: 13px;
+            color: #19478a;
+            font-weight: 400;
+            display: inline-block;
+            position: relative;
+            line-height: 15px;
+            margin-top: 8px;
+            &::before {
+                content: "";
+                left: 0;
+                bottom: -1px;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                background: #9aa7c2;
+            }
+            &::after {
+                content: "";
+                left: 0;
+                bottom: -2px;
+                width: 0%;
+                height: 2px;
+                position: absolute;
+                background: #fff;
+                @include transition(all 0.5s ease);
+            }
+            &:hover {
+                color: red;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

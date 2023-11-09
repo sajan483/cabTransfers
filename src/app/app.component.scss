@@ -1,0 +1,27 @@
+@import 'common';
+
+.nav {
+    background-color: black;
+    width: $w100;
+    color: $white;
+    padding: 3px 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    // position: fixed;
+    // top: 0;
+    // z-index: 999;
+
+    ul {
+        @include flex(flex);
+        @include flexAlign(s, c);
+        flex-wrap: wrap;
+        gap: 8px;
+        li{
+            cursor: pointer;
+            &.none{
+                cursor: default;
+                color: orange;
+            }
+        }
+    }
+}

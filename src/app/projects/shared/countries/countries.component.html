@@ -1,0 +1,23 @@
+<div class="wrapper" [ngClass]="{'fullscreen': fullScreen}">
+    <div class="sector-outer">
+        <div class="searchinput">
+            <span class="ak-back icon" (click)="onSelectItem('')"></span>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Countries</mat-label>
+                <input matInput (input)="countrySearch($event)">
+                <span matSuffix class="ak-cancel cancel-icon"></span>
+            </mat-form-field>
+        </div>
+
+        <div class="search-list scrollbar">
+            <ul *ngFor="let country of countries | appFilter: searchText: 'country'">
+                <li>
+                    <a (click)="onSelectItem(country)">
+                        <h3>{{country.name}}</h3>
+                        <span class="fi fi-{{country.code | lowercase}}"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

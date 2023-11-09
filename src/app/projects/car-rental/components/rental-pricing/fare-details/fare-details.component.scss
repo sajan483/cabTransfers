@@ -1,0 +1,98 @@
+@import "common";
+
+.fare-details {
+    margin-top: 40px;
+    @include flex(column);
+    gap: 15px;
+    .heading{
+        h3{
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+    }
+    .card {
+        padding: 10px;
+
+        ul {
+            li {
+                border-bottom: 1px solid #ededed;
+                padding: 13px 0px;
+
+                .heading {
+                    @include flex(row);
+                    @include flexAlign(sb, c);
+
+                    h2 {
+                        font-size: 14px;
+                        color: #000;
+
+                        &:first-child {
+                            padding-right: 15px;
+                        }
+        
+                        .icon {
+                            font-size: 10px;
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                .data {
+                    padding: 5px 0px 0px 14px;
+                    overflow: hidden;
+
+                    li {
+                        @include flex(row);
+                        @include flexAlign(sb, c);
+                        padding: 5px 0;
+                        border: 0;
+
+                        p {
+                            color: #525252;
+                            font-size: 13px;
+                            width: calc(100% - 100px);
+                            line-height: 20px;
+
+                            &:last-child {
+                                text-align: right;
+                            }
+                        }
+
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        footer {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            padding: 10px 0 10px;
+            background: #fff;
+
+            h2 {
+                font-size: 16px;
+                font-weight: $black_fnt;
+                color: #000;
+
+                span {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: $light-gray;
+                    text-align: right;
+                }
+
+                &:last-child {
+                    @include flex(column);
+                    @include flexAlign(c, e);
+                    font-weight: $black_fnt;
+                }
+            }
+        }
+    }
+
+}

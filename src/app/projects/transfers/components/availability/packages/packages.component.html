@@ -1,0 +1,61 @@
+<div class="packages">
+    <div class="card" *ngFor="let item of availability">
+        <div class="data">
+            <div class="left">
+                <div class="image-bg">
+                    <!-- <div class="img-item" [ngStyle]=""></div> -->
+                    <img [src]="item?.vehicledetails?.vehicleImage" alt="Vehicle Image" />
+                </div>
+                <div class="text1">
+                    <h3>{{item?.transferType}} <span> {{item?.vehicledetails?.vehicle}}</span></h3>
+
+                    <div class="feature">
+                        <p>
+                            <span class="ak-{{'van'}} icon"></span>Door to Door Service
+                        </p>
+                        <p>
+                            <span class="ak-{{'fast-time'}} icon"></span>No Waiting Time For The Customer
+                        </p>
+                    </div>
+
+                    <div class="supplier">
+                        <h5>{{item?.supplierTransferTimeInfo[0]?.type|stringFormat}}</h5>
+                        <div class="waiting"> {{item?.supplierTransferTimeInfo[0]?.value}} min<span>(Domestic)</span> {{item?.supplierTransferTimeInfo[1]?.value}} min
+                            <span>(International)</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="list">
+                    <ul class="list_style">
+                        <li *ngFor="let item of item?.transferDetailInfo;let i = index;">
+                            <p *ngIf="i<3">{{item?.name}} </p>
+                        </li>
+                    </ul>
+                    <div class="view-more" (click)="openSidePanel(item)" *ngIf="item?.transferDetailInfo?.length > 3">
+                        View More
+                    </div>
+                </div>
+                <div class="btn-area">
+                    <div class="amount">
+                        {{item?.currency}} {{item?.pricing?.price}}
+                        <!-- <span class="ak-info icon" mat-raised-button matTooltip="  AED '' "
+                            aria-label="Button that displays a tooltip when focused or hovered over"></span> -->
+                    </div>
+                    <div class="btn-wraper">
+                        <button mat-stroked-button color="primary" class="outline_btn" (click)="setDataForBooking(item)"> Select </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="operator">
+            <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+        </div>
+    </div>
+</div>
+
+<app-sidepanel *ngIf="showSidePanel" [heading]="this.title" (closeMenu)="openSidePanel(null)">
+    <app-viewmore-panel [selectedItem]="selectedItem"></app-viewmore-panel>
+</app-sidepanel>

@@ -1,0 +1,73 @@
+@import "common";
+
+.share-confirm {
+    @include flex(row);
+    @include flexAlign(s, c);
+    gap: 35px;
+
+    @media screen and (max-width : 800px) {
+        @include flex(column);
+        gap: 10px;
+    }
+
+
+    .txt {
+        @include flex(row);
+        @include flexAlign(s, c);
+        gap: 10px;
+        width: 70%;
+
+        @media screen and (max-width : 800px) {
+            width: $w100;
+        }
+
+        .icon {
+            color: #244885;
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: $regular;
+        }
+    }
+
+    .share-wraper {
+        @include flex(row);
+        @include flexAlign(s, c);
+        gap: 10px;
+        width: 30%;
+
+        @media screen and (max-width : 800px) {
+            width: $w100;
+            @include flexAlign(e, c);
+            border-top: 1px solid $lightgrey;
+            padding-top: 15px;
+
+        }
+
+        ul {
+            @include flex(row);
+            @include flexAlign(st, c);
+            gap: 25px;
+            cursor: pointer;
+
+
+            li {
+                @include flex(row);
+                @include flexAlign(s, c);
+                gap: 5px;
+
+                p {
+                    white-space: nowrap;
+                }
+
+                &:first-child {
+                    border-right: 1px solid $lightgrey;
+                    padding-right: 25px;
+                }
+
+            }
+        }
+    }
+}

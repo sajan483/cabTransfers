@@ -1,0 +1,121 @@
+@import "common";
+
+.wrapper {
+    position: relative;
+    z-index: 10;
+    width: 300px;
+    background: $white;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 14%);
+
+    .head {
+        @include flexAlign(s, c);
+        gap: 5px;
+        height: 60px;
+        padding: 0 15px;
+        border-bottom: 1px solid #c3c3c3;
+        display: none;
+
+        .icon {
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        h3 {
+            font-size: 17px;
+            font-weight: 500;
+        }
+    }
+
+    ul {
+        @include flex(column);
+        padding: 0 15px;
+        li {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            padding: 15px 0;
+            border-bottom: 1px solid #ebebeb;
+
+            p {
+                @include flex(column);
+                @include flexAlign(c, s);
+                font-size: 15px;
+                font-weight: 500;
+                span {
+                    font-size: 11px;
+                    color: #8c8a8a;
+                    font-weight: 400;
+                }
+            }
+
+            .btns {
+                @include flex(row);
+                border: 1px solid #e2e2e2;
+                border-radius: 10px;
+                overflow: hidden;
+                .action, .count {
+                    padding: 10px;
+                    font-size: 17px;
+                    width: 40px;
+                    text-align: center;
+                }
+                
+                .count {
+                    font-size: 16px;
+                    font-weight: 700;
+                    border-left: 1px solid #e2e2e2;
+                    border-right: 1px solid #e2e2e2;
+                }
+
+                .action {
+                    @media screen and (min-width: 500px) {
+                        &:hover {
+                            background: $primary;
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    .btn-wrapper {
+        @include flex(row);
+        @include flexAlign(e, c);
+        padding: 10px;
+        border-top: 1px solid #ebebeb;
+
+        button {
+            background: #d32f2f;
+            color: $white;
+            font-size: 16px;
+        }
+    }
+
+    &.fullscreen {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        .head {
+            @include flex(row);
+        }
+
+        .btn-wrapper {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            padding: 0;
+            width: 100%;
+            border: 0;
+            button {
+                width: 100%;
+            }
+        }
+    }
+}

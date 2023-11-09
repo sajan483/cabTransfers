@@ -1,0 +1,164 @@
+@import "common";
+
+.credit-and-debit-row {
+    width: $w100;
+    @include flex(column);
+    padding: 20px;
+
+    .enteramount-row {
+        background: #f4f6f8;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        @include flex(row);
+        @include flexAlign(s, c);
+        gap: 15px;
+
+    }
+
+    .row {
+        @include flex(row);
+        @include flexAlign(s, c);
+        gap: 15px;
+        margin-bottom: 20px;
+
+        &.formob {
+            @media screen and (max-width : 650px) {
+                @include flex(row);
+                @include flexAlign(s, c);
+
+                @media screen and (max-width : 600px) {
+                    @include flexAlign(sb, c);
+                    flex-wrap: wrap;
+                }
+            }
+
+            .block {
+                @include flex(column);
+                @include flexAlign(s, s);
+                gap: 5px;
+
+                &.small-width {
+                    width: 11%;
+
+                    @media screen and (max-width : 800px) {
+                        width: 20%;
+                    }
+
+                    @media screen and (max-width : 600px) {
+                        width: 45%;
+                    }
+                    @media screen and (max-width : 450px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width : 650px) {
+            @include flex(column);
+            @include flexAlign(s, s);
+            margin-bottom: 20px;
+        }
+
+        .cardicon {
+            width: 50px;
+            height: 32px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -152px -401px;
+            margin-top: 20px;
+
+            @media screen and (max-width : 650px) {
+                margin-top: -17px;
+                position: absolute;
+                right: 31px;
+            }
+        }
+
+        .block {
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 5px;
+
+
+            &.large-width {
+                width: 35%;
+                @include flex(column);
+                @include flexAlign(s, s);
+                gap: 3px;
+
+                @media screen and (max-width : 650px) {
+                    width: $w100;
+                }
+            }
+
+            &.small-width {
+                width: 11%;
+
+                @media screen and (max-width : 800px) {
+                    width: 20%;
+                }
+
+
+
+            }
+        }
+    }
+
+
+    .formlabel {
+        color: $black;
+        font-size: 14px;
+        margin-bottom: 5px;
+        width: $w100;
+    }
+
+    .cvvimg {
+        @include flex(row);
+        @include flexAlign(s, c);
+        gap: 10px;
+
+        .cvvimgcontainer {
+            width: 56px;
+            height: 41px;
+            background: url(../../../../../assets/images/payment-sprite.png) no-repeat;
+            background-position: -391px 0;
+        }
+
+        p {
+            font-size: 11px;
+            color: #757575;
+            font-weight: 400;
+            font-style: italic;
+            max-width: 103px;
+        }
+    }
+
+
+
+    .radiobutton-payment {
+        width: $w100;
+        padding-bottom: 20px;
+        @include flex(row);
+        @include flexAlign(s, c);
+
+        @media screen and (max-width : 768px) {
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 10px;
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 600;
+            color: $black;
+            margin-right: 20px;
+        }
+
+        .top {
+            padding-right: 20px;
+        }
+    }
+
+
+}

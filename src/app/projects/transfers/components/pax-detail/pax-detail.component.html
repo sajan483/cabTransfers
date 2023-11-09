@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="pax-outer">
+        <div class="pax">
+            <div class="pax-left">
+                <div class="head">
+                    <div class="head">
+                        <h2>Review Your Car Details</h2>
+                    </div>
+                    <app-transfers-detail></app-transfers-detail>
+
+                    <div class="head">
+                        <h2>Passenger Details</h2>
+                    </div>
+                    <app-passenger-info></app-passenger-info>
+
+                    <div class="head">
+                        <h2>Contact Details </h2>
+                    </div>
+                    <app-contact-details></app-contact-details>
+
+                    <!-- <div class="head">
+                        <h2>Share & confirm </h2>
+                    </div>
+                    <app-share-confirm></app-share-confirm> -->
+
+                    <div class="head">
+                        <h2>Payment Options </h2> 
+                    </div>
+                    <app-payment-options></app-payment-options>
+                </div>
+            </div>
+            <div class="pax-right">
+                <div class="head">
+                    <h2>Fare Details</h2>
+                    <span (click)="netFareVisible(netFareHide)" *ngIf="netFareHide" class="ak-eye"></span>
+                    <span (click)="netFareVisible(netFareHide)" *ngIf="!netFareHide"class="ak-restriction"></span>
+                </div>
+                <div>
+                    <app-fare-details [netFareVisibility]="netFareHide"></app-fare-details>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fair-summery-mob">
+    <div class="left">
+        <h4>Total amount</h4>
+        <h3>AED 457.50 <span class="ak-info icon"></span></h3>
+    </div>
+    <button mat-flat-button color="primary" class="btn green" (click)="openSidePanel()">Make Payment</button>
+</div>
+
+<app-sidepanel class="custom-sidepanel" *ngIf="showSidePanel" [heading]="'Reconfirmation'"
+    (closeMenu)="openSidePanel()">
+    <app-reconfirmation></app-reconfirmation>
+</app-sidepanel>

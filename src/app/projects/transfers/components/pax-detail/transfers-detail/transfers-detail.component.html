@@ -1,0 +1,270 @@
+<div *ngIf="transferDetails">
+    <div class="heading">
+        <div class="left card">
+            <div class="section">
+                <div class="onward">
+                    <h4>ONWARD</h4>
+                    <span>{{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'dd'}} {{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'MMM'}}’ {{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'yy'}}</span>
+                </div>
+                <div class="car">{{transferDetails?.transferType}} {{transferDetails?.vehicledetails?.vehicle}}</div>
+            </div>
+            <div class="section" (click)="toggleDetails()">
+                <span class="ak-down icon" [class.rotate]="showDetails"></span>
+            </div>
+        </div>
+        <div class="right card" (click)="toggleDetails()">
+            <span class="ak-down icon" [class.rotate]="showDetails"></span>
+        </div>
+    </div>
+
+    <div class="content card" *ngIf="showDetails" @openCloseAnim>
+        <div class="head">
+            <ul>
+                <li> <span>Flight number : <b> {{Display?.FlightCode}}</b></span> </li>
+                <li> <span>Arrival time : <b> {{Display?.ArrivalTimeHour + ':' + Display?.ArrivalTimeMinute}}</b></span> </li>
+                <li> <span>Adult : <b> {{transferDetails?.transferAvailabilityReq?.adults}}</b></span> </li>
+            </ul>
+            <div class="img-outer">
+                <img [src]="transferDetails?.companyDetails?.company_Logo" alt="logo">
+            </div>
+        </div>
+
+        <div class="outer">
+            <div class="destination">
+                <div class="connection">
+                    <div class="left">
+                        <p>Country</p>
+                        <h2>{{countryName(transferDetails?.transferAvailabilityReq?.location?.countryCodeFrom)}}</h2>
+                    </div>
+                </div>
+                <div class="journey-detail">
+
+                    <div class="left">
+
+                        <div class="from-date">
+                            <h2>{{transferDetails?.transferAvailabilityReq?.timings?.arrTime | timeconverter}}</h2>
+                            <p>{{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'EEE'}},{{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'dd'}} {{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'MMM'}} {{transferDetails?.transferAvailabilityReq?.timings?.arrDate | date:'yy'}}</p>
+                        </div>
+
+                        <div class="to-date">
+                            <h2>{{transferDetails?.transferAvailabilityReq?.timings?.retTime | timeconverter}}</h2>
+                            <p>{{transferDetails?.transferAvailabilityReq?.timings?.retDate | date:'EEE'}},{{transferDetails?.transferAvailabilityReq?.timings?.retDate | date:'dd'}} {{transferDetails?.transferAvailabilityReq?.timings?.retDate | date:'MMM'}} {{transferDetails?.transferAvailabilityReq?.timings?.retDate | date:'yy'}}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="center">
+                        <span class="divider"> </span>
+                    </div>
+
+                    <div class="right">
+
+                        <div class="sector">
+                            <h2>{{transferDetails?.transferAvailabilityReq?.location?.placeFrom}}</h2>
+                        </div>
+
+                        <div class="sector">
+                            <h2>{{transferDetails?.transferAvailabilityReq?.location?.placeTo}}</h2>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="car-detail">
+                <div class="packages">
+                    <div class="card">
+                        <div class="data">
+                            <div class="left">
+                                <div class="image-bg">
+                                    <div class="img-item" [ngStyle]="{'--bg-image': vehicleImage(transferDetails?.vehicledetails?.vehicleImage)}"></div>
+                                </div>
+                                <div class="text1">
+                                    <h3>{{transferDetails?.transferType}} <span> {{transferDetails?.vehicledetails?.vehicle}}</span></h3>
+
+                                    <div class="feature">
+                                        <p>
+                                            <span class="ak-van icon"></span>Door to Door Service
+                                            <span class="ak-fast-time icon"></span>No Waiting Time For The Customer
+                                        </p>
+                                    </div>
+
+                                    <div class="supplier">
+                                        <h5>{{transferDetails?.supplierTransferTimeInfo[0]?.type}}</h5>
+                                        <div class="waiting"> {{transferDetails?.supplierTransferTimeInfo[0]?.value}} <span>(Domestic)</span>
+                                            {{transferDetails?.supplierTransferTimeInfo[1]?.value}}
+                                            <span>(International)</span>
+                                        </div>
+                                    </div>
+
+                                    <a class="cancellation" *ngIf="transferDetails?.cancellationpolicy" (click)="openCancellation()">
+                                        <span class="ak-information"></span> Cancellation Policy
+                                    </a>
+
+                                </div>
+
+                            </div>
+                            <div class="right">
+                                <div class="list" *ngIf="transferDetails?.transferDetailInfo">
+                                    <ul class="list_style">
+                                        <li *ngFor="let feature of arrayConverter(transferDetails?.transferDetailInfo) | slice:0:3">
+                                            <p> {{feature.name}} </p>
+                                        </li>
+                                    </ul>
+                                    <a class="view-more" (click)="openSidePanel()">
+                                        View More Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="data"> <span class="ak-info icon"></span> If the information is not accurate, the supplier is
+                    not responsible for the correct service provision.</div>
+                <div class="data"> <span class="ak-info icon"></span> Date and time are calculated based on local time in
+                    the destination. In case of no-show, different fees will apply. Please refer to our T&C.</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="skeleton" *ngIf="!transferDetails">
+
+    <div class="heading">
+        <div class="left card">
+            <div class="section">
+                <div class="onward">
+                    <h4 class="animating"></h4>
+                    <span class="animating"></span>
+                </div>
+                <div class="car animating"></div>
+            </div>
+            <div class="section">
+                <span class="ak-down icon"></span>
+            </div>
+        </div>
+        <div class="right card">
+            <span class="ak-down icon"></span>
+        </div>
+    </div>
+
+    <div class="content card">
+        <div class="head">
+            <ul>
+                <li> <span>Flight number : <b class="animating"> </b></span> </li>
+                <li> <span>Arrival time : <b class="animating"> </b></span>
+                </li>
+                <li> <span>Adult : <b class="animating"> </b></span> </li>
+            </ul>
+            <div class="img-outer animating"> </div>
+        </div>
+
+        <div class="outer">
+            <div class="destination">
+                <div class="connection">
+                    <div class="left">
+                        <p class="animating"></p>
+                        <p class="animating"></p>
+                    </div>
+                </div>
+
+                <div class="journey-detail">
+                    <div class="left">
+                        <div class="from-date">
+                            <h2 class="animating"></h2>
+                            <h2 class="animating"></h2>
+                        </div>
+
+                        <div class="to-date">
+                            <h2 class="animating"></h2>
+                            <h2 class="animating"></h2>
+                        </div>
+
+                    </div>
+
+                    <div class="center">
+                        <span class="divider"> </span>
+                    </div>
+
+                    <div class="right">
+
+                        <div class="sector">
+                            <h2 class="animating"></h2>
+                        </div>
+
+                        <div class="sector">
+                            <h2 class="animating"></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="car-detail">
+                <div class="packages">
+                    <div class="card" *ngFor="let item of packageJson">
+                        <div class="data">
+                            <div class="left">
+                                <div class="image-bg animating"> </div>
+                                <div class="text1">
+                                    <h3><span class="animating"></span> </h3>
+
+                                    <div class="feature">
+                                        <div class="para">
+                                            <div class="icon animating"></div>
+                                            <div class="icon animating"></div>
+                                        </div>
+                                        <div class="para">
+                                            <div class="icon animating"></div>
+                                            <div class="icon animating"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="supplier">
+                                        <h5 class="animating"></h5>
+                                        <h5 class="animating"></h5>
+                                    </div>
+
+                                    <div class="cancellation animating"></div>
+
+                                </div>
+
+                            </div>
+                            <div class="right">
+                                <div class="list">
+                                    <ul>
+                                        <li class="animating"></li>
+                                        <li class="animating"></li>
+                                        <li class="animating"></li>
+                                    </ul>
+                                    <div class="view-more animating"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="information">
+                <div class="data"> <span class="animating"></span> <span class="animating"></span> </div>
+                <div class="data"> <span class="animating"></span> <span class="animating"></span> </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-sidepanel *ngIf="showSidePanel" [heading]="'Private Premium Car'" (closeMenu)="openSidePanel()">
+    <app-viewmore-panel [selectedItem]="transferDetails"></app-viewmore-panel>
+</app-sidepanel>
+<app-sidepanel *ngIf="showSidePanel1" [heading]="'Cancellation Policy'" (closeMenu)="openCancellation()">
+    <app-cancellation-policy [policy]="transferDetails?.cancellationpolicy"></app-cancellation-policy>
+</app-sidepanel>

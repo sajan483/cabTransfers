@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "akbar-latest";
+  src: url("../fonts/akbar-latest.eot?34leg7");
+  src: url("../fonts/akbar-latest.eot?34leg7#iefix") format("embedded-opentype"),
+    url("../fonts/akbar-latest.woff2?34leg7") format("woff2"),
+    url("../fonts/akbar-latest.ttf?34leg7") format("truetype"),
+    url("../fonts/akbar-latest.woff?34leg7") format("woff"),
+    url("../fonts/akbar-latest.svg?34leg7#akbar-latest") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ak-"],
+[class*="ak-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "akbar-latest" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ak-time-left:before {
+  content: "\e94d";
+}
+.ak-add:before {
+  content: "\e94c";
+}
+.ak-remove:before {
+  content: "\e94b";
+}
+.ak-verified-user:before {
+  content: "\e949";
+}
+.ak-block-user1:before {
+  content: "\e94a";
+}
+.ak-checkedmark:before {
+  content: "\e948";
+}
+.ak-filter:before {
+  content: "\e947";
+}
+.ak-terms:before {
+  content: "\e946";
+}
+.ak-search:before {
+  content: "\e945";
+}
+.ak-doors:before {
+  content: "\e942";
+}
+.ak-automatic:before {
+  content: "\e943";
+  color: #59646f;
+}
+.ak-seater:before {
+  content: "\e940";
+  color: #59646f;
+}
+.ak-ac:before {
+  content: "\e944";
+  color: #59646f;
+}
+.ak-petrol:before {
+  content: "\e93f";
+  color: #59646f;
+}
+.ak-petrol1:before {
+  content: "\e941";
+}
+.ak-printer:before {
+  content: "\e93b";
+}
+.ak-download:before {
+  content: "\e93c";
+}
+.ak-email:before {
+  content: "\e93d";
+}
+.ak-whatsapp:before {
+  content: "\e93e";
+}
+.ak-copy:before {
+  content: "\e93a";
+}
+.ak-piggy-bank:before {
+  content: "\e936";
+}
+.ak-online-payment:before {
+  content: "\e937";
+}
+.ak-credit-payment:before {
+  content: "\e938";
+}
+.ak-upi:before {
+  content: "\e939";
+}
+.ak-request-visa:before {
+  content: "\e935";
+}
+.ak-information:before {
+  content: "\e934";
+}
+.ak-info:before {
+  content: "\e933";
+}
+.ak-van:before {
+  content: "\e931";
+}
+.ak-fast-time:before {
+  content: "\e932";
+}
+.ak-airline-update1:before {
+  content: "\e92d";
+}
+.ak-notice-board:before {
+  content: "\e92e";
+}
+.ak-recharge1:before {
+  content: "\e92f";
+}
+.ak-gst1:before {
+  content: "\e930";
+}
+.ak-close:before {
+  content: "\e92c";
+}
+.ak-download-1:before {
+  content: "\e928";
+}
+.ak-up-1:before {
+  content: "\e929";
+}
+.ak-right-arrow:before {
+  content: "\e92a";
+}
+.ak-back:before {
+  content: "\e92b";
+}
+.ak-grid1:before {
+  content: "\e91f";
+}
+.ak-calendar:before {
+  content: "\e918";
+}
+.ak-cancel:before {
+  content: "\e919";
+}
+.ak-checked:before {
+  content: "\e91a";
+}
+.ak-danger:before {
+  content: "\e91b";
+}
+.ak-attention:before {
+  content: "\e917";
+}
+.ak-discount:before {
+  content: "\e91c";
+}
+.ak-left:before {
+  content: "\e920";
+}
+.ak-right:before {
+  content: "\e923";
+}
+.ak-up:before {
+  content: "\e927";
+}
+.ak-down:before {
+  content: "\e91d";
+}
+.ak-restriction:before {
+  content: "\e922";
+}
+.ak-eye:before {
+  content: "\e91e";
+}
+.ak-share:before {
+  content: "\e924";
+}
+.ak-location:before {
+  content: "\e921";
+}
+.ak-sort-down:before {
+  content: "\e925";
+}
+.ak-star:before {
+  content: "\e926";
+}
+.ak-gps:before {
+  content: "\e915";
+}
+.ak-swipe:before {
+  content: "\e916";
+}
+.ak-antenna:before {
+  content: "\e900";
+}
+.ak-bus:before {
+  content: "\e901";
+}
+.ak-cruise:before {
+  content: "\e902";
+}
+.ak-electricity:before {
+  content: "\e903";
+}
+.ak-Europamundo:before {
+  content: "\e904";
+}
+.ak-flight:before {
+  content: "\e905";
+}
+.ak-forex:before {
+  content: "\e906";
+}
+.ak-gas-cylinder:before {
+  content: "\e907";
+}
+.ak-holidays:before {
+  content: "\e908";
+}
+.ak-hotel:before {
+  content: "\e909";
+}
+.ak-insurance1:before {
+  content: "\e90a";
+}
+.ak-megaphone:before {
+  content: "\e90b";
+}
+.ak-moon-filled:before {
+  content: "\e90c";
+}
+.ak-offer:before {
+  content: "\e90d";
+}
+.ak-passport1:before {
+  content: "\e90e";
+}
+.ak-pendrive:before {
+  content: "\e90f";
+}
+.ak-rail:before {
+  content: "\e910";
+}
+.ak-smartphone1:before {
+  content: "\e911";
+}
+.ak-support:before {
+  content: "\e912";
+}
+.ak-telephone:before {
+  content: "\e913";
+}
+.ak-visa:before {
+  content: "\e914";
+}

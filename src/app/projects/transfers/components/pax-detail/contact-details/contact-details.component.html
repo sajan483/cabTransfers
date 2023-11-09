@@ -1,0 +1,71 @@
+<div class="contact-details card">
+    <form [formGroup]="ContactDetailsFormGroup" #contactEle>
+    <div class="row">
+        <ul class="form-field">
+            <li>
+                <label for="">Customer Mobile No.</label>
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Mobile Number" formControlName="MobileNo"
+                    (keypress)="onKeyPress($event)">
+                </mat-form-field>
+            </li>
+            <li>
+                <label for="">Email ID</label>
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Email ID" formControlName="EmailId">
+                </mat-form-field>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <ul class="form-field column">
+            <h3>BOOKING DETAILS</h3>
+            <li>
+                <label for="">Agency Reference</label>
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="Agency Reference" formControlName="Reference">
+                </mat-form-field>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="note">
+            <span class="ak-danger icon"></span>
+            <p>Please provide valid traveller mobile/cell number. Supplier may need to use this with the aim to locate
+                the traveller or to provide support in destination. If incorrect. details are provided, hotelbeds cannot
+                guarantee the service will be carried ou, Please bear in mind that this information will never be used
+                for marketing purposes.</p>
+        </div>
+    </div>
+    </form>
+</div>
+
+<!-- <div class="contact-details card skeleton">
+    <div class="row">
+        <ul class="form-field">
+            <li>
+                <label for="">Customer Mobile No.</label>
+               <div class="txt animating"></div>
+            </li>
+            <li>
+                <label for="">Email ID</label>
+                <div class="txt animating"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <ul class="form-field column">
+            <h3>BOOKING DETAILS</h3>
+            <li>
+                <label for="">Agency Reference</label>
+                <div class="txt animating"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="note">
+            <span class="animating"></span>
+            <p class="animating"></p>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,25 @@
+<div class="view-more-popup">
+    <div class="content">
+        <div class="list" *ngIf="selectedItem?.transferDetailInfo">
+            <h4>General information</h4>
+            <ul>
+                <li *ngFor="let item of selectedItem?.transferDetailInfo">{{item?.name}}</li>
+            </ul>
+        </div>
+       <div class="list">
+        <h4>Specific information</h4>
+        <ul>
+            <li>Prior to travel, please ensure you check the latest travel restrictions regarding COVID-19 for the destination/country you are travelling to.</li>
+        </ul>
+       </div>
+      <div class="list" *ngIf="selectedItem?.supplierTransferTimeInfo">
+        <h4>Waiting time</h4>
+        <ul>
+            <li *ngFor="let item of selectedItem?.supplierTransferTimeInfo">
+                <span *ngIf="item?.type ==='SUPPLIER_MAX_WAITING_TIME_DOMESTIC'">Maximum supplier waiting time (Domestic) : {{item?.value}}{{item?.metric}}</span>
+                <span *ngIf="item?.type ==='SUPPLIER_MAX_WAITING_TIME_INTERNATIONAL'">Maximum supplier waiting time (International) : {{item?.value}}{{item?.metric}}</span>
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>

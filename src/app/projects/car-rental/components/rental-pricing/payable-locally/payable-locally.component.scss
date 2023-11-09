@@ -1,0 +1,53 @@
+@import "common";
+
+.payable {
+    @include flex(column);
+    gap: 15px;
+    .heading{
+        h3{
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+    }
+    .card {
+        padding: 10px;
+
+        ul {
+            li {
+                padding: 8px 0px;
+
+                .heading {
+                    @include flex(row);
+                    @include flexAlign(sb, c);
+
+                    p {
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+        footer {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            padding: 10px 0 10px;
+            background: #fff;
+            border-top: 1px solid #ededed;
+
+            h2 {
+                font-size: 16px;
+                font-weight: $black_fnt;
+                color: #000;
+
+                &:last-child {
+                    @include flex(column);
+                    @include flexAlign(c, e);
+                    font-weight: $black_fnt;
+                }
+            }
+        }
+    }
+
+}

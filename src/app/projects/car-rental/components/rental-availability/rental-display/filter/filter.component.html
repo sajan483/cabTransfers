@@ -1,0 +1,142 @@
+<div class="filter scrollbar" [ngClass]="{'fullscreen': fullscreen}">
+    <div class="head">
+        <h2>Filter Your Search</h2>
+        <div class="right">
+            <a class="link">Reset All</a>
+            <span class="ak-cancel icon" (click)="closeFilter()"></span>
+        </div>
+    </div>
+    <mat-divider class="heading-btm-divider"></mat-divider>
+
+    <div class="content">
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> SUPPLIERS
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Budget</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">Sixt</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">Budget</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">Sixt</mat-checkbox> </li>
+        </ul>
+        <a class="link">+ 12 More</a>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> CAR GROUPS
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Economy</mat-checkbox> <div class="rs">₹ 2,000</div> </li>
+            <li> <mat-checkbox class="example-margin">Intermediate</mat-checkbox>  <div class="rs">₹ 2,000</div>  </li>
+            <li> <mat-checkbox class="example-margin">SUV</mat-checkbox>  <div class="rs">₹ 2,000</div>  </li>
+            <li> <mat-checkbox class="example-margin">Mini</mat-checkbox>  <div class="rs">₹ 2,000</div>  </li>
+            <li> <mat-checkbox class="example-margin">Standard</mat-checkbox>  <div class="rs">₹ 2,000</div>  </li>
+        </ul>
+        <a class="link">+ 12 More</a>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> RATINGS
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Outstanding</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin"> Excellent</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> TRANSMMISSION
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter row width-null">
+            <li> <mat-checkbox class="example-margin">Manual</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin"> Automatic</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> DOORS
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter row width-null">
+            <li> <mat-checkbox class="example-margin">1</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">2</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">3</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">4</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> FUEL POLICY
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Full to Full</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> EXCESS POLICY
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Standard</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">Zero</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> MILEAGE
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Unlimited mileage</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> LOCATION
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Airport</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">City</mat-checkbox> </li>
+        </ul>
+        <mat-divider></mat-divider>
+
+        <div class="heading">
+            <h2>
+                <span class="ak-down icon"></span> PRODUCTS
+            </h2>
+            <a  class="link">Reset</a>
+        </div>
+        <ul class="checkouter">
+            <li> <mat-checkbox class="example-margin">Standard</mat-checkbox> </li>
+            <li> <mat-checkbox class="example-margin">Premium</mat-checkbox> </li>
+        </ul>
+    </div>
+    <footer>
+        <a class="link">Reset All</a>
+        <button class="action-btn" mat-flat-button (click)="closeFilter()">Apply</button>
+    </footer>
+</div>

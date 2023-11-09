@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="../../../../assets/css/icon-fonts-style.css">
+
+<div class="navigation" *ngIf="!ShowSkeleton">
+    <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="nav-left">
+            <ul class="nav" fxLayout="row" fxLayoutAlign="start center">
+                <li *ngFor="let menu of menuList| slice: 0: (10 - addToMore)">
+                    <span class="menu-item-mine">New</span>
+                    <a fxLayout="column" fxLayoutAlign="center center">
+                        <span class="{{menu.icon}} icon"></span>
+                        <h4>{{menu.label}}</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav-right" *ngIf="menuList.length>10">
+            <a fxLayout="column" fxLayoutAlign=" center center" [matMenuTriggerFor]="moremenu">
+                <span class="b2b-header-grid icon"></span>
+                More
+            </a>
+            <mat-menu #moremenu="matMenu" xPosition="before">
+                <ul class="moremenu-list">
+                    <li *ngFor="let menu of menuList| slice: (10 - addToMore): menuList.length">
+                        <a fxLayout="column" fxLayoutAlign="center start">
+                            <span class="{{menu.icon}} icon"></span>
+                            <h4>{{menu.label}}</h4>
+                        </a>
+                    </li>
+                </ul>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+
+<!-- skeleton start -->
+<header class="skeleton" *ngIf="showSkeleton">
+    <div class="navigation">
+        <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="left" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="icon animating"></span><span class="title animating"></span></div>
+            </div>
+            <div class="right">
+                <div class="item" fxLayout="column" fxLayoutAlign="center center"><span
+                        class="more animating"></span><span class="title animating"></span></div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- skeleton end -->

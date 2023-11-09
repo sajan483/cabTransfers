@@ -1,0 +1,69 @@
+@import 'common';
+
+.text {
+  position: absolute;
+  @include flex(column);
+  @include flexAlign(c, c);
+  gap: 3px;
+
+  @media screen and (max-width : 990px) {
+    display: none;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}
+
+.text-responsive {
+  font-size: 13px;
+  padding-right: 10px;
+  color: #696969;
+
+  span {
+    padding: 0 3px;
+    font-weight: 500;
+    color: #d32f2f;
+  }
+
+  @media screen and (max-width : 990px) {
+    display: block;
+  }
+  @media screen and (min-width : 990px) {
+    display: none;
+  }
+}
+
+.pricing-timer {
+  padding-top: 20px;
+  @include flex(row);
+  @include flexAlign(c, c);
+
+  @media screen and (max-width : 990px) {
+    @include flexAlign(e, c);
+    padding-top: 0;
+
+
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 15px;
+    margin-left: 70px;
+  }
+}
+
+
+.skeleton {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 20px auto;
+  background: #fff;
+
+  div {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+}

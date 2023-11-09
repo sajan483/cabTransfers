@@ -1,0 +1,401 @@
+// @import "assets/css/common.scss";
+@import "./variables";
+@import "./mixins";
+@import "./colors";
+@import "./animate";
+
+@import "assets/css/icon-style.css";
+@import "assets/css/rental.scss";
+@import "assets/css/transfers.scss";
+@import "assets/css/material.scss";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: 0 !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-weight: $regular;
+    scroll-behavior: smooth;
+    background-color: $white;
+    line-height: 1;
+    font-family: $ff;
+    background: url(assets/images/login-bg.jpg);
+    font-size: 14px;
+    overflow-x: hidden;
+
+    &.scroll-hidden {
+        overflow: hidden;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.mat-divider {
+    width: $w100;
+}
+
+// html,
+// body {
+//     height: $w100;
+// }
+
+.container {
+    min-width: auto;
+    max-width: 1300px;
+    padding: 0 $clamp-15-10;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.scrollbar {
+    & {
+        scrollbar-width: thin;
+        scrollbar-color: #90A4AE #CFD8DC;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #CFD8DC;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background: transparent;
+            background-color: #90A4AE;
+            border: 3px solid #CFD8DC;
+
+            &:hover {
+                background-color: #7b868d;
+            }
+        }
+    }
+
+
+    &.hor {
+        &::-webkit-scrollbar {
+            width: unset;
+            height: 10px;
+        }
+    }
+}
+
+.pmtoptions .form-control {
+    height: 40px;
+    line-height: 33px;
+    padding: 0 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    color: #787878;
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-form-field-appearance-outline.mat-form-field {
+    width: 100%;
+    height: 33px;
+    font-size: 14px;
+}
+
+
+app-credit-and-debit-card {
+    .credit-and-debit-row {
+
+        .radiobutton-payment {
+
+            .mdc-form-field>label {
+                color: #908f8f;
+                font-size: 11px;
+                text-transform: uppercase;
+            }
+
+            &:last-child {
+                .mdc-form-field>label {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.custom-sidepanel {
+    z-index: 999 !important;
+    position: absolute !important;
+
+    .wrapper {
+        width: 1000px !important;
+
+        @media screen and (max-width : 1000px) {
+            width: $w100 !important;
+        }
+
+        .form {
+            padding: 0 !important;
+        }
+    }
+}
+
+app-home {
+    .home {
+        .home-left {
+            .search-box {
+                .option-box {
+                    .left {
+                        .mat-mdc-radio-group {
+                            z-index: 3;
+
+                            .mat-mdc-radio-button {
+                                .mdc-form-field {
+                                    margin: 0;
+                                    border-radius: 5px;
+                                    @include transition(all 0.5s ease-in);
+                                    border: none;
+                                    padding: 2px 6px;
+                                    font-weight: $regular;
+                                    color: #898989;
+
+                                    label {
+                                        font-size: 13px !important;
+                                    }
+
+                                    .mdc-radio {
+                                        width: unset;
+                                        height: unset;
+                                    }
+
+                                    .mdc-radio__background {
+                                        width: 15px;
+                                        height: 15px;
+                                        display: block;
+
+                                        .mdc-radio__outer-circle {
+                                            width: 15px;
+                                            height: 15px;
+                                            background: #c5c5c5;
+                                            border: 1px solid #c5c5c5;
+                                        }
+
+                                        .mdc-radio__inner-circle {
+                                            width: 15px;
+                                            height: 15px;
+                                            background: none;
+                                        }
+
+                                        .mat-radio-ripple {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                                &.mat-mdc-radio-checked {
+                                    .mdc-form-field {
+                                        border: none;
+                                        border-radius: 5px;
+                                        background: #e9efb8;
+                                        color: $black;
+                                        padding: 2px 6px;
+
+                                        .mdc-radio__background {
+                                            .mdc-radio__outer-circle {
+                                                border: transparent;
+                                            }
+
+                                            .mdc-radio__inner-circle {
+                                                width: 30px;
+                                                height: 30px;
+                                                background: #b5cb13;
+                                                position: relative;
+                                                left: -7px;
+                                                top: -7px;
+
+                                                &::before {
+                                                    position: absolute;
+                                                    content: "";
+                                                    width: 9px;
+                                                    height: 17px;
+                                                    border-bottom: 2px solid $white;
+                                                    border-right: 2px solid $white;
+                                                    transform: rotate(45deg);
+                                                    top: -7px;
+                                                    left: 0px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.active {
+                                    .mdc-form-field {
+                                        border: none;
+                                        border-radius: 5px;
+                                        background: #e9efb8;
+                                        color: $black;
+
+                                        .mdc-radio__background {
+                                            .mdc-radio__outer-circle {
+                                                border-color: transparent;
+                                            }
+
+                                            .mdc-radio__inner-circle {
+                                                width: 15px;
+                                                height: 15px;
+                                                background: #b5cb13;
+                                                position: relative;
+                                                transform: scale(01);
+
+                                                &::before {
+                                                    position: absolute;
+                                                    content: "";
+                                                    width: 9px;
+                                                    height: 17px;
+                                                    border-bottom: 2px solid $white;
+                                                    border-right: 2px solid $white;
+                                                    transform: rotate(45deg);
+                                                    top: -7px;
+                                                    left: 0px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+app-rental-display {
+
+    .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__background {
+        top: calc((var(--mdc-checkbox-state-layer-size, 18px) - 18px) / 2);
+        left: calc((var(--mdc-checkbox-state-layer-size, 18px) - 18px) / 2);
+    }
+
+    .mat-mdc-checkbox .mdc-checkbox {
+        padding: calc((var(--mdc-checkbox-state-layer-size, 29px) - 28px) / 2);
+        margin: calc((var(--mdc-checkbox-state-layer-size, 40px) - var(--mdc-checkbox-state-layer-size, 40px)) / 2);
+    }
+
+    .mat-mdc-checkbox label {
+        margin-left: 0px;
+        font-size: 13px;
+        font-weight: $regular;
+    }
+
+    .mat-mdc-checkbox-touch-target {
+        position: absolute;
+        top: 48%;
+        height: 20px;
+        left: 0%;
+        width: 39px;
+        transform: translate(-51%, -48%);
+    }
+
+    .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control {
+        height: var(--mdc-checkbox-state-layer-size, 19px);
+    }
+
+    .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+        background-color: white;
+    }
+
+    app-sidepanel {
+        .form {
+            padding: 0 !important;
+        }
+    }
+}
+
+.action-btn {
+    background: $secondary !important;
+    color: $black !important;
+    font-weight: 400;
+}
+
+app-reconfirmation {
+    app-review-car {
+        .review-car {
+            margin-top: 0 !important;
+        }
+    }
+}
+
+$timerDimen: 150px;
+
+.pricing-timer {
+    position: relative;
+
+    .mat-mdc-progress-spinner {
+        width: $timerDimen !important;
+        height: $timerDimen !important;
+        background-color: #e0e0e0;
+        border-radius: 50%;
+        box-shadow: 0 0 0 18px #e0e0e0;
+
+        @media screen and (max-width : 990px) {
+            display: none;
+        }
+
+        svg {
+            width: $timerDimen !important;
+            height: $timerDimen !important;
+        }
+
+        circle {
+            stroke-width: 5% !important;
+            stroke: #ffcd2e !important;
+            fill: #fff;
+            stroke-linecap: round;
+        }
+    }
+
+    &.green {
+        .mat-mdc-progress-spinner {
+            circle {
+                stroke: #307d01 !important;
+            }
+        }
+    }
+
+    &.red {
+        .mat-mdc-progress-spinner {
+            circle {
+                stroke: #d32f2f !important;
+            }
+        }
+    }}
+
+    app-confirmation {
+        app-review-car {
+            width: 100%;
+
+            .review-car {
+                margin-top: 20px !important;
+            }
+        }
+
+        app-booking-detail-card,
+        app-fare-details-card,
+        app-payable-locally-card,
+        app-payment-method-common,
+        app-contact-details-common {
+            width: 100%;
+            display: flex;
+        }
+    }

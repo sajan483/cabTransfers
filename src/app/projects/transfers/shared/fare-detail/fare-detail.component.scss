@@ -1,0 +1,33 @@
+@import "common";
+
+.passenger-details {
+    width: $w100;
+
+    .footer {
+        border-top: 1px solid $borderlight;
+        padding: 5px 15px;
+        @include flex(row);
+        @include flexAlign(e, c);
+
+        .pricing {
+            min-width: 150px;
+            min-height: auto;
+            background: url(../../../../../assets/images/watermark-old.png);
+            background-repeat: repeat;
+            background-size: inherit;
+            padding: 10px;
+            @include flex(column);
+            @include flexAlign(s, e);
+            gap: 5px;
+            h3{
+                font-size: 19px;
+                font-weight: $bold;
+                text-align: right;
+            }
+            p{
+                font-size: 12px;
+                color: #908F8F;
+            }
+        }
+    }
+}

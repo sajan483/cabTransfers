@@ -1,0 +1,36 @@
+<div class="wrapper" [ngClass]="{'fullscreen': fullScreen}">
+    <div class="head">
+        <span class="ak-back icon" (click)="onSelectItem()"></span>
+        <h3>Travellers</h3>
+    </div>
+    <ul>
+        <li>
+            <p>Adults<span>Above 12 Years</span></p>
+            <div class="btns">
+                <div class="action" (click)="setTravellerCount('A',false)">-</div>
+                <div class="count">{{SearchRequest.get('adult').value}}</div>
+                <div class="action" (click)="setTravellerCount('A',true)">+</div>
+            </div>
+        </li>
+        <li>
+            <p>Children <span>0- 12 Years</span></p>
+            <div class="btns">
+                <div class="action" (click)="setTravellerCount('C',false)">-</div>
+                <div class="count">{{SearchRequest.get('child').value}}</div>
+                <div class="action" (click)="setTravellerCount('C',true)">+</div>
+            </div>
+        </li>
+        <!-- <li>
+            <p>Infants <span>0- 23 Years</span></p>
+            <div class="btns">
+                <div class="action">-</div>
+                <div class="count">2</div>
+                <div class="action">+</div>
+            </div>
+        </li> -->
+    </ul>
+
+    <div class="btn-wrapper">
+        <button class="action-btn" mat-flat-button (click)="onSelectItem()">Apply</button>
+    </div>
+</div>

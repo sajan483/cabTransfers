@@ -1,0 +1,178 @@
+@import "common";
+
+.terms-conditions {
+    .contents {
+        @include flex(column);
+        gap: 20px;
+        padding: $clamp-20-16 $clamp-25-15;
+
+        .logo {
+            @include flex(row);
+            @include flexAlign(s, e);
+            gap: 13px;
+        }
+
+        .texts {
+            @include flex(column);
+            gap: 20px;
+        }
+
+        .details {
+            @include flex(column);
+            gap: 10px;
+
+            h4 {
+                font-size: 14px;
+                line-height: $clamp-22-16;
+            }
+
+            h3 {
+                font-size: 16px;
+                line-height: $clamp-28-24;
+            }
+
+            p {
+                line-height: $clamp-28-24;
+                font-size: 14px;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin-left: -11px;
+            @include flex(column);
+            gap: 8px;
+
+            li {
+                font-size: 14px;
+                line-height: $clamp-22-16;
+                margin-left: 25px;
+                @include flex(row);
+                @include flexAlign(s, s);
+                padding: 2px 0;
+                font-weight: $regular;
+                position: relative;
+
+                @media screen and (max-width: 768px) {
+                    @include flexAlign(s, s);
+                }
+
+                &::before {
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background-color: $secondary;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-left: -1em;
+                    line-height: 24px;
+                    top: 10px;
+                    position: absolute;
+
+                    @media screen and (max-width: 768px) {
+                        line-height: 33px;
+                    }
+                }
+            }
+        }
+    }
+
+    .location {
+        @include flex(row);
+        gap: 30px;
+        padding: $clamp-20-16 $clamp-25-15;
+        @media screen and (max-width:700px) {
+            @include flex(column);
+        }
+        h4 {
+            font-size: 15px;
+        }
+
+        p {
+            line-height: $clamp-18-16;
+            font-size: 14px;
+        }
+
+        .left {
+            width: 25%;
+            @include flex(column);
+            gap: 20px;
+
+            @media screen and (max-width:700px) {
+                width: 100%;
+            }
+
+            .address {
+                @include flex(column);
+                gap: 8px;
+            }
+
+            .times {
+                @include flex(column);
+                gap: 10px;
+
+                table {
+                    @media screen and (max-width:700px) {
+                       width: 60%;
+                    }
+                    @media screen and (max-width:350px) {
+                        width: 100%;
+                     }
+                    tr {
+                        @include flex(row);
+                        gap: 4px;
+                    }
+
+                    th,
+                    td {
+                        padding: $clamp-13-11;
+                        text-align: left;
+                        width: 33%;
+                        font-size: 14px;
+                    }
+
+                    th {
+                        background: #F6F6F6;
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 75%;
+            @media screen and (max-width:700px) {
+                width: 100%;
+            }
+        }
+
+        .details {
+            @include flex(column);
+            gap: 10px;
+        }
+    }
+}
+
+::ng-deep {
+
+    .mat-mdc-tab .mdc-tab__text-label {
+        letter-spacing: 0.4px;
+    }
+
+    .mat-mdc-tab-header {
+        background: #F6F6F6;
+    }
+
+    .mdc-tab {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .mdc-tab-indicator__content--underline {
+        border-color: #FFCD2E !important;
+        border-top-width: 4px !important;
+    }
+
+    .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+        color: #000000;
+    }
+}

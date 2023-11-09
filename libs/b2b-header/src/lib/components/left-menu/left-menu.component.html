@@ -1,0 +1,530 @@
+<link rel="stylesheet" href="../../../../assets/css/icon-fonts-style.css">
+
+<div class="overlay" (click)="closeMenu()" [@OverlayAnimation]=currentState>
+    <div class="b2b-header-cancel cancel-icon"></div>
+</div>
+
+<div class="left-menu" [@ContentAnimation]=currentState>
+    <div class="top" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="user-details">
+            <h3>
+                <span class="user-wel">Welcome</span>
+                <span>Benzy Infotech</span> <cite>(Agent Code : 4444)</cite>
+            </h3>
+        </div>
+        <div class="name" fxLayout="row" fxLayoutAlign="center center">
+            BI
+        </div>
+
+    </div>
+    <div class="saleperson">Sales Person : Test
+        <a> <span>999888777666</span></a>
+    </div>
+
+    <div class="main-links">
+
+        <div class="blue-text" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('balance')">
+            <p><strong>BALANCE : ₹ 14677069166.84 </strong></p>
+            <a class="b2b-header-right" [class.rotate]="menuExpand['balance']"></a>
+        </div>
+
+        <div class="user-balance-details" @expand *ngIf="menuExpand['balance']">
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="box">
+                <p>Available Balance</p>
+                <p>₹ 14677069166.84</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="box">
+                <p>Incentive Balance</p>
+                <p>₹ 14677069166.84</p>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="box">
+                <p>Pending Due</p>
+                <p>₹ 14677069166.84</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="7px" class="box alert">
+                <p>Due Date</p>
+                <p>12 Apr 2022</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="box">
+                <p>GDS Balance</p>
+                <p>₹ 14677069166.84</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="box">
+                <p>GDS Pending Due</p>
+                <p>₹ 14677069166.84</p>
+            </div>
+        </div>
+
+        <div class="blue-text" [class.no-border-btm]="!menuExpand['myacc']" fxLayout="row"
+            fxLayoutAlign="space-between center" (click)="expandMenu('myacc')">
+            <p><strong>My Account </strong></p>
+            <a class="b2b-header-right" [class.rotate]="menuExpand['myacc']"></a>
+        </div>
+
+        <ul @balanceDiv class="menus" *ngIf="menuExpand['myacc']">
+            <li fxLayout="row" fxLayoutAlign="space-between center">
+                <a><span class="b2b-header-dashboard icon"></span>Dashboard</a>
+            </li>
+
+            <li fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('mybook')">
+                <a><span class="b2b-header-travel icon"></span>My Bookings</a>
+                <span class="b2b-header-right" [class.rotate]="menuExpand['mybook']"></span>
+            </li>
+            <ul @balanceDiv *ngIf="menuExpand['mybook']">
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Itineraries </a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>View cancellations</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Travel Calendar</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Visa Form</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Re-Issue Itinerary </a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>IRCTC Refund Pending</a>
+                </li>
+            </ul>
+
+            <li fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('acc')">
+                <a><span class="b2b-header-accounts icon"></span>Accounts</a>
+                <span class="b2b-header-right" [class.rotate]="menuExpand['acc']"></span>
+            </li>
+            <ul @balanceDiv *ngIf="menuExpand['acc']">
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Account Status</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Account Statement</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>GST Statement</a>
+                </li>
+            </ul>
+
+            <li fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('rech')">
+                <a><span class="b2b-header-recycling icon"></span>Recharge</a>
+                <span class="b2b-header-right" [class.rotate]="menuExpand['rech']"></span>
+            </li>
+            <ul @balanceDiv *ngIf="menuExpand['rech']">
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Credit Recharge List</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>UPI</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Auto IMPS/NEFT/RTGS</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Net Banking</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Credit card</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Debit Card</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Cash Card</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Diners Card</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Deposit Update Request</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>View Recharge Status</a>
+                </li>
+            </ul>
+
+            <li fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('sales')">
+                <a><span class="b2b-header-sales icon"></span>Sales</a>
+                <span class="b2b-header-right" [class.rotate]="menuExpand['sales']"></span>
+            </li>
+            <ul @balanceDiv *ngIf="menuExpand['sales']">
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Sales report</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Sales statement</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Invoice download</a>
+                </li>
+
+            </ul>
+
+            <li fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('myprof')">
+                <a><span class="b2b-header-profile icon"></span>My Profile</a>
+                <span class="b2b-header-right" [class.rotate]="menuExpand['myprof']"></span>
+            </li>
+            <ul @balanceDiv *ngIf="menuExpand['myprof']">
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>My Profile</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Sub Users</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Mark-up</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Traveler Profile</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Mail Configuration</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Sub User usage Limit</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Provider Disable</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Sales Executive</a>
+                </li>
+            </ul>
+
+            <li fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('supp')">
+                <a><span class="b2b-header-support icon"></span>Support</a>
+                <span class="b2b-header-right" [class.rotate]="menuExpand['supp']"></span>
+            </li>
+            <ul @balanceDiv *ngIf="menuExpand['supp']">
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Branches</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Bank Accounts</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Mishandled Baggage Report</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Support Center</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Terms & Conditions</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Disclaimer</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Privacy Policy</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>GST</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Help & FAQ's</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>View Deal</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Alerts & News</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Terms of Use</a>
+                </li>
+                <li fxLayout="row" fxLayoutAlign="space-between center">
+                    <a><span class="b2b-header-sales-card icon"></span>Flight Restriction</a>
+                </li>
+            </ul>
+
+        </ul>
+
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-flight icon"></span>
+                <h6>Flight</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-hotel icon"></span>
+                <h6>Hotel</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-home icon"></span>
+                <h6>Home</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-profile icon"></span>
+                <h6>My Account </h6>
+            </div>
+        </div>
+
+        <div class="new-ui">
+            <div><span class="try">Try Our New UI</span></div>
+            <section>
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-dashboard icon"></span>
+                        <h6>Dashboard</h6>
+                    </div>
+                </div>
+
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('mybook2')">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-travel icon"></span>
+                        <h6>My Bookings</h6>
+                    </div>
+                    <a class="b2b-header-right" [class.rotate]="menuExpand['mybook2']"></a>
+                </div>
+                <ul @balanceDiv class="menus" *ngIf="menuExpand['mybook2']">
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Itineraries
+                        </a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>View cancellations</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Travel Calendar</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Visa Form</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Re-Issue Itinerary </a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>IRCTC Refund Pending</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>IRCTC Refund Pending</a>
+                    </li>
+                </ul>
+
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('acc2')">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-accounts icon"></span>
+                        <h6>Accounts</h6>
+                    </div>
+                    <a class="b2b-header-right" [class.rotate]="menuExpand['acc2']"></a>
+                </div>
+
+                <ul @balanceDiv class="menus" *ngIf="menuExpand['acc2']">
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Account Status</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Account Statement</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>GST Statement</a>
+                    </li>
+                </ul>
+
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('rech2')">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-recycling icon"></span>
+                        <h6>Recharge</h6>
+                    </div>
+                    <a class="b2b-header-right" [class.rotate]="menuExpand['rech2']"></a>
+                </div>
+                <ul @balanceDiv class="menus" *ngIf="menuExpand['rech2']">
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Credit Recharge List</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>UPI</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Auto IMPS/NEFT/RTGS</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Net Banking</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Credit card</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Debit Card</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Cash Card</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Diners Card</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Deposit Update Request</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>View Recharge Status</a>
+                    </li>
+                </ul>
+
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('sales2')">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-sales icon"></span>
+                        <h6>Sales</h6>
+                    </div>
+                    <a class="b2b-header-right" [class.rotate]="menuExpand['sales2']"></a>
+                </div>
+                <ul @balanceDiv class="menus" *ngIf="menuExpand['sales2']">
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Sales report</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Sales statement</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Invoice download</a>
+                    </li>
+
+                </ul>
+
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('myprof2')">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-profile icon"></span>
+                        <h6>My Profile</h6>
+                    </div>
+                    <a class="b2b-header-right" [class.rotate]="menuExpand['myprof2']"></a>
+                </div>
+                <ul @balanceDiv class="menus" *ngIf="menuExpand['myprof2']">
+                    <ul @balanceDiv>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>My Profile</a>
+                        </li>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Sub Users</a>
+                        </li>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Mark-up</a>
+                        </li>
+                        <li fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Traveler Profile</a>
+                        </li>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Mail Configuration</a>
+                        </li>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Sub User usage Limit</a>
+                        </li>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Provider Disable</a>
+                        </li>
+                        <li fxLayout="row" fxLayoutAlign="space-between center">
+                            <a><span class="b2b-header-sales-card icon"></span>Sales Executive</a>
+                        </li>
+                    </ul>
+
+                </ul>
+
+                <div class="links" fxLayout="row" fxLayoutAlign="space-between center" (click)="expandMenu('supp2')">
+                    <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                        <span class="b2b-header-support icon"></span>
+                        <h6>Support</h6>
+                    </div>
+                    <a class="b2b-header-right" [class.rotate]="menuExpand['supp2']"></a>
+                </div>
+                <ul @balanceDiv class="menus" *ngIf="menuExpand['supp2']">
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Branches</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Bank Accounts</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Mishandled Baggage Report</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Support Center</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Terms & Conditions</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Disclaimer</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Privacy Policy</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>GST</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Help & FAQ's</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>View Deal</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Alerts & News</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Terms of Use</a>
+                    </li>
+                    <li fxLayout="row" fxLayoutAlign="space-between center">
+                        <a><span class="b2b-header-sales-card icon"></span>Flight Restriction</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-settings icon"></span>
+                <h6>TopUp Your Balance</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+
+
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-hiker icon"></span>
+                <h6>Manage Travelers</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-calculator icon"></span>
+                <h6>Mark Up</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+
+
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-login-lock-refresh icon"></span>
+                <h6>Sign Up</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+        <div class="links" fxLayout="row" fxLayoutAlign="space-between center" matRipple>
+            <div class="left" fxLayout="row" fxLayoutAlign="start center">
+                <span class="b2b-header-turn-off icon"></span>
+                <h6>Log Out</h6>
+            </div>
+            <span class="b2b-header-right"></span>
+        </div>
+    </div>
+</div>
+
+<ul class="bottom" fxLayout="row" fxLayoutAlign="start" [@ContentAnimation]=currentState>
+    <li matRipple fxLayout="row" fxLayoutAlign="center center">
+        ( Last Login : 12 Apr 2022 | 10:18 AM )
+    </li>
+</ul>

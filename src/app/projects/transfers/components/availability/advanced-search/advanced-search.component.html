@@ -1,0 +1,88 @@
+<div class="advanced-search">
+    <div class="container outer">
+        <div class="place-drop">
+            <div class="country" (click)="openCountries()">
+                <h5> {{SearchRequest.get('country').value}} </h5>
+                <span class="ak-sort-down icon"></span>
+            </div>
+            <app-countries *ngIf="showCountries" (close)="closeCountries($event)"></app-countries>
+        </div>
+
+        <div class="search">
+            <div class="search-left">
+                <ul>
+                    <li class="from">
+                        <div class="wrapper" (click)="openSector(0)">
+                            <h6>
+                                PICK UP <span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                {{SearchRequest.get('pickUp').value != '' ? SearchRequest.get('pickUp').value: 'Select Your Pickup Point'}}
+                            </div>
+                        </div>
+                        <sectors *ngIf="showSector && sectorToShow === 0" [countryname]="SearchRequest.get('country').value" [countrycode]="SearchRequest.get('country_code').value" [dropdowntype]="'from'" (close)="closeSector($event, 'pick-up')"></sectors>
+
+                    </li>
+                    <li class="to">
+                        <div class="wrapper" (click)="openSector(1)">
+                            <h6>
+                                DROP OFF <span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                {{SearchRequest.get('dropOff').value != '' ? SearchRequest.get('dropOff').value: 'Select Your Drop Point'}}
+                            </div>
+                        </div>
+                        <sectors *ngIf="showSector && sectorToShow === 1" [countryname]="SearchRequest.get('country').value" [countrycode]="SearchRequest.get('country_code').value" [dropdowntype]="'to'" (close)="closeSector($event, 'drop')"></sectors>
+                    </li>
+                    <li class="pickup">
+                        <div class="wrapper" (click)="openDateTimeCalendar(0)">
+                            <h6>
+                                DEPARTURE DATE & TIME<span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                <span class="ak-calendar icon"></span>
+                                <span class="date"> <span>{{SearchRequest.get('ArrDate').value | date : 'dd'}}</span>{{SearchRequest.get('ArrDate').value | date : 'MMM'}}’{{SearchRequest.get('ArrDate').value | date : 'yy'}} {{SearchRequest.get('ArrDate').value | date : 'EEEE'}}, </span>
+                                <span class="time">{{SearchRequest.get('ArrTime').value}}</span>
+                            </div>
+                        </div>
+                        <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 0"
+                            (close)="closeDateTimeCalendar($event, 'StartDate')"></lib-date-time-calendar>
+                    </li>
+                    <li class="drop date-nill">
+                        <div class="wrapper" (click)="openDateTimeCalendar(1)">
+                            <h6>
+                                RETURN DATE & TIME <span class="ak-down icon"></span> <span class="ak-close icon close" *ngIf="SearchRequest.get('RetDate').value != ''" (click)="clearReturnDate($event)"></span>
+                            </h6>
+                            <div class="place">
+                                <div class="place">
+                                    <span class="ak-calendar icon"></span>
+                                    <span class="date" *ngIf="SearchRequest.get('RetDate').value === '';else returndate"> Book a round trip to save more</span>
+                                    <ng-template #returndate>
+                                        <span class="date"> <span>{{SearchRequest.get('RetDate').value | date : 'dd'}}</span>{{SearchRequest.get('RetDate').value | date : 'MMM'}}’{{SearchRequest.get('RetDate').value | date : 'yy'}} {{SearchRequest.get('RetDate').value | date : 'EEEE'}}, </span><span class="time">{{SearchRequest.get('RetTime').value}}</span>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                        <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 1"
+                            (close)="closeDateTimeCalendar($event, 'End Date')"></lib-date-time-calendar>
+                    </li>
+                    <li class="travelers">
+                        <div class="wrapper" (click)="openTravellers()">
+                            <h6>
+                                TRAVELERS<span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                <span class="number">{{totalTravellers}}</span> {{totalTravellers <= 1 ? 'Traveler' : 'Travelers'}}
+                            </div>
+                        </div>
+                        <app-travellers *ngIf="showTravellers" (close)="closeTravellers($event)"></app-travellers>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="search-right">
+                <button mat-flat-button color="primary" class="btn green" (click)="searchCar()">Search Car</button>
+            </div>
+        </div>
+    </div>
+</div>

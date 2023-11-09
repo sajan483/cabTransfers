@@ -1,0 +1,76 @@
+<div class="advanced-search">
+    <div class="container outer">
+        <div class="place-drop">
+            <div class="country" (click)="openCountries()">
+                <h5> India </h5>
+                <span class="ak-sort-down icon"></span>
+            </div>
+            <app-countries *ngIf="showCountries" (close)="closeCountries($event)"></app-countries>
+        </div>
+        <div class="search">
+            <div class="search-left">
+                <ul>
+                    <li class="from">
+                        <div class="wrapper" (click)="openSector(0)">
+                            <h6>
+                                PICK UP <span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                <div class="bold"> Chennai</div>
+                            </div>
+                        </div>
+                        <sectors *ngIf="showSector && sectorToShow === 0" (close)="closeSector($event)"></sectors>
+                    </li>
+                    <li class="to">
+                        <div class="wrapper" (click)="openSector(1)">
+                            <h6>
+                                DROP OFF <span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                <div class="bold">Bangalore</div>
+                            </div>
+                        </div>
+                        <sectors *ngIf="showSector && sectorToShow === 1" (close)="closeSector($event)"></sectors>
+                    </li>
+                    <li class="pickup">
+                        <div class="wrapper" (click)="openDateTimeCalendar(0)">
+                            <h6>
+                                PICK UP DATE & TIME <span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                <span class="ak-calendar icon"></span>
+                                <span class="date"> <span>11</span> Apr’23 Thursday, </span>
+                                <span class="time">20:00</span>
+                            </div>
+                        </div>
+                        <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 0"
+                            (close)="closeDateTimeCalendar($event)"></lib-date-time-calendar>
+                    </li>
+                    <li class="drop">
+                        <div class="wrapper" (click)="openDateTimeCalendar(1)">
+                            <h6>
+                                DROP OFF DATE & TIME <span class="ak-down icon"></span>
+                            </h6>
+                            <div class="place">
+                                <!-- <div class="place">
+                                    <span class="ak-calendar icon"></span>
+                                    <span class="date"> Book a round trip to save more</span>
+                                </div> -->
+                                <div class="place">
+                                    <span class="ak-calendar icon"></span>
+                                    <span class="date"> <span>11</span> Apr’23 Thursday, </span>
+                                    <span class="time">20:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 1"
+                            (close)="closeDateTimeCalendar($event)"></lib-date-time-calendar>
+                    </li>
+                </ul>
+            </div>
+            <div class="search-right">
+                <button mat-flat-button color="primary" class="btn green">Search Car</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+@import "common";
+
+.filter {
+    @include flex(column);
+    @include flexAlign(s, s);
+    gap: 15px;
+
+    .link {
+        font-size: 13px;
+        color: #1750B7;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .head {
+        @include flex(row);
+        @include flexAlign(sb, c);
+        width: $w100;
+    
+        h2 {
+            font-size: $clamp-17-15;
+            font-weight: $regular;
+        }
+        
+        .icon {
+            display: none;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        @include flex(column);
+        @include flexAlign(s, s);
+        gap: 15px;
+        width: 100%;
+
+        .heading {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            width: $w100;
+            
+            h2 {
+                @include flex(row);
+                @include flexAlign(sb, c);
+                gap: 5px;
+                font-size: $clamp-14-12;
+                font-weight: $regular;
+                cursor: pointer;
+
+                .icon {
+                    font-size: 13px;
+                    color: $txt_dgray;
+                }
+            }
+        }
+
+        ul.checkouter {
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 10px;
+            margin-top: 5px;
+            width: $w100;
+            &.width-null{
+                li{
+                    width: auto;
+                }
+            }
+
+            &.row {
+                @include flex(row);
+                @include flexAlign(s, s);
+                gap: 20px;
+            }
+
+            li {
+                @include flex(row);
+                @include flexAlign(sb, c);
+                width: $w100;
+                .rs{
+                    color: #6E6D6D;
+                    
+                }
+            }
+        }
+    }
+
+    footer {
+        display: none;
+        @include flexAlign(sb, c);
+        width: 100%;
+        padding: 10px 15px;
+        position: fixed;
+        bottom: 0;
+        background: #fff;
+        box-shadow: 0 -3px 7px 0 rgba(0,0,0,.1);
+    }
+
+    &.fullscreen {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        background: #fff;
+        width: 100%;
+        overflow-y: auto;
+        height: calc(100% - 56px);
+        gap: 0;
+        
+        .head {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+
+            .right {
+                @include flex(row);
+                gap: 10px;
+
+                .link {
+                    display: none;
+                }
+
+                .icon {
+                    display: block;
+                }
+            }
+        }
+
+        .content {
+            padding: 15px;
+        }
+
+        .heading-btm-divider {
+            display: none;
+        }
+
+        footer {
+            @include flex(row);
+        }
+    }
+}

@@ -1,0 +1,67 @@
+@import "common";
+
+.passenger-info {
+    @include flex(column);
+    @include flexAlign(s, s);
+    gap: 25px;
+
+    .row {
+        @include flex(column);
+        @include flexAlign(s, s);
+
+        gap: 8px;
+
+        h3 {
+            @include flex(row);
+            @include flexAlign(s, c);
+            gap: 3px;
+            font-weight: $regular;
+            padding-bottom: 10px;
+
+            span {
+                font-size: 12px;
+                font-weight: $regular;
+                color: #9D9D9D;
+            }
+        }
+
+        ul.form-field {
+            @include flex(row);
+            @include flexAlign(s, s);
+            flex-wrap: wrap;
+            gap: 15px;
+            width: $w100;
+            padding-bottom: 12px;
+
+            li {
+                width: calc(30% - 15px);
+                @include flex(row);
+                @include flexAlign(s, s);
+                gap: 15px;
+
+                @media screen and (max-width : 500px) {
+                    width: calc(40% - 15px);
+                }
+
+                &.title {
+                    width: 15%;
+                    min-width: 100px;
+                }
+
+                &.fname {
+                    @media screen and (max-width : 500px) {
+                        width: 100%;
+                    }
+                }
+
+                &.lname {
+                    @media screen and (max-width : 500px) {
+                        width: 100%;
+                    }
+                }
+            }
+
+
+        }
+    }
+}

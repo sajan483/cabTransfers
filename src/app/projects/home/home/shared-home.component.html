@@ -1,0 +1,240 @@
+<div class="container">
+    <div class="home">
+        <div class="home-left">
+            <div class="search-box">
+                <h1>Search Car</h1>
+                <div class="option-box">
+                    <div class="left">
+                        <mat-radio-group class="radio-style" aria-label="Select an option">
+                            <mat-radio-button value="1" [checked]="!isB2b">Rental</mat-radio-button>
+                            <mat-radio-button value="2" [checked]="isB2b" *ngIf="isB2b">Transfers</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="right">
+                        <div class="country-wraper" (click)="openCountries()">
+                            <div class="flag">
+                                <img alt="United States" src="http://purecatamphetamine.github.io/country-flag-icons/3x2/{{SearchRequest.get('country_code')?.value}}.svg"/>
+                            </div>
+                            <div class="place">{{SearchRequest.get('country').value}}</div>
+                            <span class="ak-down icon"></span>
+                        </div>
+                        <app-countries *ngIf="showCountries" (close)="closeCountries($event)"></app-countries>
+                    </div>
+                </div>
+
+                <div class="search-area">
+                    <ul class="top">
+                        <li>
+                            <div class="wrapper" (click)="openSector(0)">
+                                <div class="outer">
+                                    <div class="chose">
+                                        <label>PICK UP</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <div class="place">
+                                       {{SearchRequest.get('pickUp').value != '' ? SearchRequest.get('pickUp').value: 'Select Your Pickup Point'}}
+                                    </div>
+                                </div>
+                            </div>
+                            <sectors *ngIf="showSector && sectorToShow === 0" [countryname]="SearchRequest.get('country').value" [countrycode]="SearchRequest.get('country_code').value" [dropdowntype]="'from'" (close)="closeSector($event, 'pick-up')"></sectors>
+                        </li>
+                        <li>
+                            <div class="wrapper" (click)="openSector(1)">
+                                <div class="outer">
+                                    <div class="chose">
+                                        <label>DROP OFF</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <div class="place">
+                                        {{SearchRequest.get('dropOff').value != '' ? SearchRequest.get('dropOff').value: 'Select Your Drop Point'}}
+                                    </div>
+                                    <mat-error *ngIf="SearchRequest.get('dropOff').errors?.['compareValidator']">Pickup and drop location should be different</mat-error>
+                                </div>
+                            </div>
+                            <sectors *ngIf="showSector && sectorToShow === 1" [countryname]="SearchRequest.get('country').value" [countrycode]="SearchRequest.get('country_code').value" [dropdowntype]="'to'" (close)="closeSector($event, 'drop')"></sectors>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <ng-container *ngIf="type === 'car'; else transfers">
+                    <div class="btm-search">
+                        <ul class="btm">
+                            <li>
+                                <div class="btm-wrapper" (click)="openDateTimeCalendar(0)">
+                                    <div class="btm-chose">
+                                        <label>PICK UP DATE & TIME</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <div class="journey-detail"> <span>17</span> <span> Feb’ 23</span> Thursday <div
+                                            class="time">20:30</div>
+                                    </div>
+                                </div>
+                                <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 0"
+                                    (close)="closeDateTimeCalendar($event, 'StartDate')"></lib-date-time-calendar>
+                            </li>
+                            <li>
+                                <div class="btm-wrapper" (click)="openDateTimeCalendar(1)">
+                                    <div class="btm-chose">
+                                        <label>DROP OFF DATE& TIME</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <!-- <div class="journey-detail">Book a round trip to save more</div> -->
+                                    <div class="journey-detail"> <span>17</span> <span> Feb’ 23</span> Thursday <div
+                                            class="time">20:30</div>
+                                    </div>
+                                </div>
+                                <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 1"
+                                    (close)="closeDateTimeCalendar($event, 'StartDate')"></lib-date-time-calendar>
+                            </li>
+                            <li>
+                                <div class="btm-wrapper" (click)="openAge()">
+                                    <div class="btm-chose">
+                                        <label>DRIVERS AGE</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <div class="journey-detail"> <span>22</span> <span> Years</span></div>
+                                </div>
+                                <app-drivers-age *ngIf="showAge" (close)="closeAge($event)"></app-drivers-age>
+                            </li>
+                        </ul>
+                        <div class="btm-outer">
+                            <button mat-flat-button color="primary" class="btn green">Search Car</button>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-template #transfers>
+                    <div class="btm-search">
+                        <ul class="btm">
+                            <li>
+                                <div class="btm-wrapper" (click)="openDateTimeCalendar(0)">
+                                    <div class="btm-chose">
+                                        <label>DEPARTURE DATE & TIME</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <div class="journey-detail"> <span>{{SearchRequest.get('ArrDate').value | date : 'dd'}}</span> <span> {{SearchRequest.get('ArrDate').value | date : 'MMM'}}’ {{SearchRequest.get('ArrDate').value | date : 'yy'}}</span> {{SearchRequest.get('ArrDate').value | date : 'EEEE'}} <div
+                                        class="time">{{SearchRequest.get('ArrTime').value}}</div>
+                                    </div>
+                                </div>
+                                <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 0"
+                                    (close)="closeDateTimeCalendar($event, 'StartDate')"></lib-date-time-calendar>
+                            </li>
+                            <li>
+                                <div class="btm-wrapper" (click)="openDateTimeCalendar(1)">
+
+                                    <div class="btm-chose">
+                                        <label>RETURN DATE & TIME</label>
+                                        <span class="ak-down icon"></span>
+                                        <span class="ak-close icon close" *ngIf="SearchRequest.get('RetDate').value != ''" (click)="clearReturnDate($event)"></span>
+                                    </div>
+                                    <div class="journey-detail" *ngIf="SearchRequest.get('RetDate').value === '';else returndate">Book a round trip to save more</div>
+                                    <ng-template #returndate>
+                                        <div class="journey-detail"> <span>{{SearchRequest.get('RetDate').value | date : 'dd'}}</span> <span> {{SearchRequest.get('RetDate').value | date : 'MMM'}}’ {{SearchRequest.get('RetDate').value | date : 'yy'}}</span> {{SearchRequest.get('RetDate').value | date : 'EEEE'}} <div
+                                            class="time">{{SearchRequest.get('RetTime').value}}</div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                                <lib-date-time-calendar *ngIf="showDateTimeCalendar && calendarToShow === 1"
+                                    (close)="closeDateTimeCalendar($event, 'End Date')"></lib-date-time-calendar>
+                            </li>
+                            <li>
+                                <div class="btm-wrapper" (click)="openTravellers()">
+                                    <div class="btm-chose">
+                                        <label>TRAVELERS</label>
+                                        <span class="ak-down icon"></span>
+                                    </div>
+                                    <div class="journey-detail"> <span>{{totalTravellers}}</span> <span> {{totalTravellers <= 1 ? 'Traveler' : 'Travelers'}}</span></div>
+                                </div>
+                                <app-travellers *ngIf="showTravellers"
+                                    (close)="closeTravellers($event)"></app-travellers>
+                            </li>
+                        </ul>
+                        <div class="btm-outer">
+                            <button mat-flat-button color="primary" class="btn green" (click)="searchCar()">Search Car</button>
+                        </div>
+                    </div>
+                </ng-template>
+
+            </div>
+
+            <div class="recent-search" *ngIf="recentSearch && recentSearch.length > 0">
+                <h3>Your Recent Searches</h3>
+                <div class="box-outer">
+                    <div class="box" *ngFor="let recent of recentSearch">
+                        <div (click)="updateSearch(recent)">
+                            <div class="place-outer">
+                                <span class="place">{{recent?.Location.PlaceFrom}}</span>
+                                <span class="ak-right-arrow icon1"></span>
+                                <span class="place">{{recent?.Location.PlaceTo}}</span>
+                            </div>
+                            <div class="date">
+                                {{recent.Timings?.ArrDate | date : 'dd'}} {{recent.Timings?.ArrDate | date : 'MMM'}} {{recent.Timings?.ArrDate | date : 'yy'}} | {{recent.Timings?.ArrDate | date : 'EEEE'}}
+                            </div>
+                        </div>
+                        <span class="ak-close icon" (click)="recentClear(recent)"></span>
+                    </div>
+
+                    <div class="clear-all">
+                        <span class="ak-close"></span> <span> Clear All</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-right">
+            <ul class="box">
+                <li>
+                    <img src="../../../assets/images/home/offline-request.png" alt="">
+                    <h3>OFFLINE REQUEST</h3>
+                </li>
+                <li>
+                    <img src="../../../assets/images/home/import-pnr.png" alt="">
+                    <h3>IMPORT PNR</h3>
+                </li>
+                <li>
+                    <img src="../../../assets/images/home/travel-calendar.png" alt="">
+                    <h3>TRAVEL CALENDAR </h3>
+                </li>
+                <li>
+                    <img src="../../../assets/images/home/hold-itinery.png" alt="">
+                    <h3>HOLD ITINERARIES</h3>
+                </li>
+            </ul>
+            <ul class="list">
+                <li>
+                    <a href="">
+                        <div class="icon-outer noticeboard">
+                            <span class="ak-notice-board icon"></span>
+                        </div>
+                        <h4>Notice Board</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="icon-outer recharge">
+                            <span class="ak-recharge1 icon"></span>
+                        </div>
+                        <h4>Recharge</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="icon-outer airline-update">
+                            <span class="ak-airline-update1 icon"></span>
+                        </div>
+                        <h4>Running Status</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="icon-outer gst-invoice">
+                            <span class="ak-gst1 icon"></span>
+                        </div>
+                        <h4>GST Invoice Format</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<lib-b2b-footer [redirectUrl]="redirectUrl"></lib-b2b-footer>

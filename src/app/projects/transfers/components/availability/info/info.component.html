@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="icon-outer">
+        <span class="ak-megaphone"></span>
+    </div>
+    <p><b>7 point plan for safe travel </b>  We work closely with all of our Transfers Suppliers to protect our mutual customers.
+    </p>
+    <div class="view-more" (click)="openSidePanel()">View details</div>
+</div>
+
+<app-sidepanel *ngIf="showSidePanel" [heading]="'7 point plan for safe travel'" (closeMenu)="openSidePanel()">
+    <app-safe-travel></app-safe-travel>
+</app-sidepanel>

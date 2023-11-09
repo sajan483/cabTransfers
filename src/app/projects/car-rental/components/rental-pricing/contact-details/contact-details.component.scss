@@ -1,0 +1,132 @@
+@import "common";
+
+.contact {
+    @include flex(column);
+    gap: 15px;
+
+    .heading {
+        h3 {
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+    }
+
+    .card {
+        @include flex(column);
+        gap: 14px;
+        padding: 0;
+
+        ul {
+            @include flex(row);
+            @include flexAlign(s, s);
+            flex-wrap: wrap;
+            gap: 15px;
+            width: $w100;
+            padding: 15px 10px 0;
+            @media screen and (max-width : 500px) {
+                @include flex(column);
+            }
+
+            li {
+                width: calc(25% - 15px);
+                @include flex(column);
+                @include flexAlign(s, s);
+                gap: 5px;
+
+                @media screen and (max-width : 1200px) {
+                    width: calc(40% - 15px);
+                }
+
+                @media screen and (max-width : 900px) {
+                    width: calc(50% - 15px);
+                }
+
+                @media screen and (max-width : 500px) {
+                    width: $w100;
+                }
+
+                label {
+                    font-size: 13px;
+                    font-weight: $regular;
+                }
+            }
+        }
+
+        .bottom {
+            @include flex(row);
+            @include flexAlign(sb, c);
+            border-top: 1px solid #e2e1e1;
+            width: 100%;
+            padding: 8px 0;
+
+            @media screen and (max-width:530px) {
+                @include flex(column);
+                @include flexAlign(s, s);
+                gap: 10px;
+                padding: 6px 0;
+            }
+
+            .left {
+                @include flex(row);
+                @include flexAlign(s, c);
+                gap: 11px;
+                position: relative;
+                padding-left: 45px;
+
+                @media screen and (max-width:530px) {
+                    padding: 5px 0 10px 45px;
+                    width: 100%;
+                    border-bottom: 1px solid #e1d4d4;
+                }
+
+                @media screen and (max-width:400px) {
+                    padding-left: 10px;
+                }
+
+                span {
+                    background: #FF7800;
+                    color: white;
+                    padding: 10px;
+                    font-size: 16px;
+                    position: absolute;
+                    left: 0px;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 0px 0px 0px 4px;
+
+                    @media screen and (max-width:500px) {
+                        border-radius: 0;
+                    }
+
+                    @media screen and (max-width:400px) {
+                        position: unset;
+                    }
+                }
+            }
+
+            .right {
+                @include flex(row);
+                @include flexAlign(e, c);
+                gap: 8px;
+                padding-right: 10px;
+                cursor: pointer;
+                .icon {
+                    font-size: 20px;
+                    color: #9f9898;
+                }
+
+                @media screen and (max-width:530px) {
+                    @include flex(row);
+                    @include flexAlign(e, e);
+                    width: 100%;
+                    padding-bottom: 5px;
+                }
+
+                p {
+                    color: #545454;
+                }
+            }
+        }
+
+    }
+}

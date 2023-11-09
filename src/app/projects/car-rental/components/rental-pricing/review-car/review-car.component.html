@@ -1,0 +1,125 @@
+<div class="review-car">
+    
+        <div class="heading">
+            <h3>Review your Car Details</h3>
+            <a>Change Car</a>
+        </div>
+        <div class="car-name">
+            <div class="left">
+                <div class="card">
+                    <h4>Maruti Baleno AT <span>or similar SUV</span></h4>
+                    <div class="res">
+                        <a>Fare Rules</a>
+                        <span class="ak-down icon" [class.rotate]="showDetails" (click)="toggleDetails()"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="right" (click)="toggleDetails()">
+                <div class="card">
+                    <span class="ak-down icon" [class.rotate]="showDetails"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" *ngIf="showDetails" @openCloseAnim>
+            <div class="outer">
+                <div class="destination">
+                    <div class="connection">
+                        <div class="left">
+                            <p>Country</p>
+                            <h2>United States</h2>
+                        </div>
+                    </div>
+                    <div class="journey-detail">
+        
+                        <div class="left">
+        
+                            <div class="from-date">
+                                <h2>02:20</h2>
+                                <p>Tue,17 Nov 23</p>
+                            </div>
+        
+                            <div class="to-date">
+                                <h2>17:55</h2>
+                                <p>Tue,18 Nov 23</p>
+                            </div>
+        
+                        </div>
+        
+                        <div class="center">
+                            <span class="divider"> </span>
+                        </div>
+        
+                        <div class="right">
+        
+                            <div class="sector">
+                                <span>Pick Up</span>
+                                <h2>New York - John F. Kennedy Airport</h2>
+                            </div>
+        
+                            <div class="sector">
+                                <span>Drop Off</span>
+                                <h2>New York - John F. Kennedy Airport</h2>
+                            </div>
+        
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+            <div class="car-detail">
+                <div class="data">
+                    <div class="left">
+                        <div class="image-bg">
+                            <div class="img-item"></div>
+                        </div>
+                        <div class="text1">
+                            <h3>Maruti Baleno AT<span>or similar SUV</span></h3>
+                            <div class="feature">
+                                <ul>
+                                    <li><span class="ak-petrol icon"></span>Petrol</li>
+                                    <li><span class="ak-seater icon"></span>5 Seater</li>
+                                    <li><span class="ak-automatic icon"></span>Automatic</li>
+                                    <li><span class="ak-doors icon"></span>4 Doors</li>
+                                    <li><span class="ak-ac icon"></span>AC</li>
+    
+                                </ul>
+                            </div>
+                            <div class="footer">
+                                <ul class="list">
+                                    <li><span class="ak-petrol1 icon green"></span>Fuel - Full to Full</li>
+                                    <li class="blue"><span class="ak-information icon blue"></span>Cancellation / No show
+                                        policy</li>
+                                </ul>
+                                <ul class="list">
+                                    <li><span class="ak-danger icon orange"></span>Excess - 2000 EUR / Deposit - 2000 EUR
+                                    </li>
+                                    <li class="blue" (click)="openDialog()"><span class="ak-information icon orange"></span>Inclusions</li>
+                                    <li class="res blue"> <span  class="ak-terms icon"></span>Terms and conditions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="price">
+                            <button mat-stroked-button color="primary" class="btn yellow">Add ERP</button>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="operator">
+                    <div class="left">
+                        <img src="../../../../assets/images/availability/sixt-logo.png" alt="">
+                        <div class="res">
+                            <div class="rating">
+                                <h3>9.3</h3>
+                                <p>Outstanding</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p ><span class="ak-terms icon"></span> <span  class="res">Terms and conditions</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

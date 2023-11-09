@@ -1,0 +1,53 @@
+@import "common";
+
+.cancellation {
+    @include flex(column);
+    gap: 20px;
+    .box {
+        @include flex(column);
+        gap: 16px;
+        h4{
+            font-size: $clamp-16-14;
+        }
+        .tile {
+            @include flex(row);
+            gap: 5px;
+            box-shadow: 0px 0px 10px #00000029;
+            border-radius: 10px;
+            padding: 20px;
+            gap: 14px;
+
+            .border-left {
+                background: transparent linear-gradient(180deg, #307D01 0%, #D32F2F 100%) 0% 0% no-repeat padding-box;
+                width: 9px;
+                border-radius: 17px;
+            }
+
+            .lists {
+                @include flex(column);
+                width: 100%;
+
+                .list {
+                    @include flex(row);
+                    @include flexAlign(sb, c);
+                    border-bottom: 1px solid #efefef;
+                    padding: 14px 0;
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                    p{
+                        font-size: $clamp-16-14;
+                    }
+                    .green-txt{
+                        color: #466A08;
+                    }
+                    .red-txt{
+                        color: #C42F2B;
+                    }
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@import "common";
+.recon-body{
+    // border: 1px solid red;
+    height: 100%;
+    position: relative;
+}
+.recon-body{
+    margin-bottom: 40px;
+    padding: 15px $clamp-12-10;
+}
+.recon-footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 -5px 5px 0 rgba(0, 0, 0, 0.1);
+    z-index: 150;
+    @include flex(row);
+    @include flexAlign(e, c);
+    gap: 15px;
+
+
+    .amount {
+        background: url(../../../../../../../assets/images/watermark.png);
+        overflow: hidden;
+        padding:12px 15px;
+        border-radius: 5px;
+        @include flex(column);
+        @include flexAlign(e, e);
+        gap: 5px;
+  
+        h3 {
+          font-size: $clamp-24-18;
+          font-weight: $black_fnt;
+          position: relative;
+          z-index: 0;
+        }
+  
+        h6 {
+          color: #908f8f !important;
+          font-weight: 400;
+          text-align: center;
+          margin-top: -5px;
+          z-index: 0;
+        }
+  
+      }
+
+}

@@ -1,0 +1,72 @@
+<div class="passenger-info card">
+<form [formGroup]="PaxDetails" #paxEle>
+<div formArrayName="Adult">
+    <div class="row" *ngFor="let adult of adultControls.controls; let i = index">
+
+       <div  [formGroupName]="i">
+        <h3>ADULT {{i+1}} <span>12+ years</span></h3>
+        <ul class="form-field">
+
+            <li class="title">
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <mat-select placeholder="Title" formControlName="Title">
+                        <mat-option *ngFor="let i of Titles" [value]="i.value">{{i.value}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </li>
+
+            <li class="fname">
+                <mat-form-field appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="First Name" formControlName="FirstName" appStringValidator>
+                </mat-form-field>
+            </li>
+
+            <li class="lname">
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Last Name" formControlName="LastName" appStringValidator>
+                </mat-form-field>
+            </li>
+        </ul>
+        </div>
+    </div>
+</div>
+</form>
+
+<form [formGroup]="ChildDetails"  *ngIf="ChildDetails" >
+<div formArrayName="Child" #childEle>
+    <div class="row" *ngFor="let child of childControls.controls; let i = index">
+        <div  [formGroupName]="i">
+         <h3>CHILD {{i+1}} <span>0-12 years</span></h3>
+         <ul class="form-field">
+ 
+             <li class="title">
+                 <mat-form-field appearance="outline">
+                     <mat-label>Title</mat-label>
+                     <mat-select placeholder="Title" formControlName="TitleChild">
+                         <mat-option *ngFor="let i of TitlesChild" [value]="i.value">{{i.value}}</mat-option>
+                     </mat-select>
+                 </mat-form-field>
+             </li>
+ 
+             <li class="fname">
+                 <mat-form-field appearance="outline">
+                     <mat-label>First Name</mat-label>
+                     <input matInput placeholder="First Name" formControlName="FirstNameChild" appStringValidator>
+                 </mat-form-field>
+             </li>
+ 
+             <li class="lname">
+                 <mat-form-field appearance="outline">
+                     <mat-label>Last Name</mat-label>
+                     <input matInput placeholder="Last Name" formControlName="LastNameChild" appStringValidator>
+                 </mat-form-field>
+             </li>
+         </ul>
+        </div>
+     </div>
+</div>
+</form>
+</div>

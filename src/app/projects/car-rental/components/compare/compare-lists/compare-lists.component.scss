@@ -1,0 +1,320 @@
+@import "common";
+
+.compare {
+    @include flex(column);
+    gap: 40px;
+    padding: 40px 0;
+
+    @media screen and (max-width:900px) {
+        gap: 20px;
+    }
+
+    .heading {
+        @include flex(row);
+        @include flexAlign(sb, c);
+
+        h4 {
+            font-size: $clamp-18-16;
+            font-weight: $bold;
+        }
+
+        .back {
+            @include flex(row);
+            @include flexAlign(c, c);
+            gap: 3px;
+
+            a {
+                color: $blue;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .list {
+        @include flex(row);
+        gap: 20px;
+
+        @media screen and (max-width:900px) {
+            white-space: nowrap;
+            overflow-x: auto;
+            padding: 35px 0;
+        }
+
+        .box {
+            border: 1px solid #D0D0D0;
+            border-radius: 5px;
+            padding: 13px;
+            @include flex(column);
+            gap: 20px;
+            position: relative;
+
+            @media screen and (max-width:900px) {
+                min-width: 370px;
+                display: flex;
+            }
+
+            @media screen and (max-width:600px) {
+                min-width: 100%;
+            }
+
+            .res {
+                @include flex(column);
+                gap: 20px;
+
+                .left {
+
+                    .image {
+                        background: #EDEDED;
+                        @include flex(row);
+                        @include flexAlign(c, c);
+                        border-radius: 6px;
+
+                    }
+                }
+
+                .right {
+
+                    .details {
+                        @include flex(column);
+                        gap: 25px;
+
+                        .feature {
+                            @include flex(column);
+                            gap: 17px;
+
+                            h3 {
+                                font-size: $clamp-16-14;
+                                font-weight: $black_fnt;
+                                @include flex(row);
+                                @include flexAlign(s, c);
+                                gap: 10px;
+
+                                span {
+                                    color: #676767;
+                                    font-weight: $regular;
+                                    font-size: 14px;
+                                }
+                            }
+
+                            ul {
+                                @include flex(row);
+                                @include flexAlign(s, c);
+                                flex-wrap: wrap;
+                                column-gap: 36px;
+                                row-gap: 12px;
+
+                                li {
+                                    @include flex(row);
+                                    @include flexAlign(s, c);
+                                    gap: 6px;
+
+                                    .icon {
+                                        font-size: 18px;
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .listing {
+                            ul {
+                                @include flex(column);
+                                gap: 15px;
+
+                                li {
+                                    @include flex(row);
+                                    @include flexAlign(s,c);
+                                    gap: 8px;
+                                    &.blue {
+                                        color: #0E295A;
+                                        cursor: pointer;
+                                    }
+                                    .icon {
+                                        font-size: 18px;
+
+                                        &.green {
+                                            color: #0C9426;
+                                        }
+
+                                        &.orange {
+                                            color: #F78C03
+                                        }
+
+                                        &.blue {
+                                            color: #0E295A;
+                                        }
+                                    }
+
+                                    .down-icon {
+                                        display: inline-block;
+                                        transition: all .5s ease;
+                                        &.rotate {
+                                            transform: rotateZ(180deg);
+                                        }
+                                    }
+                                }
+
+                                .inclusion {
+                                    background: #F9F9F9;
+                                    padding: 10px;
+                                    max-height: 154px;
+                                    overflow-y: auto;
+
+                                    &::-webkit-scrollbar {
+                                        width: 8px;
+                                    }
+
+                                    &::-webkit-scrollbar-track {
+                                        background: #E6E6E6;
+                                        border-radius: 5px;
+                                    }
+
+                                    &::-webkit-scrollbar-thumb {
+                                        border-radius: 5px;
+                                        background: #878787;
+                                    }
+
+                                    ul {
+                                        list-style: none;
+                                        margin-left: -11px;
+                                        @include flex(column);
+                                        gap: 8px;
+
+                                        li {
+                                            font-size: 14px;
+                                            line-height: $clamp-22-16;
+                                            margin-left: 25px;
+                                            @include flex(row);
+                                            @include flexAlign(s, s);
+                                            padding: 2px 0;
+                                            font-weight: $regular;
+                                            position: relative;
+
+                                            &::before {
+                                                content: '';
+                                                width: 8px;
+                                                height: 8px;
+                                                background-color: $secondary;
+                                                border-radius: 50%;
+                                                display: inline-block;
+                                                margin-left: -1em;
+                                                line-height: 24px;
+                                                top: 10px;
+                                                position: absolute;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .pricing {
+                @include flex(row);
+                gap: 15px;
+                @include flexAlign(e, c);
+                border-top: 1px solid #e9e9e9;
+                padding: 10px 0;
+
+                h3 {
+                    @include flex(row);
+                    @include flexAlign(s, c);
+                    font-size: $clamp-20-14;
+                    font-weight: $black_fnt;
+                    gap: 6px;
+
+                    span {
+                        font-size: 14px;
+                        color: #C83931;
+                        cursor: pointer;
+                    }
+                }
+
+                .btn {
+                    padding: 20px;
+                    border: 0;
+
+                    &.yellow {
+                        background: #FFCD2E;
+                    }
+                }
+            }
+
+            .footer {
+                border-top: 1px solid #e9e9e9;
+                padding: 15px 0 0;
+                @include flex(row);
+                @include flexAlign(sb, c);
+
+                .left {
+                    @include flex(row);
+                    gap: 15px;
+
+                    .res {
+                        @include flex(row);
+                        gap: 15px;
+                    }
+
+                    img {
+                        height: max-content;
+                    }
+
+                    .rating {
+                        @include flex(row);
+                        @include flexAlign(s, c);
+                        border-radius: 4px;
+
+                        h3 {
+                            background: #0C9426;
+                            padding: 8px;
+                            border-radius: 4px;
+                            color: white;
+                            font-weight: 300;
+                            font-size: 13px;
+                        }
+
+                        p {
+                            padding: 8px;
+                            background: #F5F5F5;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .compare {
+                        background: #D9EFFF;
+                        border-radius: 4px;
+                        @include flex(row);
+                        @include flexAlign(c, c);
+                        padding: 0 10px;
+                    }
+                }
+
+                .right {
+                    .icon {
+                        font-size: 30px;
+                        color: #6E6E6E;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .close-btn {
+                background: #EEEEEE;
+                border: 1px solid #DCDCDC;
+                border-radius: 50%;
+                width: 34px;
+                height: 34px;
+                @include flex(row);
+                @include flexAlign(c, c);
+                position: absolute;
+                top: -23px;
+                right: 6px;
+                cursor: pointer;
+            }
+        }
+    }
+}

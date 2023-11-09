@@ -1,0 +1,234 @@
+@import "common";
+
+.packages {
+    @include flex(column);
+    @include flexAlign (s, s);
+    gap: 30px;
+    width: $w100;
+    margin: $clamp-30-5 $reset;
+
+    .card {
+        background: $white;
+        width: $w100;
+        padding: $clamp-24-18;
+        border-radius: 3px;
+        border: 1px solid $lightgrey;
+        @include flex(column);
+        @include flexAlign(sb, s);
+
+        .data {
+            @include flex(row);
+            @include flexAlign(sb, s);
+            gap: 20px;
+            width: $w100;
+
+            @media screen and (max-width : 800px) {
+                @include flex(column);
+            }
+
+            .left {
+                width: 60%;
+                @include flex(row);
+                @include flexAlign(s, s);
+                gap: 15px;
+
+                @media screen and (max-width : 800px) {
+                    width: $w100;
+                }
+
+                @media screen and (max-width : 500px) {
+                    @include flex(column);
+                }
+
+                .image-bg {
+                    background-color: #EDEDED;
+                    border-radius: 6px;
+                    width: 180px;
+                    height: 140px;
+                    @include flex(row);
+                    @include flexAlign(c, c);
+                    overflow: hidden;
+
+                    @media screen and (max-width : 500px) {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .img-item {
+                        background: var(--bg-image) no-repeat center center;
+                        background-size: inherit;
+                        width: 149px;
+                        height: 100px;
+
+                        @media screen and (max-width : 1000px) {
+                            min-width: 60%;
+                        }
+                    }
+                }
+
+                .text1 {
+                    @include flex(column);
+                    @include flexAlign(s, s);
+                    gap: 15px;
+
+                    h3 {
+                        font-size: $clamp-20-16;
+                        font-weight: $black_fnt;
+
+                        span {
+                            font-size: 13px;
+                            color: #676767;
+                            font-weight: $regular;
+                        }
+                    }
+
+                    .feature {
+                        @include flex(row);
+                        @include flexAlign(s, s);
+                        gap: 20px;
+
+                        @media screen and (max-width : 1000px) {
+                            @include flex(column);
+                            gap: 5px;
+                        }
+
+                        @media screen and (max-width : 800px) {
+                            @include flex(row);
+                            gap: 20px;
+
+                        }
+
+                        @media screen and (max-width :600px) {
+                            @include flex(column);
+                            gap: 5px;
+                        }
+
+                        p {
+                            font-size: 13px;
+                            @include flex(row);
+                            @include flexAlign(s, c);
+                        }
+
+                        .icon {
+                            margin-right: 10px;
+                            font-size: 25px;
+                            color: #59646F;
+                        }
+                    }
+
+                    .supplier {
+                        @include flex(column);
+                        @include flexAlign(s, s);
+                        gap: 8px;
+
+                        h5 {
+                            font-size: $clamp-15-14;
+                            font-weight: $bold;
+                        }
+
+                        .waiting {
+                            font-size: 13px;
+                            font-weight: $bold;
+
+                            span {
+                                font-weight: $regular;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 40%;
+                @include flex(row);
+                @include flexAlign(sb, s);
+                gap: 15px;
+
+                @media screen and (max-width : 800px) {
+                    width: $w100;
+                    border-top: 1px solid $lightgrey;
+                    padding-top: 15px;
+                }
+
+                @media screen and (max-width : 500px) {
+                    @include flex(column);
+                }
+
+                .list {
+                    margin-top: 35px;
+
+
+                    @media screen and (max-width : 800px) {
+                        margin-top: 0;
+                    }
+
+                    @media screen and (max-width : 500px) {
+                        width: $w100;
+
+                        ul.list_style {
+                            li {
+                                margin-left: 20px;
+                            }
+                        }
+
+                    }
+
+                    .view-more {
+                        text-indent: 26px;
+                        margin-top: 7px;
+                        text-decoration: underline;
+                        color: #244885;
+                        cursor: pointer;
+                    }
+                }
+
+                .btn-area {
+                    @include flex(column);
+                    @include flexAlign(c, e);
+                    gap: 12px;
+
+                    @media screen and (max-width : 500px) {
+                        width: $w100;
+                        @include flexAlign(c, e);
+                        border-top: 1px solid $lightgrey;
+                        padding-top: 15px;
+
+
+                    }
+
+                    .amount {
+                        font-size: 20px;
+                        font-weight: $black_fnt;
+                        white-space: nowrap;
+
+                        .icon {
+                            color: #C83931;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .btn-wraper {}
+
+                }
+            }
+
+        }
+
+        .operator {
+            border-top: 1px solid $lightgrey;
+            width: $w100;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}

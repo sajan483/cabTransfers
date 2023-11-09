@@ -1,0 +1,51 @@
+@import "common";
+.booking{
+    @include flex(column);
+    gap: 15px;
+    .heading{
+        h3{
+            font-weight: $bold;
+            font-size: $clamp-19-16;
+        }
+    }
+    ul{
+        @include flex(row);
+        @include flexAlign(s, s);
+        flex-wrap: wrap;
+        gap: 15px;
+        width: $w100;
+        @media screen and (max-width : 500px) {
+            @include flex(column);
+        }
+       
+        li {
+            width: calc(25% - 15px);
+            @include flex(column);
+            @include flexAlign(s, s);
+            gap: 5px;
+            @media screen and (max-width : 1200px) {
+                width: calc(28% - 15px);
+            }
+            @media screen and (max-width : 800px) {
+                width: calc(50% - 15px);
+            }
+            @media screen and (max-width : 500px) {
+                width: $w100;
+            }
+          &.small{
+            width: 15%;
+            @media screen and (max-width : 800px) {
+                width: 30%;
+            }
+            @media screen and (max-width : 500px) {
+                width: $w100;
+            }
+          }
+
+            label {
+                font-size: 13px;
+                font-weight: $regular;
+            }
+        }
+    }
+}

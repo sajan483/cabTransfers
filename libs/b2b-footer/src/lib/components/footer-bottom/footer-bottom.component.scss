@@ -1,0 +1,47 @@
+@import "../../../../assets/css/common.scss";
+
+.footer-bottom {
+    background: url(../../../../assets/images/login-bg.jpg) #ededed;
+    padding: 18px 0;
+
+    .bottomfooter {
+        width: 100%;
+
+        .ftleft {
+            p {
+                font-size: 13px;
+                color: #373b43;
+                font-weight: 400;
+            }
+        }
+
+        .ftright {
+            p {
+                font-size: 13px;
+                color: #373b43;
+                font-weight: 400;
+
+                a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: #373b43;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .footer-row {
+        .footer-bottom {
+            .bottomfooter {
+                .ftleft {
+                    p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

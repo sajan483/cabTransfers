@@ -1,0 +1,86 @@
+<section class="credit-and-debit-row">
+    <div class="enteramount-row">
+        <div class="block large-width">
+            <label class="formlabel">Amount</label>
+            <input type="text" class="form-control" placeholder="Enter Amount" />
+        </div>
+    </div>
+
+    <div class="radiobutton-payment">
+        <h5>Select Cards</h5>
+        <div class="top">
+            <mat-radio-button value="One Way"><span>Credit Card</span></mat-radio-button>
+        </div>
+        <div class="top">
+            <mat-radio-button value="One Way"><span>CORPORATE CREDIT CARD</span></mat-radio-button>
+        </div>
+        <div class="top">
+            <mat-radio-button value="One Way"><span>DEBIT CARD</span></mat-radio-button>
+        </div>
+    </div>
+
+    <div class="radiobutton-payment">
+        <h5>Select Payment Gateway</h5>
+        <div class="top">
+            <mat-radio-button value="One Way"><span>Safex</span></mat-radio-button>
+        </div>
+        <div class="top">
+            <mat-radio-button value="One Way"><span>Razor Pay</span></mat-radio-button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="block large-width">
+            <label class="formlabel">Card Number</label>
+
+            <mat-form-field class="example-full-width"  appearance="outline"> 
+                <input matInput placeholder="Enter card number here" value="">
+              </mat-form-field>
+              
+        </div>
+        <div class="cardicon"></div>
+        <div class="block large-width">
+            <label class="formlabel">Name on Card</label>
+            <mat-form-field class="example-full-width"  appearance="outline"> 
+                <input matInput placeholder="Name on Card" value="">
+              </mat-form-field>
+
+        </div>
+    </div>
+
+    <div class="row formob">
+        <div class="block small-width">
+            <label class="formlabel">Expiry Date</label>
+            <mat-form-field appearance="outline" class="small not-floating">
+                <mat-label>Month</mat-label>
+                <mat-select>
+                    <mat-option>
+                        sss
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="block small-width">
+            <label class="formlabel">&nbsp;</label>
+            <mat-form-field appearance="outline" class="small not-floating">
+                <mat-label>Year</mat-label>
+                <mat-select>
+                    <mat-option>
+                        sss
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="block small-width">
+            <label class="formlabel">CVV</label>
+            <mat-form-field class="example-full-width"  appearance="outline"> 
+                <input matInput placeholder="CVV" value="">
+              </mat-form-field>
+
+        </div>
+        <div class="cvvimg">
+            <div class="cvvimgcontainer"></div>
+            <p>3digits printed on the back of the card</p>
+        </div>
+    </div>
+</section>

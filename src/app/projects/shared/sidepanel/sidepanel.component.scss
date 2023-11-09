@@ -1,0 +1,62 @@
+@import "common";
+
+.wrapper {
+    background: $white;
+    position: fixed;
+    height: 100%;
+    width: 800px;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    overflow-y: auto;
+    transform: translate(100%, 0);
+    animation: show-left-to-right .5s linear;
+    animation-fill-mode: forwards;
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+    }
+
+    &.hide {
+        transform: translate(0, 0);
+        animation: hide-left-to-right .5s linear;
+        animation-fill-mode: forwards;
+    }
+
+    .heading {
+        @include flex(row);
+        @include flexAlign(sb,c);
+        padding: $clamp-20-16 $clamp-25-15;
+        border-bottom: 1px solid $bdr-light;
+        h1 {
+            font-size: $clamp-19-16;
+            font-weight: $bold;
+        }
+        .close-icon{
+            cursor: pointer;
+            transform: scale(.8);
+            transition: all .5s ease;
+            opacity: .5;
+            &:hover{
+                transform: scale(1);
+                opacity: 1;
+                color:$black;
+            }
+        }
+    }
+
+    .form {
+        padding: $clamp-20-16 $clamp-25-15;
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: rgba($black, .4);
+    top: 0;
+    right: 0;
+}

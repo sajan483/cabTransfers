@@ -1,0 +1,392 @@
+@import "../../../../assets/css/common.scss";
+
+.navigation {
+    width: 100%;
+    background: #0e295a;
+
+    .nav-left {
+        width: 95%;
+
+        .nav {
+            li {
+                margin-right: 45px;
+                position: relative;
+                cursor: pointer;
+
+                .menu-item-mine {
+                    animation-name: blinker;
+                    animation-duration: 1s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    padding: 2px 6px;
+                    color: #000;
+                    font-size: 11px;
+                    border-radius: 4px;
+                    position: absolute;
+                    top: -12px;
+                    right: calc(50% - 17px);
+                }
+
+                .menu-item-mine::after {
+                    position: absolute;
+                    bottom: -4px;
+                    right: 3px;
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-top: 4px solid #a78103;
+                }
+
+                @-moz-keyframes blinker {
+                    0% {
+                        background: $secondary;
+                    }
+
+                    50% {
+                        background: #e48f1f;
+                    }
+
+                    100% {
+                        background: $secondary;
+                    }
+                }
+
+                @-webkit-keyframes blinker {
+                    0% {
+                        background: $secondary;
+                    }
+
+                    50% {
+                        background: #e48f1f;
+                    }
+
+                    100% {
+                        background: $secondary;
+                    }
+                }
+
+                @keyframes blinker {
+                    0% {
+                        background: $secondary;
+                    }
+
+                    50% {
+                        background: #e48f1f;
+                    }
+
+                    100% {
+                        background: $secondary;
+                    }
+                }
+
+                a {
+                    color: #fff;
+                    overflow: hidden;
+                    height: 66px;
+                    transition: 0.3s ease;
+                    padding-top: 7px;
+                    border-bottom: 4px solid transparent;
+
+                    .icon {
+                        font-size: 25px;
+                        transition: 0.3s ease;
+                        margin-bottom: 3px;
+                    }
+
+                    h4 {
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        margin: 3px 0 0 0;
+                        line-height: 17px;
+                        font-weight: 400;
+                        transition: 0.3s ease;
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        transition: 0.3s ease;
+                        border-bottom-color: $secondary;
+
+                        .icon {
+                            color: $secondary;
+                            @include transform(scale(0.7));
+                        }
+
+                        h4 {
+                            color: $secondary;
+                        }
+                    }
+
+                    &.active {
+                        transition: 0.3s ease;
+                        border-bottom: 4px solid $secondary;
+
+                        .icon {
+                            font-size: 18px;
+                            color: $secondary;
+                        }
+
+                        h4 {
+                            font-size: 12px;
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-right {
+        cursor: pointer;
+
+        a {
+            text-transform: uppercase;
+            font-size: 11px;
+            color: #fff;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+
+            .icon {
+                color: #fff;
+                font-size: 32px;
+                margin-bottom: 2px;
+            }
+
+            &:hover {
+                transition: 0.3s ease;
+                color: $secondary;
+
+                .icon {
+                    transition: 0.3s ease;
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+.moremenu-list {
+    padding: 5px 0;
+    width: 200px;
+
+    li {
+        padding: 8px 23px 8px 55px;
+        color: $black;
+        font-size: 15px;
+        font-weight: 400;
+        position: relative;
+        cursor: pointer;
+        margin: 10px 0;
+        @include transition(all 0.5s ease);
+        text-transform: capitalize;
+
+        span {
+            color: #5f5f5f;
+            font-size: 18px;
+            position: absolute;
+            left: 23px;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+
+        &::before {
+            content: "";
+            left: 0px;
+            top: 50%;
+            width: 4px;
+            height: 0%;
+            background: $secondary;
+            position: absolute;
+            z-index: 11;
+            opacity: 0;
+            border-radius: 0 999px 999px 0;
+            @include transition(all 0.5s ease);
+        }
+
+        &:hover {
+            background: rgba(255, 205, 46, 0.08);
+            padding-left: 48px;
+
+            &::before {
+                height: 100%;
+                opacity: 1;
+                top: 0;
+            }
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.hide {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:1150px) {
+    .nav {
+        li {
+            margin-right: 1.7%;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .nav {
+        li {
+            &.hide800 {
+                display: none;
+            }
+        }
+    }
+
+    .moremenu-list {
+        li {
+            &.hide {
+                &.show800 {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1290px) {
+    .nav {
+        li {
+            a {
+                height: 60px;
+
+                &.new {
+                    &::before {
+                        left: -30px;
+                        top: 8px;
+                        font-size: 10px;
+                    }
+                }
+
+                .icon {
+                    font-size: 23px;
+
+                    &.ak-cruise {
+                        font-size: 28px;
+                    }
+                }
+
+                h3 {
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .nav {
+        li {
+            &.hide750 {
+                display: none;
+            }
+        }
+    }
+
+    .moremenu-list {
+        li {
+            &.hide {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .nav {
+        li {
+            &.hide1100 {
+                display: none;
+            }
+        }
+    }
+
+    .moremenu-list {
+        li {
+            &.hide {
+                &.show1100 {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.skeleton {
+    padding: 0 !important;
+    border-radius: 0px;
+    overflow: hidden;
+    padding: 5px 15px;
+
+    .animating {
+        animation: flash 1s linear 0s infinite normal forwards;
+        -webkit-animation: flash 1s linear 0s infinite normal forwards;
+        @include skeletonbg();
+    }
+
+    .image {
+        width: 200px;
+        height: 50px;
+        margin: 15px 0;
+    }
+
+    .navigation {
+        background: #0e295a;
+        height: 66px;
+        padding-top: 9px;
+
+        .left {
+            width: 60%;
+
+            .item {
+                .icon {
+                    width: 24px;
+                    height: 29px;
+                }
+
+                .title {
+                    width: 70px;
+                    height: 14px;
+                    margin-top: 5px;
+                }
+
+                .more {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+
+        .right {
+            width: 30px;
+
+            .item {
+                .title {
+                    width: 32px;
+                    height: 14px;
+                    margin-top: 5px;
+                }
+
+                .more {
+                    width: 32px;
+                    height: 29px;
+                }
+            }
+        }
+    }
+}
